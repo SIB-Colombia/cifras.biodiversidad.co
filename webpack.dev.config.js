@@ -2,7 +2,8 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, 'index.js'),
+        "app": path.resolve(__dirname, './src/entries/app.js'),
+
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -11,6 +12,7 @@ module.exports = {
     devServer: {
         port: 9000,
     },
+    devtool: 'eval-source-map',
     module: {
         rules: [
             {
