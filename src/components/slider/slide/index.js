@@ -4,11 +4,9 @@ import SlideLayout from "./layout";
 class Slide extends Component {
     render () {
         return (
-            <SlideLayout>
-                <div>
-                    {this.props.text}
-                </div>
-            </SlideLayout>
+            <SlideLayout
+                text={this.props.text}
+            />
         )
     }
 }
