@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../_styles/Utilities/styles.css'
+import "../../_styles/components/home.scss"
 
 const HomeLayout = props => (
     <section className="HomeLayout">

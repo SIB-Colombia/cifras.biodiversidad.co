@@ -27,3 +27,22 @@ $sib-yellow: (
 $sib-magenta: (
   "base": #E83A64,
 );
+
+$colors: (
+  "gray": $sib-gray,
+  "teal" : $sib-teal,
+  "orange": $sib-orange,
+  "yellow": $sib-yellow,
+  "magenta": $sib-magenta
+);
+
+@function color($color, $type) {
+  @if map-has-key($colors, $color) {
+    $curr_color: map-get($colors, $color);
+    @if map-has-key($curr_color, $type) {
+      @return map-get($curr_color, $type);
+    }
+  }
+  @warn "Unknown `#{$color}` - `#{$type}` in $colors.";
+  @return null;
+}

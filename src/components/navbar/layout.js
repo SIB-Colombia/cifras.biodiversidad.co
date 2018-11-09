@@ -1,9 +1,10 @@
 import React from 'react'
+import "../../_styles/components/navbar.scss"
 
 const NavbarLayout = props => (
-    <div>
+    <nav className="Navbar">
         {props.children}
-    </div>
+    </nav>
 )
 
 export default NavbarLayout

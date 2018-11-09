@@ -1,15 +1,17 @@
 @charset "UTF-8";
 
-@import "_utilities/normalize";
+@import "normalize";
+@import "variables";
 
-@import "_utilities/_color-variables";
-@import "_utilities/_color";
+@import "color-variables";
+@import "color";
 
-@import "_utilities/_variables";
+@import "variables";
+@import "gradients";
 
-@import "_utilities/_helpers";
-@import "_utilities/_shadows";
-@import "_utilities/_typo";
-@import "_utilities/_grid";
-@import "_utilities/_gradients";
+@import "helpers";
+@import "shadows";
+@import "typo";
+@import "grid";
+@import "gradients";
 

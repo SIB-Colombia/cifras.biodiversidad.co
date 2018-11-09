@@ -1,0 +1,13 @@
+@import "../_utilities/utilities";
+@import "../elements/card";
+
+
+.HomeLinks {
+}
+.HomeLink {
+  @extend .card;
+  list-style-type: none;
+  display: block;
+  padding: 1em;
+
+}

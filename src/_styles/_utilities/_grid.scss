@@ -1,0 +1,26 @@
+.container {
+  padding-left: 5%;
+  padding-right: 5%;
+  &--full {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.row{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.col{
+  box-sizing: border-box;
+  margin: 0.5em;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: (100%/$i);
+    box-sizing: border-box;
+    margin: 0.5em;
+  }
+}
