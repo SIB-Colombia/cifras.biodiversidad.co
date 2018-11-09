@@ -17,12 +17,12 @@ module.exports = (env) => {
     return {
 
         entry: {
-            "app": path.resolve(__dirname, './src/entries/app.js'),
+            "home": path.resolve(__dirname, 'src/entries/app.js'),
         },
         output: {
             path: path.resolve(__dirname, 'dist'),
             filename: 'js/[name].js',
-            publicPath: "/",
+            publicPath: path.resolve(__dirname, 'dist')+"/",
             chunkFilename: 'js/[id].[chunkhash].js',
         },
         devServer: {
@@ -51,6 +51,12 @@ module.exports = (env) => {
                                 }
                             }
                         ]
+                    })
+                },
+                {
+                    test: /\.scss$/,
+                    use: ExtractTextPlugin.extract({
+                        use: [ 'css-loader', 'sass-loader' ]
                     })
                 },
                 {
