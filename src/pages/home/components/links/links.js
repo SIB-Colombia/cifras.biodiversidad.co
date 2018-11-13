@@ -1,29 +1,21 @@
 import React from 'react'
-import {NavLink} from "react-router-dom";
+import HomeLink from "./components/link";
 import "../../../../_styles/components/home-links.scss";
 
 const HomeLinks = props => (
     <div className="container Homelinks">
         <div className="row">
             <div className="col-4">
-                <NavLink to="/destacados" activeClassName="is-active" className="HomeLink">
-                    Destacados
-                </NavLink>
+                <HomeLink/>
             </div>
             <div className="col-4">
-                <NavLink to="/grupos" activeClassName="is-active" className="HomeLink">
-                    Grupos
-                </NavLink>
+                <HomeLink/>
             </div>
             <div className="col-4">
-                <NavLink to="/municipios" activeClassName="is-active" className="HomeLink">
-                    Municipios
-                </NavLink>
+                <HomeLink/>
             </div>
             <div className="col-4">
-                <NavLink to="/entidades" activeClassName="is-active" className="HomeLink">
-                    Entidades
-                </NavLink>
+                <HomeLink/>
             </div>
         </div>
     </div>

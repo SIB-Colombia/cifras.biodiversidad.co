@@ -6,8 +6,25 @@
 }
 .HomeLink {
   @extend .card;
-  list-style-type: none;
   display: block;
-  padding: 1em;
+  list-style-type: none;
+  padding: 40px 32px 32px 32px;
+  text-decoration: none;
+  border-bottom: 3px solid $secondary-color;
+}
 
+.HomeLink__title {
+  color: color("teal", "base");
+  display: block;
+  font-family: $secondary-font;
+  font-size: 1.1em;
+  line-height: 1em;
+  margin-bottom: .5em;
+}
+
+.HomeLink__action {
+  color: color("teal", "darken-1");
+  font-family: $main-font;
+  font-size: 1em;
+  line-height: 1em;
 }

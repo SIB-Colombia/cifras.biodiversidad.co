@@ -9,7 +9,11 @@ $title-color: color("gray", "darken-1") !default;
 $text-color: color("gray", "base") !default;
 $link-color: color("teal", "darken-1") !default;
 
+$main-font: 'Roboto', sans-serif;
+$secondary-font: 'Roboto Slab', serif;
+
 $light: 300;
 $regular: 400;
 $medium: 500;
-$bold: 700
+$bold: 700;
+

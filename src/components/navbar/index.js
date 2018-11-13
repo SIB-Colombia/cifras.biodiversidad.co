@@ -6,8 +6,14 @@ class Navbar extends Component {
     render () {
         return (
             <NavbarLayout>
-                <img src="" alt="Logo Biodiversidad en cifras - Santander"/>
-                <Menu/>
+                {/* <div id="toggleSideBar">
+                    -
+                </div>*/}
+                <img src="../../../images/logos/logo-cifras-santander.svg" alt="Logo Biodiversidad en cifras - Santander"/>
+
+
+                {/*<Menu/>*/}
+
             </NavbarLayout>
         )
     }
