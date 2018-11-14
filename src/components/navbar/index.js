@@ -12,7 +12,7 @@ class Navbar extends Component {
                 <img src="../../../images/logos/logo-cifras-santander.svg" alt="Logo Biodiversidad en cifras - Santander"/>
 
                 <p>EXPLORAR</p>
-                {/*<Menu/>*/}
+                <Menu />
 
             </NavbarLayout>
         )

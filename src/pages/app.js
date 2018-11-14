@@ -7,12 +7,13 @@ import Groups from "./groups";
 import Geo from "./geo";
 import Companies from "./companies";
 import NotFound from "./not-found";
+import { connect } from 'react-redux'
 
 class App extends Component {
     render () {
         return (
             <Fragment>
-                <Navbar/>
+                <Navbar />
                 <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/destacados" component={Highlights}/>
@@ -27,5 +28,7 @@ class App extends Component {
         )
     }
 }
+
+
 
 export default App
