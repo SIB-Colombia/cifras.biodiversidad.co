@@ -4,6 +4,8 @@ import Slider from "../../components/slider";
 import HomeLinks from "./components/links/links";
 
 class Home extends Component {
+
+
     render () {
         return (
             <HomeLayout>

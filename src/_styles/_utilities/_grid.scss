@@ -1,3 +1,5 @@
+@import "variables";
+
 .container {
   padding-left: 5%;
   padding-right: 5%;
@@ -5,12 +7,27 @@
     padding-left: 0;
     padding-right: 0;
   }
+  @media screen and (max-width: $size-medium) {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  @media screen and (max-width: $size-small) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 .row{
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: $size-medium) {
+    flex-wrap: wrap;
+  }
+  @media screen and (max-width: $size-small) {
+    flex-wrap: wrap;
+  }
+
 }
 .col{
   box-sizing: border-box;
@@ -22,5 +39,20 @@
     width: (100%/$i);
     box-sizing: border-box;
     margin: 0.5em;
+    @media screen and (max-width: $size-medium) {
+      width: 45% !important;
+    }
+    @media screen and (max-width: $size-small) {
+      width: 100% !important;
+    }
   }
+}
+
+
+
+
+@media screen and (max-width: $size-small) {
+
+}
+@media screen and (min-width: $size-medium) {
 }

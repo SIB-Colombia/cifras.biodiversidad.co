@@ -1,10 +1,11 @@
 import React from 'react'
+import "../../../_styles/components/slider.scss"
 
 const SlideLayout = props => (
     <div className="SlideLayout">
-        <h1>{props.text}</h1>
-        <h2>Registros biológicos</h2>
-        <h3>8vo lugar a nivel nacional</h3>
+        <span className="SlideLayout__number">182.489</span>
+        <h2 className="SlideLayout__title">{props.text}</h2>
+        <p className="SlideLayout__subtitle">8vo lugar a nivel nacional</p>
     </div>
 )
 

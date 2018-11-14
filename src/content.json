@@ -1,0 +1,49 @@
+{
+  "menu": [
+    {
+      "title": "Destacados",
+      "url": "/destacados"
+    },
+    {
+      "title": "Grupos biológicos",
+      "url": "/grupos"
+    },
+    {
+      "title": "Municipios",
+      "url": "/municipios"
+    },
+    {
+      "title": "Entidades",
+      "url": "/entidades"
+    }
+  ],
+  "home": {
+    "slides" : [
+      {
+        "title": "Registros biológicos",
+        "number": "182.246",
+        "subtitle": "8vo a nivel nacional",
+        "disclaimer": "datos con corte a noviembre de 2017"
+      },
+      {
+        "title": "Especies",
+        "number": "182.246",
+        "subtitle": "8vo a nivel nacional",
+        "disclaimer": "datos con corte a noviembre de 2017"
+      },
+      {
+        "title": "Especies amenzadas",
+        "number": "182.246",
+        "subtitle": "8vo a nivel nacional",
+        "disclaimer": "datos con corte a noviembre de 2017"
+      },
+      {
+        "title": "Especies exóticas",
+        "number": "182.246",
+        "subtitle": "8vo a nivel nacional",
+        "disclaimer": "datos con corte a noviembre de 2017"
+      }
+    ],
+
+  }
+}
