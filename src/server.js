@@ -33,7 +33,6 @@ app.get('*', (req, res) => {
         <body>
             <div id="app">${html}</div>
             <script src="/js/app.js"></script>
-            
         </body>
         </html>
     `)

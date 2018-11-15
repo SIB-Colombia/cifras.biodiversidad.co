@@ -1,5 +1,5 @@
 {
-  "menu": [
+  "sections": [
     {
       "id": "1",
       "title": "Destacados",
@@ -32,16 +32,16 @@
     {
       "id": "2",
       "title": "Especies",
-      "number": "182.246",
+      "number": "182",
       "subtitle": "8vo a nivel nacional",
       "disclaimer": "datos con corte a noviembre de 2017"
     },
     {
       "id": "3",
       "title": "Especies amenzadas",
-      "number": "182.246",
-      "subtitle": "8vo a nivel nacional",
-      "disclaimer": "datos con corte a noviembre de 2017"
+      "number": "246",
+      "subtitle": "1 a nivel nacional",
+      "disclaimer": " "
     },
     {
       "id": "4",
@@ -49,6 +49,16 @@
       "number": "182.246",
       "subtitle": "8vo a nivel nacional",
       "disclaimer": "datos con corte a noviembre de 2017"
+    }
+  ],
+  "highlights": [
+    {
+      "id": "1",
+      "number": "182.235",
+      "title": "Registros Biológicos",
+      "text": "8vo lugar a nivel nacional",
+      "link": "/",
+      "size": "large"
     }
   ]
 }

@@ -15,7 +15,7 @@ class Sidebar extends Component {
 
                 >Animales</Link> */}
                 <ul>
-                    <li>Animales</li>
+                    <li>Sidebar en construcción</li>
                 </ul>
             </SidebarLayout>
         )

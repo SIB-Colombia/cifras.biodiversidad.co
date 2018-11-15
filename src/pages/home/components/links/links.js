@@ -1,24 +1,34 @@
-import React from 'react'
+import React, { Component } from 'react'
 import HomeLink from "./components/link";
 import "../../../../_styles/components/home-links.scss";
+import { connect } from 'react-redux'
 
-const HomeLinks = props => (
-    <div className="container Homelinks">
-        <div className="row">
-            <div className="col-4">
-                <HomeLink/>
+
+class HomeLinks extends Component {
+    render () {
+        return (
+            <div className="container">
+                <div className="row HomeLinks">
+                    {
+                        this.props.links.map( item => (
+
+                            <div className="col-4" key={item.id}>
+                                <HomeLink {...item}/>
+                            </div>
+
+                        ))
+                    }
+
+                </div>
             </div>
-            <div className="col-4">
-                <HomeLink/>
-            </div>
-            <div className="col-4">
-                <HomeLink/>
-            </div>
-            <div className="col-4">
-                <HomeLink/>
-            </div>
-        </div>
-    </div>
+        )
+    }
+}
+
+const mapStateToProps = ( state, props ) => (
+    {
+        links: state.data.sections
+    }
 )
 
-export default HomeLinks
+export default connect(mapStateToProps)(HomeLinks)

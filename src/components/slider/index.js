@@ -1,23 +1,39 @@
 import React, { Component } from 'react'
 import SliderLayout from "./layout";
 import Slide from "./slide";
-import { connect } from 'react-redux'
+import Slider from "react-slick"
 
-class Slider extends Component {
+
+class HomeSlider extends Component {
     render () {
+        let settings = {
+            infinite: true,
+            slidesToShow: 1,
+            fade: true,
+            autoplay: true,
+            speed: 600,
+            autoplaySpeed: 20000,
+            arrows: false,
+        };
         return (
             <SliderLayout>
-                <Slide/>
-                {/*
+                {
+                    this.props.slides.length &&
 
-                    this.props.slides.map((item) => {
-                        return <Slide
-                            {...item}
-                            key={item.id}
-                        />
-                    })
+                    <Slider { ...settings }>
+                        {
+                            this.props.slides.map( item => (
 
-                */}
+                                    <Slide
+                                        {...item}
+                                        key={item.id}
+                                    />
+
+                            ))
+
+                        }
+                    </Slider>
+                }
             </SliderLayout>
         )
     }
@@ -25,4 +41,4 @@ class Slider extends Component {
 
 
 
-export default Slider
+export default HomeSlider

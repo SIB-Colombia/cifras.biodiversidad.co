@@ -1,19 +1,20 @@
-import React, { Fragment, Component } from 'react'
-import { Route, Switch, Redirect } from 'react-router-dom'
-import Navbar from "../components/navbar";
+import React, { Fragment, Component, PropTypes } from 'react'
 import Home from "./home";
+import Navbar from "../components/navbar";
 import Highlights from "./highlights";
 import Groups from "./groups";
 import Geo from "./geo";
 import Companies from "./companies";
 import NotFound from "./not-found";
-import { connect } from 'react-redux'
+import { Provider } from 'react-redux'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import Footer from "../components/footer/layout";
 
-class App extends Component {
-    render () {
-        return (
+const Root = ({ store } ) => (
+    <Provider store={store}>
+        <BrowserRouter>
             <Fragment>
-                <Navbar />
+                <Navbar/>
                 <Switch>
                     <Route exact path="/" component={Home}/>
                     <Route exact path="/destacados" component={Highlights}/>
@@ -23,12 +24,10 @@ class App extends Component {
                     <Redirect from="/g" to="/grupos"/>
                     <Route component={NotFound}/>
                 </Switch>
+                <Footer/>
             </Fragment>
+        </BrowserRouter>
+    </Provider>
+)
 
-        )
-    }
-}
-
-
-
-export default App
+export default Root

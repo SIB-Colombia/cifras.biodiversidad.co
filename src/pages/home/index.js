@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import HomeLayout from "./layout";
-import Slider from "../../components/slider";
+import HomeSlider from "../../components/slider";
 import HomeLinks from "./components/links/links";
-import { connect } from 'react'
+import { connect } from 'react-redux'
 
 class Home extends Component {
 
@@ -10,7 +10,7 @@ class Home extends Component {
     render () {
         return (
             <HomeLayout>
-                <Slider text={'Slide'}/>
+                <HomeSlider slides={this.props.slides}/>
                 <HomeLinks/>
             </HomeLayout>
         )
@@ -18,11 +18,11 @@ class Home extends Component {
 
 }
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = (state, props) => (
     {
         slides: state.data.slides
     }
-}
+)
 
-//export default connect(mapStateToProps)(Home)
-export default Home
+
+export default connect(mapStateToProps)(Home)
