@@ -1,0 +1,14 @@
+@import "../_utilities/variables";
+@import "../_utilities/grid";
+
+
+.Footer{
+  &__logos {
+    background-color: color("teal", "darken-1");
+    padding: 40px 0;
+  }
+  &__bar {
+    background-color: color("teal", "darken-2");
+    padding: 15px 0;
+  }
+}

@@ -7,7 +7,15 @@
   box-sizing: border-box;
 }
 
+%cardHover {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
 .card {
   @extend %card;
+}
+
+.card--hover {
+  @extend %cardHover
 }
 
