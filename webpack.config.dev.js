@@ -13,6 +13,7 @@ module.exports = {
     },
     devServer: {
         port: 9000,
+        historyApiFallback: true
     },
     devtool: 'eval-source-map',
     module: {
