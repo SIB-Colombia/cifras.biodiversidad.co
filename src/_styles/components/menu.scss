@@ -1,0 +1,27 @@
+@import "../_utilities/variables";
+@import "../elements/card";
+
+.MainMenu {
+  @extend .card;
+  background-color: white;
+  position: fixed;
+  right: 15px;
+  top: 85px;
+  width: 200px;
+  z-index: 99;
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.MainMenu__item {
+  list-style-type: none;
+  a {
+    color: $text-color;
+    display: block;
+    font-size: 0.875em;
+    text-decoration: none;
+    padding: 1.2em;
+  }
+}

@@ -4,28 +4,39 @@
 
 
 .HomeLinks {
+  height: 40vh;
 }
 .HomeLink {
   @extend .card;
   display: block;
   list-style-type: none;
-  padding: 40px 32px 32px 32px;
+  padding: 2em 1em;
   text-decoration: none;
   border-bottom: 3px solid $secondary-color;
+  height: 100px;
+  box-sizing: border-box;
+  &:hover {
+    @extend .card--hover
+  }
 }
+
+
 
 .HomeLink__title {
   color: color("teal", "base");
   display: block;
   font-family: $secondary-font;
-  font-size: 1.1em;
+  font-size: 1em;
   line-height: 1em;
   margin-bottom: .5em;
+
 }
 
 .HomeLink__action {
   color: color("teal", "darken-1");
   font-family: $main-font;
-  font-size: 1em;
+  font-size: 0.8em;
+  font-weight: $light;
   line-height: 1em;
+
 }

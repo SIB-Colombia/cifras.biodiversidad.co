@@ -2,10 +2,16 @@
 .Navbar {
   align-items: center;
   background-color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: space-between;
   height: 70px;
-  padding: 0 10px;
+  left: 0;
+  padding: 0 15px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99;
   img {
     height: 40px;
   }
@@ -14,5 +20,6 @@
     font-size: 0.8em;
     font-weight: $light;
     text-align: right;
+    cursor: pointer;
   };
 }
