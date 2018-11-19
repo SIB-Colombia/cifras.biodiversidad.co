@@ -2,9 +2,16 @@ import React, { Component } from 'react'
 import SliderLayout from "./layout";
 import Slide from "./slide";
 import Slider from "react-slick"
+import SliderNav from "./nav";
 
 
 class HomeSlider extends Component {
+    next () {
+        this.slider.slickNext()
+    }
+    prev () {
+        this.slider.slickNext()
+    }
     render () {
         let settings = {
             infinite: true,
@@ -13,14 +20,15 @@ class HomeSlider extends Component {
             autoplay: true,
             speed: 600,
             autoplaySpeed: 20000,
-            arrows: false,
+
         };
         return (
             <SliderLayout>
+                <SliderNav/>
                 {
                     this.props.slides.length &&
 
-                    <Slider { ...settings }>
+                    <Slider ref={}{ ...settings }>
                         {
                             this.props.slides.map( item => (
 
