@@ -17,9 +17,22 @@
   }
   p {
     color: color("gray", "base");;
+    cursor: pointer;
+    display: block;
     font-size: 0.8em;
     font-weight: $light;
+    position: relative;
     text-align: right;
-    cursor: pointer;
+    padding-right: 15px;
+    &:after{
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 6px solid $text-color;
+      content: "";
+      margin-top: -4px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+    }
   };
 }

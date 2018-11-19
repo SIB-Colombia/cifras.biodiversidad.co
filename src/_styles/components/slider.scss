@@ -44,7 +44,6 @@
 }
 
 .SliderNav {
-  background-color: red;
   cursor: pointer;
   font-size: 0;
   height: 60px;
@@ -54,22 +53,33 @@
   top: 50%;
   width: 30px;
   &:before, &:after {
-    background-color: yellow;
+    background-color: $link-color;
     content: "";
     height: 2px;
     position: absolute;
-    width: 22px;
+    width: 30px;
   }
-  &:before {
 
-  }
-  &:after{
-    bottom: 0;
+  &.prev {
+    left: 0;
+    &:before {
+      top: 16px;
+      transform: rotate(-60deg);
+    }
+    &:after{
+      bottom: 16px;
+      transform: rotate(60deg);
+    }
   }
   &.next {
-    right: 0
-  }
-  &.prev {
-    left: 0
+    right: 0;
+    &:before {
+      top: 16px;
+      transform: rotate(60deg);
+    }
+    &:after{
+      bottom: 16px;
+      transform: rotate(-60deg);
+    }
   }
 }

@@ -26,7 +26,7 @@ class Navbar extends Component {
                     <img src="../../../images/logos/logo-cifras-santander.svg" alt="Logo Biodiversidad en cifras - Santander"/>
                 </Link>
 
-                <p onClick={this.handleToggleMainMenu}>EXPLORAR +</p>
+                <p onClick={this.handleToggleMainMenu}>EXPLORAR</p>
 
                 {
                     this.state.menuVisible &&
