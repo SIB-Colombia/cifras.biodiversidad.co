@@ -4,7 +4,6 @@ import Slide from "./slide";
 import Slider from "react-slick"
 import SliderNav from "./nav";
 
-
 class HomeSlider extends Component {
     setSliderRef = e => {
         this.slider = e
@@ -21,7 +20,7 @@ class HomeSlider extends Component {
             slidesToShow: 1,
             fade: true,
             autoplay: true,
-            speed: 600,
+            speed: 100,
             autoplaySpeed: 20000,
             arrows: false
 
@@ -30,22 +29,17 @@ class HomeSlider extends Component {
             <SliderLayout>
                 {
                     this.props.slides.length &&
-
                     <Slider ref={this.setSliderRef}{ ...settings }>
                         {
                             this.props.slides.map( item => (
-
-                                    <Slide
-                                        {...item}
-                                        key={item.id}
-                                    />
-
+                                <Slide
+                                    {...item}
+                                    key={item.id}
+                                />
                             ))
-
                         }
                     </Slider>
                 }
-
                 <SliderNav direction="prev" handleClick={this.prev}/>
                 <SliderNav direction="next" handleClick={this.next}/>
             </SliderLayout>

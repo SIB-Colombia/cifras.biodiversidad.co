@@ -57,29 +57,34 @@
     content: "";
     height: 2px;
     position: absolute;
-    width: 30px;
+    width: 25px;
   }
-
+  &:before {
+    top: 20px;
+  }
+  &:after{
+    bottom: 20px;
+  }
   &.prev {
     left: 0;
     &:before {
-      top: 16px;
-      transform: rotate(-60deg);
+      transform: rotate(-50deg);
+      left: 5px;
     }
     &:after{
-      bottom: 16px;
-      transform: rotate(60deg);
+      transform: rotate(50deg);
+      left:5px;
     }
   }
   &.next {
     right: 0;
     &:before {
-      top: 16px;
-      transform: rotate(60deg);
+      transform: rotate(50deg);
+      right:5px;
     }
     &:after{
-      bottom: 16px;
-      transform: rotate(-60deg);
+      transform: rotate(-50deg);
+      right: 5px;
     }
   }
 }
