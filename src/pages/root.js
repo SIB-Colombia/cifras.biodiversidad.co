@@ -10,7 +10,7 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import Footer from "../components/footer/layout";
 
-const Root = ({ store } ) => (
+const Root = ( { store } ) => (
     <Provider store={store}>
         <BrowserRouter>
             <Fragment>

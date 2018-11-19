@@ -1,8 +1,10 @@
 import React from 'react'
 
 const HighlightsLayout = props => (
-    <section className="HighlightsLayout">
-        {props.children}
+    <section className="HighlightsLayout container">
+        <div className="row">
+            {props.children}
+        </div>
     </section>
 )
 

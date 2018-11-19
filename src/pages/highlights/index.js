@@ -1,16 +1,29 @@
 import React, { Component } from 'react'
 import HighlightsLayout from "./layout";
 import Highlight from "./highlight";
+import { connect } from 'react-redux'
 
 class Highlights extends Component {
     render () {
         return (
             <HighlightsLayout>
-                <Highlight/>
+                {
+                    this.props.highlights.map( item => (
+                        <Highlight
+                            {...item}
+                            key={item.id}
+                        />
+                    ))
+                }
             </HighlightsLayout>
         )
     }
-
 }
 
-export default Highlights
+const mapStateToProps = (state, props) => (
+    {
+        highlights: state.data.highlights
+    }
+)
+
+export default connect(mapStateToProps)(Highlights)

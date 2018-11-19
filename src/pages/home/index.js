@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 
 class Home extends Component {
 
-
     render () {
         return (
             <HomeLayout>
