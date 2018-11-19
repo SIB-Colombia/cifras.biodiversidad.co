@@ -6,10 +6,40 @@ import Sidebar from "../../components/sidebar";
 class Groups extends Component {
     render () {
         return (
-            <GroupsLayout>
+            <fragment>
+
                 <Sidebar/>
+                <GroupsLayout>
+
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
+                <p>Grupos</p>
                 <p>Grupos</p>
             </GroupsLayout>
+            </fragment>
         )
     }
 
