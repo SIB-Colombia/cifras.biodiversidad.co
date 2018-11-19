@@ -6,10 +6,13 @@ import SliderNav from "./nav";
 
 
 class HomeSlider extends Component {
-    next () {
+    setSliderRef = e => {
+        this.slider = e
+    }
+    next = () => {
         this.slider.slickNext()
     }
-    prev () {
+    prev = () => {
         this.slider.slickNext()
     }
     render () {
@@ -20,15 +23,15 @@ class HomeSlider extends Component {
             autoplay: true,
             speed: 600,
             autoplaySpeed: 20000,
+            arrows: false
 
         };
         return (
             <SliderLayout>
-                <SliderNav/>
                 {
                     this.props.slides.length &&
 
-                    <Slider ref={}{ ...settings }>
+                    <Slider ref={this.setSliderRef}{ ...settings }>
                         {
                             this.props.slides.map( item => (
 
@@ -42,6 +45,9 @@ class HomeSlider extends Component {
                         }
                     </Slider>
                 }
+
+                <SliderNav direction="prev" handleClick={this.prev}/>
+                <SliderNav direction="next" handleClick={this.next}/>
             </SliderLayout>
         )
     }

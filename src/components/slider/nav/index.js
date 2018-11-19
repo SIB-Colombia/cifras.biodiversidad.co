@@ -6,9 +6,9 @@ class SliderNav extends PureComponent {
     render () {
         return (
             <div
-                className={`sliderNav ${this.props.direction}`}
-                id={`slideTo-${this.props.direction}`}>
-                {this.props.text}
+                className={`SliderNav ${this.props.direction}`}
+                onClick={this.props.handleClick}>
+                {this.props.direction}
             </div>
         )
     }

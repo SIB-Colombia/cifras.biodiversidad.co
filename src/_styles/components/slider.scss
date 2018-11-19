@@ -42,3 +42,34 @@
     margin-top: 1.3em;
   }
 }
+
+.SliderNav {
+  background-color: red;
+  cursor: pointer;
+  font-size: 0;
+  height: 60px;
+  margin-top: -30px;
+  position: absolute;
+  text-indent: -9999;
+  top: 50%;
+  width: 30px;
+  &:before, &:after {
+    background-color: yellow;
+    content: "";
+    height: 2px;
+    position: absolute;
+    width: 22px;
+  }
+  &:before {
+
+  }
+  &:after{
+    bottom: 0;
+  }
+  &.next {
+    right: 0
+  }
+  &.prev {
+    left: 0
+  }
+}
