@@ -36,7 +36,7 @@
 
 @for $i from 1 through 12 {
   .col-#{$i} {
-    width: (100%/$i);
+    width: unquote((100 / (12 / $i)) + "%");
     box-sizing: border-box;
     margin: 0.5em;
     @media screen and (max-width: $size-medium) {

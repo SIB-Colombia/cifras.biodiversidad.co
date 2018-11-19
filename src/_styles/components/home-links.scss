@@ -4,7 +4,7 @@
 
 
 .HomeLinks {
-  height: 40vh;
+  min-height: 40vh;
 }
 .HomeLink {
   @extend .card;
@@ -19,8 +19,6 @@
     @extend .card--hover
   }
 }
-
-
 
 .HomeLink__title {
   color: color("teal", "base");

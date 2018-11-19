@@ -12,7 +12,7 @@ class HomeLinks extends Component {
                     {
                         this.props.links.map( item => (
 
-                            <div className="col-4" key={item.id}>
+                            <div className="col-3" key={item.id}>
                                 <HomeLink {...item}/>
                             </div>
 
