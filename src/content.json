@@ -57,17 +57,18 @@
       "number": "182.489",
       "title": "Registros Biológicos",
       "text": "8vo lugar a nivel nacional",
+      "size": "4",
       "link": "/",
-      "size": "large",
-      "color": "white"
+      "color": "orange"
+
     },
     {
       "id": "2",
       "number": "9.563",
       "title": "Especies",
       "text": "5to lugar a nivel nacional",
+      "size": "8",
       "link": "/",
-      "size": "large",
       "color": "orange"
     }
   ]
