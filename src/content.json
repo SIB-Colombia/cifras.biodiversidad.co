@@ -71,5 +71,25 @@
       "link": "/",
       "color": "orange"
     }
+  ],
+  "Groups": [
+    {
+      "name": "animales",
+      "children": [
+        {
+          "name": "vertebrados",
+          "children": [
+            {
+              "name": "peces",
+              "children": [
+                {
+                  "name": "dulceacuícolas"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   ]
 }

@@ -3,6 +3,7 @@ import NavbarLayout from "./layout";
 import Menu from "./menu";
 import { connect }  from "react-redux";
 import { Link } from "react-router-dom"
+import ToggleSidebar from "./toggleSidebar";
 
 class Navbar extends Component {
     state = {
@@ -19,9 +20,9 @@ class Navbar extends Component {
     render () {
         return (
             <NavbarLayout>
-                {/* <div id="toggleSideBar">
-                    -
-                </div>*/}
+                <ToggleSidebar/>
+
+
                 <Link to="/">
                     <img src="../../../images/logos/logo-cifras-santander.svg" alt="Logo Biodiversidad en cifras - Santander"/>
                 </Link>
