@@ -6,8 +6,12 @@ class FilterList extends Component {
     render () {
         return (
             <FilterListLayout>
-                {/*loop para iterar sobre los items*/}
-                <FilterItem type="firstLevel" text="hola"/>
+            {
+                this.props.items.map( item => (
+                    <FilterItem key={item.id} type="firstLevel" name={item.name} children={true}/>
+                ))
+
+            }
             </FilterListLayout>
         )
     }

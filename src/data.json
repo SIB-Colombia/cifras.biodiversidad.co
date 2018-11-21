@@ -1,0 +1,234 @@
+{
+  "data": {
+    "animales": {
+      "id": "1",
+      "nombre": "ANIMALES",
+      "grupoBiologicoHijos": [
+        {
+          "id": "2",
+          "nombre": "VERTEBRADOS",
+          "grupoBiologicoHijos": [
+            {
+              "id": "3",
+              "nombre": "MAM�FEROS",
+              "grupoBiologicoHijos": [
+                {
+                  "id": "4",
+                  "nombre": "MAM�FEROS MARINOS"
+                }
+              ]
+            },
+            {
+              "id": "5",
+              "nombre": "AVES",
+              "grupoBiologicoHijos": []
+            },
+            {
+              "id": "6",
+              "nombre": "REPTILES",
+              "grupoBiologicoHijos": []
+            },
+            {
+              "id": "7",
+              "nombre": "ANFIBIOS",
+              "grupoBiologicoHijos": []
+            },
+            {
+              "id": "8",
+              "nombre": "PECES",
+              "grupoBiologicoHijos": [
+                {
+                  "id": "9",
+                  "nombre": "PECES MARINOS"
+                },
+                {
+                  "id": "10",
+                  "nombre": "PECES DULCEACU�COLAS"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "11",
+          "nombre": "INVERTEBRADOS",
+          "grupoBiologicoHijos": [
+            {
+              "id": "12",
+              "nombre": "INSECTOS",
+              "grupoBiologicoHijos": [
+                {
+                  "id": "13",
+                  "nombre": "ESCARABAJOS"
+                },
+                {
+                  "id": "14",
+                  "nombre": "MARIPOSAS"
+                },
+                {
+                  "id": "15",
+                  "nombre": "HORMIGAS"
+                },
+                {
+                  "id": "16",
+                  "nombre": "ABEJAS"
+                },
+                {
+                  "id": "17",
+                  "nombre": "D�PTEROS"
+                },
+                {
+                  "id": "21",
+                  "nombre": "CRUST�CEOS"
+                }
+              ]
+            },
+            {
+              "id": "18",
+              "nombre": "AR�CNIDOS",
+              "grupoBiologicoHijos": []
+            },
+            {
+              "id": "19",
+              "nombre": "MOLUSCOS",
+              "grupoBiologicoHijos": [
+                {
+                  "id": "20",
+                  "nombre": "MOLUSCOS MARINOS"
+                }
+              ]
+            },
+            {
+              "id": "22",
+              "nombre": "EQUINODERMOS",
+              "grupoBiologicoHijos": []
+            },
+            {
+              "id": "23",
+              "nombre": "CORALES",
+              "grupoBiologicoHijos": []
+            }
+          ]
+        }
+      ]
+    },
+    "plantas": {
+      "id": "24",
+      "nombre": "PLANTAS",
+      "grupoBiologicoHijos": [
+        {
+          "id": "25",
+          "nombre": "ORQU�DEAS",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "26",
+          "nombre": "MAGNOLIAS AFINES",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "27",
+          "nombre": "BROMELIAS LABIADAS PASIFLORAS",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "28",
+          "nombre": "PALMAS",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "29",
+          "nombre": "ZAMIAS",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "30",
+          "nombre": "FRAILEJONES",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "31",
+          "nombre": "CACTUS",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "32",
+          "nombre": "PINOS AFINES",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "33",
+          "nombre": "HELECHOS AFINES",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "34",
+          "nombre": "FANER�GAMAS",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "35",
+          "nombre": "ESPECIES MADERABLES",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "36",
+          "nombre": "MUSGOS AFINES",
+          "grupoBiologicoHijos": []
+        }
+      ]
+    },
+    "hongos": {
+      "id": "37",
+      "nombre": "HONGOS",
+      "grupoBiologicoHijos": [
+        {
+          "id": "38",
+          "nombre": "MACROHONGOS",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "39",
+          "nombre": "ROYAS",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "40",
+          "nombre": "CARBONES",
+          "grupoBiologicoHijos": []
+        }
+      ]
+    },
+    "algas": {
+      "id": "41",
+      "nombre": "ALGAS",
+      "grupoBiologicoHijos": [
+        {
+          "id": "42",
+          "nombre": "ALGAS MARINAS",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "43",
+          "nombre": "ALGAS DULCEACU�COLAS",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "44",
+          "nombre": "ALGAS TERRESTRES",
+          "grupoBiologicoHijos": []
+        },
+        {
+          "id": "45",
+          "nombre": "ALGAS OTRAS",
+          "grupoBiologicoHijos": []
+        }
+      ]
+    },
+    "liquenes": {
+      "id": "46",
+      "nombre": "L�QUENES",
+      "grupoBiologicoHijos": []
+    }
+  }
+}

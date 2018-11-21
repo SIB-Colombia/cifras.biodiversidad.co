@@ -8,8 +8,8 @@ class Groups extends Component {
     render () {
         return (
             <Fragment>
-                <ServiceExample/>
-                {/*<Sidebar/>*/}
+                {/*<ServiceExample/>*/}
+                <Sidebar list={[{"id":"1","name": "animales"}, {"id":"2","name": "plantas"}]}/>
                 <GroupsLayout>
                     <h1>Búsqueda por grupos biológicos </h1>
                     <div className="VisualizationPanel">
