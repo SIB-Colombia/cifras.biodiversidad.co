@@ -3,6 +3,8 @@
 .container {
   padding-left: 5%;
   padding-right: 5%;
+  max-width: 1280px;
+  margin: auto;
   &--full {
     padding-left: 0;
     padding-right: 0;
@@ -27,7 +29,6 @@
   @media screen and (max-width: $size-small) {
     flex-wrap: wrap;
   }
-
 }
 .col{
   box-sizing: border-box;
@@ -36,7 +37,7 @@
 
 @for $i from 1 through 12 {
   .col-#{$i} {
-    width: unquote((100 / (12 / $i)) + "%");
+    width: unquote((90 / (12 / $i)) + "%");
     box-sizing: border-box;
     margin: 0.5em;
     @media screen and (max-width: $size-medium) {

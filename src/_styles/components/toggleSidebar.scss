@@ -1,10 +1,23 @@
 @import "../_utilities/variables";
 
 .ToggleSidebarLayout {
-  position: absolute;
+  align-items: center;
+  background-color: $secondary-color;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
   height: 70px;
-  width: 70px;
+  justify-content: center;
   left: 0;
-  background-color: $secondary-color
+  position: absolute;
+  width: 70px;
+  span {
+    background: white;
+    font-size: 0;
+    height: 2px;
+    margin: 2px 0;
+    width: 20px;
+    text-indent: -9999px;
+  }
 
 }

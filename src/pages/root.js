@@ -12,7 +12,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import content from "../content";
 import groups from "../data";
 import { createStore } from "redux";
-import reducer from "../reducers/content";
+import reducer from "../services/reducers/content";
 
 
 const initialState = {

@@ -57,19 +57,40 @@
       "number": "182.489",
       "title": "Registros Biológicos",
       "text": "8vo lugar a nivel nacional",
-      "size": "4",
+      "size": "8",
       "link": "/",
-      "color": "orange"
-
+      "color": "white",
+      "align": "left"
     },
     {
       "id": "2",
       "number": "9.563",
       "title": "Especies",
       "text": "5to lugar a nivel nacional",
+      "size": "4",
+      "link": "/",
+      "color": "orange",
+      "align": "center"
+    },
+    {
+      "id": "3",
+      "number": "182.489",
+      "title": "Registros Biológicos",
+      "text": "8vo lugar a nivel nacional",
+      "size": "4",
+      "link": "/",
+      "color": "teal",
+      "align": "center"
+    },
+    {
+      "id": "4",
+      "number": "9.563",
+      "title": "Especies",
+      "text": "5to lugar a nivel nacional",
       "size": "8",
       "link": "/",
-      "color": "orange"
+      "color": "white",
+      "align": "left"
     }
   ]
 }

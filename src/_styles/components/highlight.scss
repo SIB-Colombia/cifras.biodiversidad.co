@@ -1,0 +1,61 @@
+@import "../_utilities/variables";
+@import "../_utilities/grid";
+@import "../elements/card";
+
+.HighlightsLayout {
+  .row{
+    flex-wrap: wrap;
+  }
+}
+
+.Hightlight {
+  border-bottom: 3px solid transparent;
+  box-sizing: border-box;
+  height: 200px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2vw;
+  @extend %card;
+  a {
+    text-decoration: none;
+  }
+  &__number {
+    color: $title-color;
+    font-family: $secondary-font;
+    font-size: 3.5em;
+    font-weight: $bold;
+  }
+  &__title {
+    color: $title-color;
+    font-family: $secondary-font;
+    font-size: 1.5em;
+    font-weight: $light;
+  }
+  &__text {
+    color: $title-color;
+    font-family: $main-font;
+    font-size: .8em;
+    font-weight: $light;
+    margin-top: .5rem
+  }
+  &.white {
+    background-color: white;
+    border-bottom-color: $secondary-color;
+  }
+  &.orange,
+  &.teal{
+    .Hightlight {
+      &__number,
+      &__title,
+      &__text {
+        color: white;
+      }
+    }
+  }
+  &.center{
+    align-items: center;
+    text-align: center;
+  }
+}

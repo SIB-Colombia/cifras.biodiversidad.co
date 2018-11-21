@@ -2,8 +2,9 @@ import React from 'react';
 
 class ServiceExample extends React.Component {
     componentDidMount() {
-        fetch('https://d857f24e.ngrok.io/graphql', {
+        fetch('http://d857f24e.ngrok.io/graphql', {
             method: 'POST',
+            mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ query: '{ grupoBiologico(id: 1) { nombre } }' }),
         })
@@ -14,7 +15,7 @@ class ServiceExample extends React.Component {
 
     render() {
         return (
-            <div>s</div>
+            <div>a</div>
         );
     }
 }

@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react'
 import GroupsLayout from "./layout";
 import Sidebar from "../../components/sidebar";
-import ServiceExample from "./service-example";
+import ServiceExample from "../../services/service-example";
 import { connect } from 'react-redux'
 
 class Groups extends Component {
@@ -10,9 +10,9 @@ class Groups extends Component {
         return (
             <Fragment>
                 {/*
-                    <ServiceExample/>
-                */}
                 <Sidebar groups={this.props.groups}/>
+                */}
+                    <ServiceExample/>
                 <GroupsLayout>
                     <h1>Búsqueda por grupos biológicos </h1>
                     <div className="VisualizationPanel">

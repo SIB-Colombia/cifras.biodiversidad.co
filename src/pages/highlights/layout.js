@@ -1,4 +1,5 @@
 import React from 'react'
+import "../../_styles/components/highlight.scss"
 
 const HighlightsLayout = props => (
     <section className="HighlightsLayout container">
