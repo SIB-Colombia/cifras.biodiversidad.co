@@ -7,12 +7,10 @@ class Sidebar extends Component {
         return (
             <SidebarLayout>
                 <h3>Sidebar</h3>
-
                 {
                     this.props.groups.map( item => (
                         <Fragment key={item.id}>
-                            <p>{item.nombre}</p>
-                            <FilterList  group={item} />
+                            <FilterList name={item.nombre} {...item} children={true}/>
                         </Fragment>
                     ))
                 }

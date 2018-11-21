@@ -10,9 +10,10 @@ class Groups extends Component {
         return (
             <Fragment>
                 {/*
-                <Sidebar groups={this.props.groups}/>
-                */}
                     <ServiceExample/>
+                */}
+
+                <Sidebar groups={this.props.groups}/>
                 <GroupsLayout>
                     <h1>Búsqueda por grupos biológicos </h1>
                     <div className="VisualizationPanel">

@@ -23,7 +23,7 @@ const initialState = {
 }
 
 const store = createStore(
-    reducer,
+    (state) => state,
     initialState,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
@@ -48,6 +48,7 @@ class Root extends Component {
                     </Fragment>
                 </BrowserRouter>
             </Provider>
+
         )
     }
 }

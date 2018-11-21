@@ -3,16 +3,24 @@ import FilterListLayout from "./layout";
 import FilterItem from "./item";
 
 class FilterList extends Component {
+    state = {
+        hasChildren: this.props.children
+    }
+
     render () {
         return (
             <FilterListLayout>
-
-                {
-                this.props.group.grupoBiologicoHijos &&
-                    this.props.group.grupoBiologicoHijos.map( item => (
-                        <FilterItem key={item.id} type="" {...item} />
-                    ))
-            }
+                <li>
+                    <p>{this.props.nombre}</p>
+                    <ul>
+                    {
+                        this.state.hasChildren &&
+                        this.props.grupoBiologicoHijos.map( item => (
+                            <FilterItem key={item.id} {...item} children={item.grupoBiologicoHijos}/>
+                        ))
+                    }
+                    </ul>
+                </li>
             </FilterListLayout>
         )
     }
