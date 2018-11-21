@@ -4,7 +4,7 @@ import FilterList from "../index";
 class FilterItem extends Component {
     render () {
         return (
-            <li>{this.props.name}</li>
+            <li>{this.props.nombre}</li>
         )
     }
 }

@@ -6,11 +6,12 @@ class FilterList extends Component {
     render () {
         return (
             <FilterListLayout>
-            {
-                this.props.items.map( item => (
-                    <FilterItem key={item.id} type="firstLevel" name={item.name} children={true}/>
-                ))
 
+                {
+                this.props.group.grupoBiologicoHijos &&
+                    this.props.group.grupoBiologicoHijos.map( item => (
+                        <FilterItem key={item.id} type="" {...item} />
+                    ))
             }
             </FilterListLayout>
         )

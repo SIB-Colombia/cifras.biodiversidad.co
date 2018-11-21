@@ -10,6 +10,7 @@ import Footer from "../components/footer/layout";
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import content from "../content";
+import groups from "../data";
 import { createStore } from "redux";
 import reducer from "../reducers/content";
 
@@ -17,6 +18,7 @@ import reducer from "../reducers/content";
 const initialState = {
     data: {
         ...content,
+        ...groups
     },
 }
 

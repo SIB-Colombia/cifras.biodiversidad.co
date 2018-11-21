@@ -2,14 +2,17 @@ import React, {Component, Fragment} from 'react'
 import GroupsLayout from "./layout";
 import Sidebar from "../../components/sidebar";
 import ServiceExample from "./service-example";
+import { connect } from 'react-redux'
 
 class Groups extends Component {
 
     render () {
         return (
             <Fragment>
-                {/*<ServiceExample/>*/}
-                <Sidebar list={[{"id":"1","name": "animales"}, {"id":"2","name": "plantas"}]}/>
+                {/*
+                    <ServiceExample/>
+                */}
+                <Sidebar groups={this.props.groups}/>
                 <GroupsLayout>
                     <h1>Búsqueda por grupos biológicos </h1>
                     <div className="VisualizationPanel">
@@ -33,10 +36,14 @@ class Groups extends Component {
                     </div>
                 </GroupsLayout>
             </Fragment>
-
         )
     }
-
 }
 
-export default Groups
+const mapStateToProps = ( state, props ) => (
+    {
+        groups: Object.values( state.data.groups )
+    }
+)
+
+export default connect(mapStateToProps)(Groups)
