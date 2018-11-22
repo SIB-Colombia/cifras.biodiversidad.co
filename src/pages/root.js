@@ -20,10 +20,8 @@ const initialState = {
         ...content,
         ...groups
     },
-    sidebarVisibility: {
-        toggle: false,
-        sidebar: false
-    }
+    sidebar: true,
+    buttonSidebar: false,
 }
 
 const store = createStore(

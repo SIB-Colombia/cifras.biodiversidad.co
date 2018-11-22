@@ -1,0 +1,11 @@
+@import "../_utilities/variables";
+@import "../_utilities/grid";
+@import "../elements/card";
+
+.GroupsLayout {
+  padding-left: 0;
+  overflow-y: hidden;
+  &.sidebarActive {
+    padding-left: 280px;
+  }
+}

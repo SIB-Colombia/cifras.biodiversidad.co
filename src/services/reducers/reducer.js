@@ -1,18 +1,19 @@
 const reducer = (state, action ) => {
     switch ( action.type ) {
-        case 'TOOGLE_SIDEBAR': {
-            //action.payload.sidebarVisible
+        case 'BUTTON_SIDEBAR_VISIBILITY': {
             return {
                 ...state,
-                sidebarVisibility: {
-                    button: action.payload.toggleSidebarVisible,
-                    sidebar: action.payload.sidebarVisible
-                }
+                buttonSidebar: action.payload.toggleSidebarVisible,
+            }
+        }
+        case 'SIDEBAR_VISIBILITY': {
+            return {
+                ...state,
+                sidebar: action.payload.sidebarVisible
             }
         }
         default:
             return state
-
     }
 }
 

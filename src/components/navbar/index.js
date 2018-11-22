@@ -8,17 +8,18 @@ import { connect }  from "react-redux";
 class Navbar extends Component {
     state = {
         menuVisible: this.props.togglevisible,
+        sidebarVisible: this.props.sidebarVisible
     }
     handleToggleMainMenu = e => {
         this.setState({
             menuVisible: !this.state.menuVisible,
         })
     }
-    handleButtonSidebar = e => {
+    handleSidebar = e => {
         this.props.dispatch({
-            type: 'TOOGLE_SIDEBAR',
+            type: 'SIDEBAR_VISIBILITY',
             payload: {
-                sidebarVisible: !this.state.menuVisible
+                sidebarVisible: !this.props.sidebarVisible
             }
         })
     }
@@ -29,7 +30,7 @@ class Navbar extends Component {
             <NavbarLayout>
                 {
                     this.props.togglevisible &&
-                    <ToggleSidebar /*handleClick={this.handleButtonSidebar}*/ />
+                    <ToggleSidebar handleClick={this.handleSidebar} />
                 }
 
                 {/* TODO: convertir logo en componente */}
@@ -52,8 +53,8 @@ class Navbar extends Component {
 const mapStateToProps = (state, props) => (
     {
         items: state.data.sections,
-        togglevisible: state.sidebarVisibility.button,
-        sidebarVisible: state.sidebarVisibility.sidebar
+        togglevisible: state.buttonSidebar,
+        sidebarVisible: state.sidebar
     }
 )
 

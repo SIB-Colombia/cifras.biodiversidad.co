@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 class Home extends Component {
     componentDidMount () {
         this.props.dispatch({
-            type: 'TOOGLE_SIDEBAR',
+            type: 'BUTTON_SIDEBAR_VISIBILITY',
             payload: {
                 toggleSidebarVisible: false
             }

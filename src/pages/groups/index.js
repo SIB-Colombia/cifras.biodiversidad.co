@@ -1,26 +1,34 @@
 import React, {Component, Fragment} from 'react'
 import GroupsLayout from "./layout";
 import Sidebar from "../../components/sidebar";
-import ServiceExample from "../../services/service-example";
 import { connect } from 'react-redux'
+import RadarComponent from "../../components/chart/RadarComponent";
+import TableComponent from "../../components/table";
 
 class Groups extends Component {
     componentDidMount () {
         this.props.dispatch({
-            type: 'TOOGLE_SIDEBAR',
+            type: 'BUTTON_SIDEBAR_VISIBILITY',
             payload: {
                 toggleSidebarVisible: true
             }
         })
+        this.props.dispatch({
+            type: 'SIDEBAR_VISIBILITY',
+            payload: {
+                sidebarVisible: true
+            }
+        })
     }
+
     render () {
         return (
             <Fragment>
-                    <ServiceExample/>
-                {/*
-                */}
-                <Sidebar groups={this.props.groups}/>
-                <GroupsLayout>
+                {
+                    this.props.sidebarVisible &&
+                    <Sidebar groups={this.props.groups}/>
+                }
+                <GroupsLayout sidebarActive={this.props.sidebarVisible}>
                     <h1>Búsqueda por grupos biológicos </h1>
                     <div className="VisualizationPanel">
                         <div className="illustration or map">
@@ -31,15 +39,17 @@ class Groups extends Component {
                                 <p className="tab">RRBB</p>
                             </div>
                             <div className="tabsContent">
-                                <div className="graph">
-
-                                </div>
+                                <RadarComponent
+                                    {...this.props}
+                                    ref={ref => this.chartInstance = ref && ref.chartInstance}
+                                    type='radar'
+                                />
                             </div>
                         </div>
                     </div>
 
                     <div className="table">
-
+                        <TableComponent/>
                     </div>
                 </GroupsLayout>
             </Fragment>
@@ -47,9 +57,10 @@ class Groups extends Component {
     }
 }
 
-const mapStateToProps = ( state, props ) => (
+const mapStateToProps = ( state ) => (
     {
-        groups: Object.values( state.data.groups )
+        groups: Object.values( state.data.groups ),
+        sidebarVisible: state.sidebar
     }
 )
 
