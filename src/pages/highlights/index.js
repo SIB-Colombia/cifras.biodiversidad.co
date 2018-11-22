@@ -4,6 +4,14 @@ import Highlight from "./highlight";
 import { connect } from 'react-redux'
 
 class Highlights extends Component {
+    componentDidMount () {
+        this.props.dispatch({
+            type: 'TOOGLE_SIDEBAR',
+            payload: {
+                toggleSidebarVisible: false
+            }
+        })
+    }
     render () {
         return (
             <HighlightsLayout>

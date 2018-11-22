@@ -7,19 +7,14 @@ import { connect }  from "react-redux";
 
 class Navbar extends Component {
     state = {
-        menuVisible: false,
-        sidebarVisible: true
+        menuVisible: this.props.togglevisible,
     }
     handleToggleMainMenu = e => {
-        console.log(this.state)
         this.setState({
             menuVisible: !this.state.menuVisible,
         })
     }
-    handleToggleSidebar = e => {
-        this.setState({
-            sidebarVisible: !this.state.menuVisible,
-        })
+    handleButtonSidebar = e => {
         this.props.dispatch({
             type: 'TOOGLE_SIDEBAR',
             payload: {
@@ -32,12 +27,19 @@ class Navbar extends Component {
     render () {
         return (
             <NavbarLayout>
-               <ToggleSidebar handleClick={this.handleToggleSidebar}/>
+                {
+                    this.props.togglevisible &&
+                    <ToggleSidebar /*handleClick={this.handleButtonSidebar}*/ />
+                }
+
                 {/* TODO: convertir logo en componente */}
-                <Link to="/">
-                    <img src="../../../images/logos/logo-cifras-santander.svg" alt="Logo Biodiversidad en cifras - Santander"/>
-                </Link>
-                <p onClick={this.handleToggleMainMenu}>EXPLORAR</p>
+                <div className="HeaderLogo">
+                    <Link to="/">
+                        <img src="../../../images/logos/logo-cifras-santander.svg" alt="Logo Biodiversidad en cifras - Santander"/>
+                    </Link>
+                </div>
+
+                <p onClick={this.handleToggleMainMenu} className="ToggleMainMenu">EXPLORAR</p>
                 {
                     this.state.menuVisible &&
                     <Menu items={this.props.items} handleClick={this.handleToggleMainMenu}/>
@@ -49,8 +51,12 @@ class Navbar extends Component {
 
 const mapStateToProps = (state, props) => (
     {
-        items: state.data.sections
+        items: state.data.sections,
+        togglevisible: state.sidebarVisibility.button,
+        sidebarVisible: state.sidebarVisibility.sidebar
     }
 )
+
+
 
 export default connect(mapStateToProps)(Navbar)

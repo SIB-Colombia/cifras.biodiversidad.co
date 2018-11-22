@@ -1,16 +1,30 @@
 import React, { Component } from 'react'
 import CompaniesLayout from "./layout";
 import Sidebar from "../../components/sidebar";
+import connect from "react-redux/es/connect/connect";
 
 class Companies extends Component {
+    componentDidMount () {
+        this.props.dispatch({
+            type: 'TOOGLE_SIDEBAR',
+            payload: {
+                toggleSidebarVisible: true
+            }
+        })
+    }
     render() {
         return (
             <CompaniesLayout>
-                <Sidebar/>
                 <p>Entidades</p>
             </CompaniesLayout>
         )
     }
 }
 
-export default Companies
+const mapStateToProps = ( state, props ) => (
+    {
+        geo: Object.values( state.data.groups )
+    }
+)
+
+export default connect(mapStateToProps)(Companies)

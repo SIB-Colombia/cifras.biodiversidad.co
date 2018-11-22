@@ -5,6 +5,14 @@ import HomeLinks from "./components/links/links";
 import { connect } from 'react-redux'
 
 class Home extends Component {
+    componentDidMount () {
+        this.props.dispatch({
+            type: 'TOOGLE_SIDEBAR',
+            payload: {
+                toggleSidebarVisible: false
+            }
+        })
+    }
     render () {
         return (
             <HomeLayout>

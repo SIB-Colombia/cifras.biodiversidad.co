@@ -2,11 +2,10 @@ import React from 'react';
 
 class ServiceExample extends React.Component {
     componentDidMount() {
-        fetch('https://countries.trevorblades.com/', {
+        fetch('https://cors-anywhere.herokuapp.com/https://0ffd1170.ngrok.io/graphql', {
             method: 'POST',
-            mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ query: '{ continents { name } }' }),
+            body: JSON.stringify({ query: '{ grupoBiologico(id: 1) { nombre } }' }),
         })
             .then(res => res.json())
             .then(res => console.log(res.data))

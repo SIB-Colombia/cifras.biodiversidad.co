@@ -1,23 +1,26 @@
 @import "../_utilities/variables";
 
 .ToggleSidebarLayout {
-  align-items: center;
   background-color: $secondary-color;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  height: 70px;
-  justify-content: center;
+  display: inline-block;
   left: 0;
-  position: absolute;
-  width: 70px;
-  span {
-    background: white;
-    font-size: 0;
-    height: 2px;
-    margin: 2px 0;
-    width: 20px;
-    text-indent: -9999px;
+  vertical-align: middle;
+  .burgerIcon{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    span {
+      background: white;
+      font-size: 0;
+      height: 2px;
+      margin: 2px 0;
+      width: 20px;
+      text-indent: -9999px;
+    }
   }
 
 }

@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
-import ToggleSidebarLayout from "./layout";
+import "../../../_styles/components/toggleSidebar.scss"
 
 class ToggleSidebar extends Component {
     render () {
         return (
-            <ToggleSidebarLayout>
-                <div onClick={this.props.handleClick}>
+            <div onClick={this.props.handleClick} className="ToggleSidebarLayout">
+                <div className="burgerIcon">
                     <span>-</span>
                     <span>-</span>
                     <span>-</span>
                 </div>
-            </ToggleSidebarLayout>
+            </div>
         )
     }
 }
+
 
 export default ToggleSidebar

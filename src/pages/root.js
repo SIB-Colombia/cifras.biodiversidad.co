@@ -12,7 +12,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import content from "../content";
 import groups from "../data";
 import { createStore } from "redux";
-import reducer from "../services/reducers/content";
+import reducer from "../services/reducers/reducer.js";
 
 
 const initialState = {
@@ -20,10 +20,14 @@ const initialState = {
         ...content,
         ...groups
     },
+    sidebarVisibility: {
+        toggle: false,
+        sidebar: false
+    }
 }
 
 const store = createStore(
-    (state) => state,
+    reducer,
     initialState,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )

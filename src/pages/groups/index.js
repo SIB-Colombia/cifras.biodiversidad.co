@@ -5,14 +5,20 @@ import ServiceExample from "../../services/service-example";
 import { connect } from 'react-redux'
 
 class Groups extends Component {
-
+    componentDidMount () {
+        this.props.dispatch({
+            type: 'TOOGLE_SIDEBAR',
+            payload: {
+                toggleSidebarVisible: true
+            }
+        })
+    }
     render () {
         return (
             <Fragment>
-                {/*
                     <ServiceExample/>
+                {/*
                 */}
-
                 <Sidebar groups={this.props.groups}/>
                 <GroupsLayout>
                     <h1>Búsqueda por grupos biológicos </h1>
