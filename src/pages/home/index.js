@@ -5,7 +5,6 @@ import HomeLinks from "./components/links/links";
 import { connect } from 'react-redux'
 
 class Home extends Component {
-
     render () {
         return (
             <HomeLayout>
@@ -14,7 +13,6 @@ class Home extends Component {
             </HomeLayout>
         )
     }
-
 }
 
 const mapStateToProps = (state, props) => (
@@ -22,6 +20,5 @@ const mapStateToProps = (state, props) => (
         slides: state.data.slides
     }
 )
-
 
 export default connect(mapStateToProps)(Home)

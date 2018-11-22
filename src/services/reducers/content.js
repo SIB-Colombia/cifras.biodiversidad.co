@@ -1,6 +1,6 @@
-const data = ( state, action ) => {
+const sidebar = ( state, action ) => {
     switch ( action.type ) {
-        case 'TOOGLE_MENU': {
+        case 'TOOGLE_SIDEBAR': {
             return {
                 ...state
             }
@@ -11,4 +11,4 @@ const data = ( state, action ) => {
     }
 }
 
-export default data
+export default sidebar

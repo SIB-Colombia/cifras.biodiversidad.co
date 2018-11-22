@@ -5,9 +5,11 @@ class ToggleSidebar extends Component {
     render () {
         return (
             <ToggleSidebarLayout>
-                <span>-</span>
-                <span>-</span>
-                <span>-</span>
+                <div onClick={this.props.handleClick}>
+                    <span>-</span>
+                    <span>-</span>
+                    <span>-</span>
+                </div>
             </ToggleSidebarLayout>
         )
     }
