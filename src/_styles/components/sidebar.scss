@@ -6,4 +6,59 @@
   position: fixed;
   height: 100%;
   overflow-y: auto;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.16);
+
+  h3 {
+    padding: 1em;
+    font-weight: $regular;
+  }
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  p {
+    text-transform: lowercase;
+    font-weight: $light;
+  };
+}
+
+
+.FilterList {
+  .FilterItem {
+    p {
+      padding: 1em;
+      border-top: 1px solid $light-gray;
+      border-bottom: 1px solid $light-gray;
+      cursor: pointer;
+    }
+    .FilterList {
+      .FilterItem {
+        background: $background-light;
+
+        p {
+          padding: 1em 1em 1em 2em;
+          border-bottom: 1px solid $light-gray
+        }
+        .FilterList {
+          .FilterItem {
+            background: $background-medium-lighten;
+            p {
+              padding: .8em .8em .8em 3em;
+              border-bottom: 1px solid $light-gray
+            }
+            .FilterList {
+              .FilterItem {
+                background: $background-medium-darken;
+                p {
+                  padding: .5em .5em .5em 4em;
+                  border-bottom: 1px solid $light-gray
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

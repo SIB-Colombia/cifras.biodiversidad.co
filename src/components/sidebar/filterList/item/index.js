@@ -9,7 +9,7 @@ class FilterItem extends Component {
     render () {
         return (
 
-                    <li>
+                    <li className="FilterItem">
                         <p>{this.props.nombre}</p>
                         {
                             this.state.hasChildren &&

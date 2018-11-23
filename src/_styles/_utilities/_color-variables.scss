@@ -1,6 +1,7 @@
 $sib-gray: (
   "base": #5D5D5D,
   "lighten-1": #B3B3B3,
+  "lighten-2": #E5E5E5,
   "darken-1": #465252,
 );
 
@@ -28,12 +29,17 @@ $sib-magenta: (
   "base": #E83A64,
 );
 
+$sib-white: (
+  "base": #FFFFFF,
+);
+
 $colors: (
   "gray": $sib-gray,
   "teal" : $sib-teal,
   "orange": $sib-orange,
   "yellow": $sib-yellow,
-  "magenta": $sib-magenta
+  "magenta": $sib-magenta,
+  "white": $sib-white
 );
 
 @function color($color, $type) {

@@ -10,9 +10,9 @@ class FilterList extends Component {
     render () {
         return (
             <FilterListLayout>
-                <li>
+                <li className="FilterItem">
                     <p>{this.props.nombre}</p>
-                    <ul>
+                    <ul className="FilterList">
                     {
                         this.state.hasChildren &&
                         this.props.grupoBiologicoHijos.map( item => (

@@ -30,7 +30,7 @@ class Groups extends Component {
                 }
                 <GroupsLayout sidebarActive={this.props.sidebarVisible}>
                     <h1>Búsqueda por grupos biológicos </h1>
-                    <div className="VisualizationPanel">
+                    <div className="VisualizationPanel card white">
                         <div className="illustration or map">
 
                         </div>
