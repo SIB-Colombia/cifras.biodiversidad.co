@@ -4,9 +4,17 @@ import Sidebar from "../../components/sidebar";
 import { connect } from 'react-redux'
 import RadarComponent from "../../components/chart/RadarComponent";
 import TableComponent from "../../components/table";
+import queryString from 'query-string'
 
 class Groups extends Component {
+    static fetchGroupData (value )  {
+        console.log(value)
+    }
+
     componentDidMount () {
+        const values = queryString.parse(this.props.location.search)
+        Groups.fetchGroupData(values.group)
+
         this.props.dispatch({
             type: 'BUTTON_SIDEBAR_VISIBILITY',
             payload: {
@@ -28,7 +36,7 @@ class Groups extends Component {
                     this.props.sidebarVisible &&
                     <Sidebar groups={this.props.groups}/>
                 }
-                <GroupsLayout sidebarActive={this.props.sidebarVisible}>
+                <GroupsLayout sidebarActive={this.props.sidebarVisible} >
                     <h1>Búsqueda por grupos biológicos </h1>
                     <div className="VisualizationPanel card white">
                         <div className="illustration or map">
@@ -56,6 +64,9 @@ class Groups extends Component {
         )
     }
 }
+
+
+
 
 const mapStateToProps = ( state ) => (
     {

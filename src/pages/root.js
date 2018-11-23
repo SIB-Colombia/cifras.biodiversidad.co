@@ -43,7 +43,6 @@ class Root extends Component {
                             <Route exact path="/grupos" component={Groups}/>
                             <Route exact path="/municipios" component={Geo}/>
                             <Route exact path="/entidades" component={Companies}/>
-                            <Redirect from="/g" to="/grupos"/>
                             <Route component={NotFound}/>
                         </Switch>
                         <Footer/>
