@@ -5,14 +5,23 @@ import Highlights from "./highlights";
 import Groups from "./groups";
 import Geo from "./geo";
 import Companies from "./companies";
-import NotFound from "./not-found";
 import Footer from "../components/footer/index";
-import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { createStore } from "redux";
+import { Provider } from 'react-redux'
+
+import NotFound from "./not-found";
+import reducer from "../services/reducers/reducer.js";
+
 import content from "../content";
 import groups from "../data";
-import { createStore } from "redux";
-import reducer from "../services/reducers/reducer.js";
+
+import ApolloClient from 'apollo-boost'
+import { ApolloProvider } from 'react-apollo'
+
+const client = new ApolloClient({
+    uri: 'https://cors-anywhere.herokuapp.com/http://ec2-54-146-43-238.compute-1.amazonaws.com:8080/graphql'
+})
 
 
 const initialState = {
@@ -33,22 +42,24 @@ const store = createStore(
 class Root extends Component {
     render () {
         return (
+            <ApolloProvider client={client}>
             <Provider store={store}>
-                <BrowserRouter>
-                    <Fragment>
-                        <Navbar/>
-                        <Switch>
-                            <Route exact path="/" component={Home}/>
-                            <Route exact path="/destacados" component={Highlights}/>
-                            <Route exact path="/grupos" component={Groups}/>
-                            <Route exact path="/municipios" component={Geo}/>
-                            <Route exact path="/entidades" component={Companies}/>
-                            <Route component={NotFound}/>
-                        </Switch>
-                        <Footer/>
-                    </Fragment>
-                </BrowserRouter>
-            </Provider>
+                    <BrowserRouter>
+                        <Fragment>
+                            <Navbar/>
+                            <Switch>
+                                <Route exact path="/" component={Home}/>
+                                <Route exact path="/destacados" component={Highlights}/>
+                                <Route exact path="/grupos" component={Groups}/>
+                                <Route exact path="/municipios" component={Geo}/>
+                                <Route exact path="/entidades" component={Companies}/>
+                                <Route component={NotFound}/>
+                            </Switch>
+                            <Footer/>
+                        </Fragment>
+                    </BrowserRouter>
+                </Provider>
+            </ApolloProvider>
 
         )
     }
