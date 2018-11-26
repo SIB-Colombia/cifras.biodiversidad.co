@@ -33,7 +33,6 @@ class Groups extends Component {
     render () {
         return (
             <Fragment>
-                <ServiceExample/>
                 {
                     this.props.sidebarVisible &&
                     <Sidebar groups={this.props.groups}/>
@@ -62,7 +61,9 @@ class Groups extends Component {
                         <TableComponent/>
                     </div>
                 </GroupsLayout>
+            <ServiceExample/>
             </Fragment>
+
         )
     }
 }
