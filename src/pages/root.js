@@ -6,7 +6,7 @@ import Groups from "./groups";
 import Geo from "./geo";
 import Companies from "./companies";
 import NotFound from "./not-found";
-import Footer from "../components/footer/layout";
+import Footer from "../components/footer/index";
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import content from "../content";

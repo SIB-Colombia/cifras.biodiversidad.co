@@ -1,8 +1,8 @@
 import React from "react"
 import "../../_styles/components/footer.scss"
 
-const Footer = props => (
-    <footer className="Footer">
+const FooterLayout = props => (
+    <footer className={props.sidebarActive ? `FooterLayout sidebarActive` : `FooterLayout`}>
             <div className="Footer__logos">
                 <div className="container">
                     <div className="row">
@@ -29,4 +29,4 @@ const Footer = props => (
     </footer>
 )
 
-export default Footer
+export default FooterLayout

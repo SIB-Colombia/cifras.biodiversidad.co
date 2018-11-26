@@ -5,10 +5,11 @@ import { connect } from 'react-redux'
 import RadarComponent from "../../components/chart/RadarComponent";
 import TableComponent from "../../components/table";
 import queryString from 'query-string'
+import ServiceExample from "../../services/service-example";
 
 class Groups extends Component {
     static fetchGroupData (value )  {
-        console.log(value)
+       // console.log( `Filtro URL: ${value}`)
     }
 
     componentDidMount () {
@@ -32,6 +33,7 @@ class Groups extends Component {
     render () {
         return (
             <Fragment>
+                <ServiceExample/>
                 {
                     this.props.sidebarVisible &&
                     <Sidebar groups={this.props.groups}/>
