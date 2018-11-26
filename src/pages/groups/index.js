@@ -14,6 +14,7 @@ class Groups extends Component {
     }
 
     componentDidMount () {
+        console.log(this.props)
         const values = queryString.parse(this.props.location.search)
         Groups.fetchGroupData(values.group)
 
@@ -63,6 +64,7 @@ class Groups extends Component {
                         <TableComponent/>
                     </div>
                 </GroupsLayout>
+
             </Fragment>
 
         )

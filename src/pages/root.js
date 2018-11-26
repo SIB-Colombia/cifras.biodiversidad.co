@@ -18,6 +18,8 @@ import groups from "../data";
 
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
+import GroupsList from "../services/groups-list";
+import GroupsLayout from "./groups/layout";
 
 const client = new ApolloClient({
     uri: 'https://cors-anywhere.herokuapp.com/http://ec2-54-146-43-238.compute-1.amazonaws.com:8080/graphql'
@@ -44,7 +46,8 @@ class Root extends Component {
         return (
             <ApolloProvider client={client}>
             <Provider store={store}>
-                    <BrowserRouter>
+
+                <BrowserRouter>
                         <Fragment>
                             <Navbar/>
                             <Switch>

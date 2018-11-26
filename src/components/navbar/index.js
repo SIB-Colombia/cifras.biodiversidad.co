@@ -4,6 +4,8 @@ import Menu from "./menu";
 import { Link } from "react-router-dom"
 import ToggleSidebar from "./toggleSidebar";
 import { connect }  from "react-redux";
+import GroupsList from "../../services/groups-list";
+import Provider from "react-redux/es/components/Provider";
 
 class Navbar extends Component {
     state = {
@@ -28,6 +30,7 @@ class Navbar extends Component {
     render () {
         return (
             <NavbarLayout>
+
                 {
                     this.props.togglevisible &&
                     <ToggleSidebar handleClick={this.handleSidebar} />
