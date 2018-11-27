@@ -10,7 +10,11 @@ class Sidebar extends Component {
                     {
                         this.props.groups.map(item => (
                             <Fragment key={item.id}>
-                                <FilterList name={item.nombre} {...item} children={true}/>
+                                <FilterList
+                                    name={item.nombre}
+                                    children={true}
+                                    {...item}
+                                />
                             </Fragment>
                         ))
                     }

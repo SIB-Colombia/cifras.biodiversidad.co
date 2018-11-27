@@ -1,25 +1,47 @@
-import React, { Component } from 'react'
+import React, {Component, Fragment} from 'react'
 import FilterList from "../index";
 
 class FilterItem extends Component {
     state = {
-        hasChildren: this.props.children
+        hasChildren: this.props.children,
+        showChildren: false
+
+    }
+    setRef = e => {
+        this.item = e
+    }
+
+    handleClick = e => {
+        console.log(this.item)
+        e.stopPropagation();
+        this.setState({
+            showChildren: !this.state.showChildren,
+        })
     }
 
     render () {
         return (
-
-                    <li className="FilterItem">
-                        <p>{this.props.nombre}</p>
+            <li
+                className="FilterItem"
+                onClick={this.handleClick}
+                ref={this.setRef}
+                key={this.props.id}
+            >
+                <p>{this.props.nombre}</p>
+                {
+                    this.state.showChildren &&
+                    <Fragment>
                         {
                             this.state.hasChildren &&
 
-                                this.props.grupoBiologicoHijos.map(item => (
-                                    <FilterList key={item.id} {...item} children={item.grupoBiologicoHijos}/>
-                                ))
+                            this.props.grupoBiologicoHijos.map(item => (
+                                <FilterList key={item.id} {...item} children={item.grupoBiologicoHijos}/>
+                            ))
 
                         }
-                    </li>
+                    </Fragment>
+                }
+            </li>
         )
     }
 }
