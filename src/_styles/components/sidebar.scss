@@ -17,16 +17,22 @@
     padding: 0;
     list-style-type: none;
   }
-  p {
-    text-transform: lowercase;
+  p, a {
+    color: $text-color;
+    display: block;
     font-weight: $light;
+    text-decoration: none;
+    text-transform: lowercase;
+    &:visited, &:active {
+      color: $text-color;
+    }
   };
 }
 
 
 .FilterList {
   .FilterItem {
-    p {
+    p, a {
       padding: 1em;
       border-top: 1px solid $light-gray;
       border-bottom: 1px solid $light-gray;
@@ -36,21 +42,21 @@
       .FilterItem {
         background: $background-light;
 
-        p {
+        p, a{
           padding: 1em 1em 1em 2em;
           border-bottom: 1px solid $light-gray
         }
         .FilterList {
           .FilterItem {
             background: $background-medium-lighten;
-            p {
+            p, a {
               padding: .8em .8em .8em 3em;
               border-bottom: 1px solid $light-gray
             }
             .FilterList {
               .FilterItem {
                 background: $background-medium-darken;
-                p {
+                p, a {
                   padding: .5em .5em .5em 4em;
                   border-bottom: 1px solid $light-gray
                 }

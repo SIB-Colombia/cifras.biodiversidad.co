@@ -10,12 +10,12 @@ import GroupsList from "../../services/groups-list";
 
 class Groups extends Component {
     static fetchGroupData (value )  {
-       // console.log( `Filtro URL: ${value}`)
+       console.log( `Filtro URL: ${value}`)
     }
 
     componentDidMount () {
         const values = queryString.parse(this.props.location.search)
-        Groups.fetchGroupData(values.group)
+        Groups.fetchGroupData(values.grupo)
 
         this.props.dispatch({
             type: 'BUTTON_SIDEBAR_VISIBILITY',

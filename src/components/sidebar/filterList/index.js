@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import FilterListLayout from "./layout";
 import FilterItem from "./item";
+import {Link} from "react-router-dom";
 
 class FilterList extends Component {
     state = {
@@ -29,7 +30,8 @@ class FilterList extends Component {
                     ref={this.setRef}
                     key={this.props.id}
                 >
-                    <p>{this.props.nombre}</p>
+                    <Link to={`/grupos/?grupo=${this.props.nombre}`}>{this.props.nombre}</Link>
+
 
                     {
                         this.state.showChildren &&
