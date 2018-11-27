@@ -30,7 +30,7 @@ class FilterItem extends Component {
                 ref={this.setRef}
                 key={this.props.id}
             >
-                <Link to={`/grupos/?grupo=${this.props.nombre}`}>{this.props.nombre}</Link>
+                <Link to={`?grupo=${this.props.nombre}`}>{this.props.nombre}</Link>
                 {
                     this.state.showChildren &&
                     <Fragment>
