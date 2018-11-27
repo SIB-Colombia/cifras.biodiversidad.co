@@ -14,7 +14,6 @@ class Groups extends Component {
     }
 
     componentDidMount () {
-        console.log(this.props)
         const values = queryString.parse(this.props.location.search)
         Groups.fetchGroupData(values.group)
 
@@ -41,7 +40,7 @@ class Groups extends Component {
                 }
                 <GroupsLayout sidebarActive={this.props.sidebarVisible} >
                     <h1>Búsqueda por grupos biológicos </h1>
-                    <GroupsList/>
+                    {/*<GroupsList/>*/}
                     <div className="VisualizationPanel card white">
                         <div className="illustration or map">
 

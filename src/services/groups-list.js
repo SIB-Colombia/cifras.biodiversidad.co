@@ -54,5 +54,4 @@ class GroupsList extends Component {
     }
 }
 
-
 export default GroupsList

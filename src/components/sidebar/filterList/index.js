@@ -7,10 +7,14 @@ class FilterList extends Component {
         hasChildren: this.props.children
     }
 
+    handleClick = e => {
+        console.log(e)
+    }
+
     render () {
         return (
             <FilterListLayout>
-                <li className="FilterItem">
+                <li className="FilterItem" onClick={this.handleClick} ref={this.myRef}>
                     <p>{this.props.nombre}</p>
                     <ul className="FilterList">
                     {
