@@ -7,6 +7,7 @@ import TableComponent from "../../components/table";
 import queryString from 'query-string'
 import ServiceExample from "../../services/service-example";
 import GroupsList from "../../services/groups-list";
+import Tabs from "../../components/tabs";
 
 class Groups extends Component {
     static fetchGroupData (value )  {
@@ -41,21 +42,18 @@ class Groups extends Component {
                 <GroupsLayout sidebarActive={this.props.sidebarVisible} >
                     <h1>Búsqueda por grupos biológicos </h1>
                     {/*<GroupsList/>*/}
-                    <div className="VisualizationPanel card white">
-                        <div className="illustration or map">
+                    <div className="VisualizationPanel card white row">
+                        <div className="illustration or map col-6" >
 
                         </div>
-                        <div className="tabsContainer">
-                            <div className="tabsNav">
-                                <p className="tab">RRBB</p>
-                            </div>
-                            <div className="tabsContent">
+                        <div className="col-6">
+                            <Tabs>
                                 <RadarComponent
                                     {...this.props}
                                     ref={ref => this.chartInstance = ref && ref.chartInstance}
                                     type='radar'
                                 />
-                            </div>
+                            </Tabs>
                         </div>
                     </div>
 
