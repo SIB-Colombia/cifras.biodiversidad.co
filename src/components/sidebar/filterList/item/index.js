@@ -6,7 +6,6 @@ class FilterItem extends Component {
     state = {
         hasChildren: this.props.children,
         showChildren: false
-
     }
     setRef = e => {
         this.item = e
