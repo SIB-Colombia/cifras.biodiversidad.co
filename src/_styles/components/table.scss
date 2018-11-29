@@ -1,0 +1,17 @@
+@import "../_utilities/variables";
+
+.ReactTable {
+
+  .rt-td {
+    background-color: white;
+    font-weight: $regular;
+    line-height: 16px;
+    padding: 3rem 1rem;
+    &:not(:first-child) {
+      font-family: $secondary-font;
+      font-size: 2em;
+      text-align: center;
+    }
+  }
+}
+

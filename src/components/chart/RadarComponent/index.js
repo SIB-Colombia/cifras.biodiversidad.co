@@ -31,7 +31,6 @@ class RadarComponent extends Component {
     render() {
         return (
             <div>
-                <h2>Radar Example</h2>
                 <Radar data={data} />
             </div>
         );

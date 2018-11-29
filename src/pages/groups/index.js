@@ -47,12 +47,12 @@ class Groups extends Component {
 
                         </div>
                         <div className="col-6">
-                            <Tabs>
                                 <RadarComponent
                                     {...this.props}
                                     ref={ref => this.chartInstance = ref && ref.chartInstance}
                                     type='radar'
                                 />
+                            <Tabs>
                             </Tabs>
                         </div>
                     </div>

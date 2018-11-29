@@ -1,6 +1,6 @@
 import React from 'react'
-import '../../_styles/components/table.scss'
 import 'react-table/react-table.css'
+import '../../_styles/components/table.scss'
 
 const TableComponentLayout = props => (
     <section>

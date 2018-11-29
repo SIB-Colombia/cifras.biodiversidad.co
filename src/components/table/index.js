@@ -64,7 +64,7 @@ class TableComponent extends Component {
                 <ReactTable
                     data={data}
                     columns={columns}
-                    defaultPageSize={5}
+                    defaultPageSize={10}
                 />
             </TableComponentLayout>
         );

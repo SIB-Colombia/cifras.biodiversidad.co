@@ -22,7 +22,7 @@ import GroupsList from "../services/groups-list";
 import GroupsLayout from "./groups/layout";
 
 const client = new ApolloClient({
-    uri: 'https://cors-anywhere.herokuapp.com/http://ec2-54-146-43-238.compute-1.amazonaws.com:8080/graphql'
+    uri: 'https://cors-anywhere.herokuapp.com/https://ec2-34-207-172-223.compute-1.amazonaws.com:8080/graphql'
 })
 
 
