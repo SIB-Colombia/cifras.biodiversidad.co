@@ -74,7 +74,7 @@ class Groups extends Component {
 const mapStateToProps = ( state ) => (
     {
         groups: Object.values( state.data.groups ),
-        sidebarVisible: state.sidebar
+        sidebarVisible: state.interaction.sidebar
     }
 )
 

@@ -1,4 +1,9 @@
-const reducer = (state, action ) => {
+const initialState = {
+    sidebar: true,
+    buttonSidebar: false,
+}
+
+const interfaceReducer = (state = initialState, action ) => {
     switch ( action.type ) {
         case 'BUTTON_SIDEBAR_VISIBILITY': {
             return {
@@ -17,4 +22,4 @@ const reducer = (state, action ) => {
     }
 }
 
-export default reducer
+export default interfaceReducer

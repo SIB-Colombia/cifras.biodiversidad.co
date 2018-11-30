@@ -56,8 +56,8 @@ class Navbar extends Component {
 const mapStateToProps = (state, props) => (
     {
         items: state.data.sections,
-        togglevisible: state.buttonSidebar,
-        sidebarVisible: state.sidebar
+        togglevisible: state.interaction.buttonSidebar,
+        sidebarVisible: state.interaction.sidebar
     }
 )
 
