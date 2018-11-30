@@ -44,8 +44,8 @@ class GroupsList extends Component {
                             if(loading) return <h4>cargando...</h4>
                             if(error) console.log(error)
                             console.log(data)
-
                             return <h1>Datos cargados</h1>
+
                         }
                     }
                 </Query>
