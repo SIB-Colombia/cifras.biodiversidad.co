@@ -45,7 +45,6 @@ class GroupsList extends Component {
                             if(error) console.log(error)
                             console.log(data)
                             return <h1>Datos cargados</h1>
-
                         }
                     }
                 </Query>
