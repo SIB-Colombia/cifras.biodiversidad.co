@@ -3,7 +3,7 @@ import interaction from './interfaceReducer'
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
-    interaction: interaction,
+    interaction,
     data
 })
 
