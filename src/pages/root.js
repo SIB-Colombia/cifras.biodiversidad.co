@@ -10,7 +10,7 @@ import NotFound from "./not-found";
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { createStore } from "redux";
 import { Provider } from 'react-redux'
-import reducer from "../services/reducers/index";
+import reducer from "../reducers/index";
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 

@@ -3,15 +3,11 @@ import HomeLayout from "./layout";
 import HomeSlider from "../../components/slider";
 import HomeLinks from "./components/links/links";
 import { connect } from 'react-redux'
+import {sidebarVisibility} from "../../actions";
 
 class Home extends Component {
     componentDidMount () {
-        this.props.dispatch({
-            type: 'BUTTON_SIDEBAR_VISIBILITY',
-            payload: {
-                toggleSidebarVisible: false
-            }
-        })
+        this.props.dispatch(sidebarVisibility(false))
     }
     render () {
         return (

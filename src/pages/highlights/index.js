@@ -2,15 +2,11 @@ import React, { Component } from 'react'
 import HighlightsLayout from "./layout";
 import Highlight from "./highlight";
 import { connect } from 'react-redux'
+import {sidebarVisibility} from "../../actions";
 
 class Highlights extends Component {
     componentDidMount () {
-        this.props.dispatch({
-            type: 'BUTTON_SIDEBAR_VISIBILITY',
-            payload: {
-                toggleSidebarVisible: false
-            }
-        })
+        this.props.dispatch(sidebarVisibility(false))
     }
     render () {
         return (

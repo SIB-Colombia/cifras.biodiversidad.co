@@ -8,6 +8,7 @@ import queryString from 'query-string'
 import ServiceExample from "../../services/service-example";
 import GroupsList from "../../services/groups-list";
 import Tabs from "../../components/tabs";
+import {buttonSidebarVisibility, sidebarVisibility} from "../../actions";
 
 class Groups extends Component {
     static fetchGroupData (value )  {
@@ -17,19 +18,8 @@ class Groups extends Component {
     componentDidMount () {
         const values = queryString.parse(this.props.location.search)
         Groups.fetchGroupData(values.grupo)
-
-        this.props.dispatch({
-            type: 'BUTTON_SIDEBAR_VISIBILITY',
-            payload: {
-                toggleSidebarVisible: true
-            }
-        })
-        this.props.dispatch({
-            type: 'SIDEBAR_VISIBILITY',
-            payload: {
-                sidebarVisible: true
-            }
-        })
+        this.props.dispatch(sidebarVisibility(true))
+        this.props.dispatch(buttonSidebarVisibility(true))
     }
 
     render () {
@@ -67,9 +57,6 @@ class Groups extends Component {
         )
     }
 }
-
-
-
 
 const mapStateToProps = ( state ) => (
     {
