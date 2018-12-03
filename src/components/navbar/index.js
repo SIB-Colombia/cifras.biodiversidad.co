@@ -4,7 +4,8 @@ import Menu from "./menu";
 import { Link } from "react-router-dom"
 import ToggleSidebar from "./toggleSidebar";
 import { connect }  from "react-redux";
-import  { sidebarVisibility} from "../../actions";
+import * as actions from "../../actions";
+import { bindActionCreators } from 'redux'
 
 class Navbar extends Component {
     state = {
@@ -17,7 +18,7 @@ class Navbar extends Component {
         })
     }
     handleSidebar = e => {
-        this.props.dispatch(sidebarVisibility(!this.props.sidebarVisible))
+        this.props.actions.sidebarVisibility(!this.props.sidebarVisible)
     }
 
     render () {
@@ -51,4 +52,10 @@ const mapStateToProps = (state, props) => (
     }
 )
 
-export default connect(mapStateToProps)(Navbar)
+const mapDispatchToProps = dispatch => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+    }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar)

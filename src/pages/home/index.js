@@ -4,10 +4,13 @@ import HomeSlider from "../../components/slider";
 import HomeLinks from "./components/links/links";
 import { connect } from 'react-redux'
 import {sidebarVisibility} from "../../actions";
+import {bindActionCreators} from "redux";
+import * as actions from "../../actions";
 
 class Home extends Component {
     componentDidMount () {
-        this.props.dispatch(sidebarVisibility(false))
+        this.props.actions.sidebarVisibility(false)
+        this.props.actions.buttonSidebarVisibility(false)
     }
     render () {
         return (
@@ -25,4 +28,10 @@ const mapStateToProps = (state, props) => (
     }
 )
 
-export default connect(mapStateToProps)(Home)
+const mapDispatchToProps = dispatch => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+    }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

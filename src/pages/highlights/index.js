@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import HighlightsLayout from "./layout";
 import Highlight from "./highlight";
 import { connect } from 'react-redux'
-import {sidebarVisibility} from "../../actions";
+import {bindActionCreators} from "redux";
+import * as actions from "../../actions";
 
 class Highlights extends Component {
     componentDidMount () {
-        this.props.dispatch(sidebarVisibility(false))
+        this.props.actions.sidebarVisibility(false)
+        this.props.actions.buttonSidebarVisibility(false)
     }
     render () {
         return (
@@ -30,4 +32,9 @@ const mapStateToProps = (state, props) => (
     }
 )
 
-export default connect(mapStateToProps)(Highlights)
+const mapDispatchToProps = dispatch => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+    }
+)
+export default connect(mapStateToProps, mapDispatchToProps)(Highlights)

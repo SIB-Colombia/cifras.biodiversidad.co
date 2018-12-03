@@ -8,7 +8,8 @@ import queryString from 'query-string'
 import ServiceExample from "../../services/service-example";
 import GroupsList from "../../services/groups-list";
 import Tabs from "../../components/tabs";
-import {buttonSidebarVisibility, sidebarVisibility} from "../../actions";
+import {bindActionCreators} from "redux";
+import * as actions from "../../actions";
 
 class Groups extends Component {
     static fetchGroupData (value )  {
@@ -18,8 +19,9 @@ class Groups extends Component {
     componentDidMount () {
         const values = queryString.parse(this.props.location.search)
         Groups.fetchGroupData(values.grupo)
-        this.props.dispatch(sidebarVisibility(true))
-        this.props.dispatch(buttonSidebarVisibility(true))
+
+        this.props.actions.sidebarVisibility(true)
+        this.props.actions.buttonSidebarVisibility(true)
     }
 
     render () {
@@ -65,4 +67,10 @@ const mapStateToProps = ( state ) => (
     }
 )
 
-export default connect(mapStateToProps)(Groups)
+const mapDispatchToProps = dispatch => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+    }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Groups)

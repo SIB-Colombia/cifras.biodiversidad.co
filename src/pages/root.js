@@ -18,8 +18,6 @@ const client = new ApolloClient({
     uri: 'https://cors-anywhere.herokuapp.com/https://ec2-34-207-172-223.compute-1.amazonaws.com:8080/graphql'
 })
 
-
-
 const initialState = {
 
 }
@@ -51,7 +49,6 @@ class Root extends Component {
                     </BrowserRouter>
                 </Provider>
             </ApolloProvider>
-
         )
     }
 }
