@@ -5,10 +5,10 @@ import { connect } from 'react-redux'
 import RadarComponent from "../../components/chart/RadarComponent";
 import TableComponent from "../../components/table";
 import queryString from 'query-string'
-import ServiceExample from "../../services/service-example";
-import GroupsList from "../../services/groups-list";
+import ServiceExample from "../../actions/services/service-example";
+import GroupsList from "../../actions/services/groups-list";
 import Tabs from "../../components/tabs";
-import {bindActionCreators} from "redux";
+import { bindActionCreators } from "redux";
 import * as actions from "../../actions";
 
 class Groups extends Component {

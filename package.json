@@ -43,6 +43,7 @@
     "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.10.0",
     "prop-types": "^15.6.2",
+    "redux-devtools-extension": "^2.13.7",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.19.1",
     "url-loader": "^0.6.2",
@@ -69,6 +70,8 @@
     "react-slick": "^0.23.2",
     "react-table": "^6.8.6",
     "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1"
   },
   "proxy": {

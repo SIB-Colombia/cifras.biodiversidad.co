@@ -1,18 +1,21 @@
 import React, { Fragment, Component, PropTypes } from 'react'
-import Home from "./home";
-import Navbar from "../components/navbar";
-import Highlights from "./highlights";
-import Groups from "./groups";
-import Geo from "./geo";
-import Companies from "./companies";
-import Footer from "../components/footer/index";
-import NotFound from "./not-found";
+import Home from './home';
+import Navbar from '../components/navbar';
+import Highlights from './highlights';
+import Groups from './groups';
+import Geo from './geo';
+import Companies from './companies';
+import Footer from '../components/footer/index';
+import NotFound from './not-found';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
-import reducer from "../reducers/index";
+import reducer from '../reducers/index';
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
+import logger from "redux-logger"
+import { composeWithDevTools } from 'redux-devtools-extension'
+import thunk from 'redux-thunk'
 
 const client = new ApolloClient({
     uri: 'https://cors-anywhere.herokuapp.com/https://ec2-34-207-172-223.compute-1.amazonaws.com:8080/graphql'
@@ -25,7 +28,12 @@ const initialState = {
 const store = createStore(
     reducer,
     {},
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    composeWithDevTools(
+        applyMiddleware(
+            //logger,
+            thunk
+        )
+    )
 )
 
 class Root extends Component {

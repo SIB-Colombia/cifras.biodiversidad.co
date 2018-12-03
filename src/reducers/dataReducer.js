@@ -1,5 +1,5 @@
-import content from "../services/content";
-import groups from "../services/data";
+import content from "../actions/services/content";
+import groups from "../actions/services/data";
 
 const initialState = {
     ...content,
