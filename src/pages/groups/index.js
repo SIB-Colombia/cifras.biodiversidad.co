@@ -27,13 +27,16 @@ class Groups extends Component {
     render () {
         return (
             <Fragment>
+                <GroupsList/>
                 {
                     this.props.sidebarVisible &&
                     <Sidebar groups={this.props.groups}/>
                 }
                 <GroupsLayout sidebarActive={this.props.sidebarVisible} >
                     <h1>Búsqueda por grupos biológicos </h1>
-                    {/*<GroupsList/>*/}
+                    {/*
+                    */}
+
                     <div className="VisualizationPanel card white row">
                         <div className="illustration or map col-6" >
 

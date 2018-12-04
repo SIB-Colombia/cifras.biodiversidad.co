@@ -1,50 +1,23 @@
 import React, { Component } from 'react'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
+import { connect } from 'react-redux'
+import {bindActionCreators} from "redux";
+import * as actions from "../index";
+import { GROUPS_LIST } from "./queries";
 
-const GROUPS_QUERY = gql`
-query GroupsQuery {
-    vistaGrupo(id: 1) {
-    id
-    especies
-    especiesAmenaza
-    especiesVU
-    especiesEN
-    especiesCR
-    especiesCites
-    especiesCitesI
-    especiesCitesII
-    especiesCitesIII
-    especiesEndemicas
-    especiesMigratorias
-    especiesExoticas
-    registros
-    registrosAmenaza
-    registrosVU
-    registrosEN
-    registrosCR
-    registrosCites
-    registrosCitesI
-    registrosCitesII
-    registrosCitesIII
-    registrosEndemicas
-    registrosMigratorias
-    registrosExoticas
-  }
-}
-`
 
 class GroupsList extends Component {
     render () {
         return (
             <div>
-                <Query query={GROUPS_QUERY}>
+                <Query query={GROUPS_LIST}>
                     {
                         ({ loading, error, data }) => {
                             if(loading) return <h4>cargando...</h4>
                             if(error) console.log(error)
                             console.log(data)
-                            return <h1>Datos cargados</h1>
+                            return <h1>Datos Cargados</h1>
                         }
                     }
                 </Query>
@@ -53,4 +26,10 @@ class GroupsList extends Component {
     }
 }
 
-export default GroupsList
+const mapDispatchToProps = dispatch => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+    }
+)
+
+export default connect(null, mapDispatchToProps)(GroupsList)

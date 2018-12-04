@@ -18,12 +18,9 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 
 const client = new ApolloClient({
-    uri: 'https://cors-anywhere.herokuapp.com/https://ec2-34-207-172-223.compute-1.amazonaws.com:8080/graphql'
+   uri: 'https://cors-anywhere.herokuapp.com/http://ec2-34-207-172-223.compute-1.amazonaws.com:8080/graphql'
+//    uri: 'https://countries.trevorblades.com/'
 })
-
-const initialState = {
-
-}
 
 const store = createStore(
     reducer,
@@ -40,8 +37,8 @@ class Root extends Component {
     render () {
         return (
             <ApolloProvider client={client}>
-            <Provider store={store}>
-                <BrowserRouter>
+                <Provider store={store}>
+                    <BrowserRouter>
                         <Fragment>
                             <Navbar/>
                             <Switch>
