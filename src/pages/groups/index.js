@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import RadarComponent from "../../components/chart/RadarComponent";
 import TableComponent from "../../components/table";
 import queryString from 'query-string'
-import ServiceExample from "../../actions/services/service-example";
+import ServiceExample from "../../actions/services/example";
 import GroupsList from "../../actions/services/groups-list";
 import Tabs from "../../components/tabs";
 import { bindActionCreators } from "redux";
@@ -27,7 +27,6 @@ class Groups extends Component {
     render () {
         return (
             <Fragment>
-                <GroupsList/>
                 {
                     this.props.sidebarVisible &&
                     <Sidebar groups={this.props.groups}/>
@@ -36,6 +35,7 @@ class Groups extends Component {
                     <h1>Búsqueda por grupos biológicos </h1>
                     {/*
                     */}
+                    <GroupsList/>
 
                     <div className="VisualizationPanel card white row">
                         <div className="illustration or map col-6" >

@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
-import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
 import { connect } from 'react-redux'
 import {bindActionCreators} from "redux";
 import * as actions from "../index";
 import { GROUPS_LIST } from "./queries";
-import queryString from "query-string";
 
 
-class GroupsList extends Component {
+class SidebarService extends Component {
 
     render () {
         return (
@@ -34,4 +32,4 @@ const mapDispatchToProps = dispatch => (
     }
 )
 
-export default connect(null, mapDispatchToProps)(GroupsList)
+export default connect(null, mapDispatchToProps)(SidebarService)
