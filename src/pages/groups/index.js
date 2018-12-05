@@ -1,15 +1,11 @@
 import React, {Component, Fragment} from 'react'
-import GroupsLayout from "./layout";
-import Sidebar from "../../components/sidebar";
 import { connect } from 'react-redux'
-import RadarComponent from "../../components/chart/RadarComponent";
-import TableComponent from "../../components/table";
 import queryString from 'query-string'
-import ServiceExample from "../../actions/services/example";
-import GroupsList from "../../actions/services/groups-list";
-import Tabs from "../../components/tabs";
 import { bindActionCreators } from "redux";
 import * as actions from "../../actions";
+import SearchSidebarPage from "../templates/sidebarTemplate/index";
+import {GROUPS_LIST} from "../../actions/services/queries";
+import {Query} from "react-apollo";
 
 class Groups extends Component {
     static fetchGroupData (value )  {
@@ -19,46 +15,28 @@ class Groups extends Component {
     componentDidMount () {
         const values = queryString.parse(this.props.location.search)
         Groups.fetchGroupData(values.grupo)
-
         this.props.actions.sidebarVisibility(true)
         this.props.actions.buttonSidebarVisibility(true)
     }
 
     render () {
         return (
-            <Fragment>
-                {
-                    this.props.sidebarVisible &&
-                    <Sidebar groups={this.props.groups}/>
-                }
-                <GroupsLayout sidebarActive={this.props.sidebarVisible} >
-                    <h1>Búsqueda por grupos biológicos </h1>
-                    {/*
-                    */}
-                    <GroupsList/>
+                <Query query={GROUPS_LIST}>
+                    {
+                        ({ loading, error, data }) => {
+                            if(loading) return <h4>cargando...</h4>
+                            if(error) console.log(error)
+                            console.log(data)
 
-                    <div className="VisualizationPanel card white row">
-                        <div className="illustration or map col-6" >
-
-                        </div>
-                        <div className="col-6">
-                                <RadarComponent
+                            return (
+                                <SearchSidebarPage
                                     {...this.props}
-                                    ref={ref => this.chartInstance = ref && ref.chartInstance}
-                                    type='radar'
+                                    title="Búsqueda por grupos biológicos"
                                 />
-                            <Tabs>
-                            </Tabs>
-                        </div>
-                    </div>
-
-                    <div className="table">
-                        <TableComponent/>
-                    </div>
-                </GroupsLayout>
-
-            </Fragment>
-
+                            )
+                        }
+                    }
+                </Query>
         )
     }
 }

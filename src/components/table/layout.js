@@ -3,7 +3,7 @@ import 'react-table/react-table.css'
 import '../../_styles/components/table.scss'
 
 const TableComponentLayout = props => (
-    <section>
+    <section className="table">
         {props.children}
     </section>
 )
