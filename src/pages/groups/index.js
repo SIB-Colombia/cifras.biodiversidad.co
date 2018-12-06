@@ -6,6 +6,7 @@ import * as actions from "../../actions";
 import SearchSidebarPage from "../templates/sidebarTemplate/index";
 import {GROUPS_LIST} from "../../actions/services/queries";
 import {Query} from "react-apollo";
+import LoadingTemplate from '../templates/loading';
 
 class Groups extends Component {
     static fetchGroupData (value )  {
@@ -24,9 +25,8 @@ class Groups extends Component {
                 <Query query={GROUPS_LIST}>
                     {
                         ({ loading, error, data }) => {
-                            if(loading) return <h4>cargando...</h4>
+                            if(loading) return <LoadingTemplate {...this.props}/>
                             if(error) console.log(error)
-                            console.log(data)
 
                             return (
                                 <SearchSidebarPage
