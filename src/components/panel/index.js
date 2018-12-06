@@ -1,7 +1,9 @@
 import React from 'react'
+import "../../_styles/components/panel.scss"
+
 
 const Panel = props => (
-    <div className="VisualizationPanel card white row">
+    <div className={`VisualizationPanel panel ${props.loading ? `loading` : ` `}`}>
         <div className="illustration or map col-6" >
             {props.children}
         </div>
