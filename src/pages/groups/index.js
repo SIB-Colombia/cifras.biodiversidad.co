@@ -28,13 +28,12 @@ class Groups extends Component {
                             if(loading) return <LoadingTemplate {...this.props}/>
                             if(error) console.log(error)
 
-                            /*return (
+                            return (
                                 <SearchSidebarPage
                                     {...this.props}
                                     title="Búsqueda por grupos biológicos"
                                 />
-                            )*/
-                            return <LoadingTemplate {...this.props}/>
+                            )
                         }
                     }
                 </Query>

@@ -13,19 +13,19 @@ class LoadingTemplate extends Component {
                 <LoadingTemplateLayout sidebarActive={this.props.sidebarVisible}>
                     <h1>Cargando datos</h1>
                     <Panel loading={true}>
-                       Cargando
+
                     </Panel>
                     <Panel loading={true}>
-                        Cargando
+
                     </Panel>
                     <Panel loading={true}>
-                        Cargando
+
                     </Panel>
                     <Panel loading={true}>
-                        Cargando
+
                     </Panel>
                     <Panel loading={true}>
-                        Cargando
+
                     </Panel>
                 </LoadingTemplateLayout>
             </Fragment>
