@@ -4,19 +4,41 @@ import RadarComponent from "../../../components/chart/RadarComponent/index";
 import TableComponent from "../../../components/table/index";
 import Panel from "../../../components/panel/index";
 import SidebarTemplateLayout from "./layout";
+import queryString from "query-string";
+import { bindActionCreators } from "redux";
+import * as actions from "../../../actions";
+import connect from "react-redux/es/connect/connect";
+
 
 class SidebarTemplate extends Component {
 
+    componentDidMount () {
+        const urlValue = queryString.parse(this.props.location.search)
+        console.log(urlValue)
+        this.props.actions.filterGroup(urlValue)
+
+        this.props.actions.sidebarVisibility(true)
+        this.props.actions.buttonSidebarVisibility(true)
+    }
     render () {
+        const groupsList = [
+            this.props.data.animales,
+            this.props.data.plantas,
+            this.props.data.hongos,
+            this.props.data.algas,
+            this.props.data.liquenes,
+        ]
         return (
+
             <Fragment>
 
                 {
                     this.props.sidebarVisible &&
-                    <Sidebar groups={this.props.groups}/>
+                    <Sidebar items={groupsList}/>
                 }
                 <SidebarTemplateLayout sidebarActive={this.props.sidebarVisible}>
                     <h1>{this.props.title}</h1>
+                    {/*console.log(this.props.data)*/}
                     <Panel>
                         <RadarComponent
                             {...this.props}
@@ -29,7 +51,19 @@ class SidebarTemplate extends Component {
             </Fragment>
         )
     }
+
 }
 
+const mapStateToProps = ( state ) => (
+    {
+        sidebarVisible: state.interaction.sidebar
+    }
+)
 
-export default SidebarTemplate
+const mapDispatchToProps = dispatch => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+    }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(SidebarTemplate)

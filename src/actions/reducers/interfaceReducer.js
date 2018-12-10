@@ -1,7 +1,7 @@
 import {
     BUTTON_SIDEBAR_VISIBILITY,
     SIDEBAR_VISIBILITY
-} from "../actions/types"
+} from "../types/index"
 
 const initialState = {
     sidebar: true,

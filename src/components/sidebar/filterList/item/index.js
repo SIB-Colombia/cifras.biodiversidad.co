@@ -1,6 +1,9 @@
 import React, {Component, Fragment} from 'react'
 import FilterList from "../index";
 import {Link} from "react-router-dom";
+import {bindActionCreators} from "redux";
+import * as actions from "../../../../actions";
+import connect from "react-redux/es/connect/connect";
 
 class FilterItem extends Component {
     state = {
@@ -12,10 +15,8 @@ class FilterItem extends Component {
     }
 
     handleClick = e => {
-        console.log(this.item)
-        {console.log(this.props)}
-
         e.stopPropagation();
+        this.props.actions.filterGroup(this.props.id)
         this.setState({
             showChildren: !this.state.showChildren,
         })
@@ -38,7 +39,6 @@ class FilterItem extends Component {
                             this.props.grupoBiologicoHijos.map(item => (
                                 <FilterList key={item.id} {...item} children={item.grupoBiologicoHijos}/>
                             ))
-
                         }
                     </Fragment>
                 }
@@ -47,4 +47,10 @@ class FilterItem extends Component {
     }
 }
 
-export default FilterItem
+const mapDispatchToProps = dispatch => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+    }
+)
+
+export default connect(null, mapDispatchToProps)(FilterItem)

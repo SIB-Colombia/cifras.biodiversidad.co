@@ -10,16 +10,25 @@ import NotFound from './not-found';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
-import reducer from '../reducers/index';
+import reducer from '../actions/reducers/index';
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
+import { InMemoryCache } from "apollo-cache-inmemory";
 import logger from "redux-logger"
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 
+const cache = new InMemoryCache({
+    dataIdFromObject: object => object.key || null
+
+});
+
+
 const client = new ApolloClient({
-   uri: 'https://cors-anywhere.herokuapp.com/http://ec2-34-207-172-223.compute-1.amazonaws.com:8080/graphql'
+   uri: 'https://cors-anywhere.herokuapp.com/http://ec2-34-207-172-223.compute-1.amazonaws.com:8080/graphql',
+    cache
 //    uri: 'https://countries.trevorblades.com/'
+
 })
 
 const store = createStore(

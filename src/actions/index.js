@@ -1,7 +1,7 @@
 import {
     BUTTON_SIDEBAR_VISIBILITY,
     SIDEBAR_VISIBILITY,
-    GROUPS_LIST
+    FILTER_GROUP
 } from "./types"
 
 export const sidebarVisibility = visibility => (
@@ -22,11 +22,11 @@ export const buttonSidebarVisibility = visibility => (
     }
 )
 
-export const fetchGroupList = visibility => (
+export const filterGroup = activeGroup => (
     {
-        type: GROUPS_LIST,
+        type: FILTER_GROUP,
         payload: {
-            toggleSidebarVisible: visibility
+            activeGroup: activeGroup
         }
     }
 

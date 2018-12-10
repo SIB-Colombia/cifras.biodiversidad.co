@@ -4,11 +4,12 @@ import FilterList from "./filterList";
 
 class Sidebar extends Component {
     render () {
-            return (
+
+        return (
                 <SidebarLayout>
                     <h3>Sidebar</h3>
                     {
-                        this.props.groups.map(item => (
+                        this.props.items.map(item => (
                             <Fragment key={item.id}>
                                 <FilterList
                                     name={item.nombre}
@@ -22,12 +23,5 @@ class Sidebar extends Component {
             )
     }
 }
-
-const mapDispatchToProps = dispatch => (
-    {
-        sidebarVisibility: dispatch.sidebarVisibility
-    }
-
-)
 
 export default Sidebar
