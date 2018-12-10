@@ -41,3 +41,60 @@ query groupList {
 }
     ${GroupListFragment.children}
 `
+
+export const GROUPS = gql`
+    query Groups {
+        animales: grupoBiologico(id: 1) {
+            ...children
+        }
+        plantas: grupoBiologico(id: 24) {
+            ...children
+        }
+        hongos: grupoBiologico(id: 37) {
+            ...children
+        }
+        algas: grupoBiologico(id: 41) {
+            ...children
+        }
+        liquenes: grupoBiologico(id: 46) {
+            ...children
+        }
+        
+        allVistagrupobiologico {
+            id
+            registros
+            especies
+            especiesAmenaza
+            especiesVU
+            especiesEN
+            especiesCR
+            registrosAmenaza
+            registrosVU
+            registrosEN
+            especiesCR
+            especiesCites
+            especiesCitesI
+            especiesCitesII
+            especiesCitesIII
+            registrosCites
+            registrosCitesI
+            registrosCitesII
+            registrosCitesIII
+            especiesExoticas
+            especiesEndemicas
+            especiesMigratorias
+            registrosExoticas
+            registrosEndemicas
+            registrosMigratorias
+        }
+    }
+
+    ${GroupListFragment.children}
+`
+
+
+/*
+especiesEstimadasPais
+registrosEvidenciaPais
+especiesEvidenciaPais
+*/
