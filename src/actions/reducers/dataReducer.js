@@ -1,20 +1,34 @@
 import content from "../services/content";
+import { fromJS } from 'immutable'
+import {
+    FETCH_GROUPS,
+    FILTER_GROUP
+} from "../types/index"
 
-const initialState = {
+const initialState = fromJS({
     ...content,
     groups: {
-        list: [],
+        data: {},
         active: ""
     }
-}
+})
 
-const filterGroup = (state = initialState, action ) => {
+const dataReducer = (state = initialState, action ) => {
     switch ( action.type ) {
-        case 'FILTER_GROUP': {
+        case FETCH_GROUPS: {
             return {
                 ...state,
                 groups: {
-                    active: action.payload.activeGroup
+                    data: action.payload.groups
+                }
+            }
+        }
+        case FILTER_GROUP: {
+            return {
+                ...state,
+                groups: {
+                    active: action.payload.activeGroup,
+                    ...state.data
                 }
             }
         }
@@ -23,4 +37,4 @@ const filterGroup = (state = initialState, action ) => {
     }
 }
 
-export default filterGroup
+export default dataReducer

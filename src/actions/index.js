@@ -1,7 +1,7 @@
 import {
     BUTTON_SIDEBAR_VISIBILITY,
     SIDEBAR_VISIBILITY,
-    FILTER_GROUP
+    FILTER_GROUP, FETCH_GROUPS
 } from "./types"
 
 export const sidebarVisibility = visibility => (
@@ -20,6 +20,17 @@ export const buttonSidebarVisibility = visibility => (
             toggleSidebarVisible: visibility
         }
     }
+)
+
+
+export const fetchGroups = groups => (
+    {
+        type: FETCH_GROUPS,
+        payload: {
+            groups: groups
+        }
+    }
+
 )
 
 export const filterGroup = activeGroup => (

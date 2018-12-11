@@ -14,8 +14,9 @@ class SidebarTemplate extends Component {
 
     componentDidMount () {
         const urlValue = queryString.parse(this.props.location.search)
-        console.log(urlValue)
+
         this.props.actions.filterGroup(urlValue)
+        this.props.actions.fetchGroups(this.props.data)
 
         this.props.actions.sidebarVisibility(true)
         this.props.actions.buttonSidebarVisibility(true)
