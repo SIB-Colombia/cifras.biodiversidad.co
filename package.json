@@ -61,6 +61,7 @@
     "express": "^4.16.4",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",
+    "immutable": "^4.0.0-rc.12",
     "query-string": "^6.2.0",
     "react": "^16.5.2",
     "react-apollo": "^2.3.1",
@@ -72,6 +73,7 @@
     "react-slick": "^0.23.2",
     "react-table": "^6.8.6",
     "redux": "^4.0.1",
+    "redux-immutable": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1"
