@@ -14,32 +14,26 @@ class SidebarTemplate extends Component {
 
     componentDidMount () {
         const urlValue = queryString.parse(this.props.location.search)
+        //console.log(urlValue)
+        //this.props.actions.filterGroup(urlValue)
 
-        this.props.actions.filterGroup(urlValue)
         this.props.actions.fetchGroups(this.props.data)
 
         this.props.actions.sidebarVisibility(true)
         this.props.actions.buttonSidebarVisibility(true)
     }
     render () {
-        const groupsList = [
-            this.props.data.animales,
-            this.props.data.plantas,
-            this.props.data.hongos,
-            this.props.data.algas,
-            this.props.data.liquenes,
-        ]
+
         return (
 
             <Fragment>
-
+                {console.log(this.props.activeGroup)}
                 {
                     this.props.sidebarVisible &&
-                    <Sidebar items={groupsList}/>
+                    <Sidebar items={this.props.sidebarItems}/>
                 }
                 <SidebarTemplateLayout sidebarActive={this.props.sidebarVisible}>
                     <h1>{this.props.title}</h1>
-                    {/*console.log(this.props.data)*/}
                     <Panel>
                         <RadarComponent
                             {...this.props}
@@ -55,11 +49,19 @@ class SidebarTemplate extends Component {
 
 }
 
-const mapStateToProps = ( state ) => (
-    {
-        sidebarVisible: state.interaction.sidebar
-    }
-)
+const mapStateToProps = ( state ) => {
+    let activeIdToRender = state.getIn(['data', 'groups', 'data'])
+    const activeeDataToRender = state.getIn(['data', 'groups', 'active'])
+
+    console.log(activeIdToRender)
+    console.log(activeeDataToRender)
+    return (
+        {
+            sidebarVisible: state.getIn(['interaction', 'sidebar']),
+        }
+    )
+}
+
 
 const mapDispatchToProps = dispatch => (
     {
