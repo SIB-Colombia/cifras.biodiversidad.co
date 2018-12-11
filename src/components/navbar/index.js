@@ -9,7 +9,7 @@ import { bindActionCreators } from 'redux'
 
 class Navbar extends Component {
     state = {
-        menuVisible: this.props.togglevisible,
+        menuVisible: this.props.toggleVisible,
         sidebarVisible: this.props.sidebarVisible
     }
     handleToggleMainMenu = e => {
@@ -25,7 +25,7 @@ class Navbar extends Component {
         return (
             <NavbarLayout>
                 {
-                    this.props.togglevisible &&
+                    this.props.toggleVisible &&
                     <ToggleSidebar handleClick={this.handleSidebar} />
                 }
                 {/* TODO: convertir logo en componente */}
@@ -47,7 +47,7 @@ class Navbar extends Component {
 const mapStateToProps = (state, props) => (
     {
         items: state.data.sections,
-        togglevisible: state.interaction.buttonSidebar,
+        toggleVisible: state.get('data').get('interaction').get('buttonSidebar'),
         sidebarVisible: state.interaction.sidebar
     }
 )

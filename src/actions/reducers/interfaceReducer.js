@@ -1,12 +1,14 @@
+import { fromJS } from 'immutable'
+
 import {
     BUTTON_SIDEBAR_VISIBILITY,
     SIDEBAR_VISIBILITY
 } from "../types/index"
 
-const initialState = {
+const initialState = fromJS({
     sidebar: true,
     buttonSidebar: false,
-}
+})
 
 const interfaceReducer = (state = initialState, action ) => {
     switch ( action.type ) {
