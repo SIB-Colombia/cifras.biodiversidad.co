@@ -24,7 +24,7 @@ class Home extends Component {
 
 const mapStateToProps = (state, props) => (
     {
-        slides: state.data.slides
+        slides: state.getIn(['data', 'slides'])
     }
 )
 

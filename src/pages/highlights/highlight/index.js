@@ -12,3 +12,4 @@ const Highlight = props => (
 )
 
 export default Highlight
+

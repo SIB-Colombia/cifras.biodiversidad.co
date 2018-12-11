@@ -6,23 +6,17 @@ import {
 } from "../types/index"
 
 const initialState = fromJS({
-    sidebar: true,
+    sidebar: false,
     buttonSidebar: false,
 })
 
 const interfaceReducer = (state = initialState, action ) => {
     switch ( action.type ) {
         case BUTTON_SIDEBAR_VISIBILITY: {
-            return {
-                ...state,
-                buttonSidebar: action.payload.toggleSidebarVisible,
-            }
+            return state.set('buttonSidebar', action.payload.toggleSidebarVisible)
         }
         case SIDEBAR_VISIBILITY: {
-            return {
-                ...state,
-                sidebar: action.payload.sidebarVisible
-            }
+            return state.set('sidebar', action.payload.sidebarVisible)
         }
         default:
             return state

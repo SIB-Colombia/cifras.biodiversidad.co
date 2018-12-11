@@ -27,19 +27,19 @@ class HomeSlider extends Component {
         };
         return (
             <SliderLayout>
-                {
-                    this.props.slides.length &&
-                    <Slider ref={this.setSliderRef}{ ...settings }>
-                        {
-                            this.props.slides.map( item => (
-                                <Slide
-                                    {...item}
-                                    key={item.id}
-                                />
-                            ))
-                        }
-                    </Slider>
-                }
+                <Slider ref={this.setSliderRef}{ ...settings }>
+                    {
+                        this.props.slides.map( item => (
+                            <Slide
+                                key={item.get('id')}
+                                number={item.get('number')}
+                                title={item.get('title')}
+                                subtitle={item.get('subtitle')}
+                                disclaimer={item.get('disclaimer')}
+                            />
+                        ))
+                    }
+                </Slider>
                 <SliderNav direction="prev" handleClick={this.prev}/>
                 <SliderNav direction="next" handleClick={this.next}/>
             </SliderLayout>

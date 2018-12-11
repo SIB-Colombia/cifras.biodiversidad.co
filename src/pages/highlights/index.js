@@ -16,8 +16,14 @@ class Highlights extends Component {
                 {
                     this.props.highlights.map( item => (
                         <Highlight
-                            {...item}
-                            key={item.id}
+                            key={item.get('id')}
+                            size={item.get('size')}
+                            color={item.get('color')}
+                            align={item.get('align')}
+                            number={item.get('number')}
+                            title={item.get('title')}
+                            text={item.get('text')}
+                            link={item.get('link')}
                         />
                     ))
                 }
@@ -28,7 +34,7 @@ class Highlights extends Component {
 
 const mapStateToProps = (state, props) => (
     {
-        highlights: state.data.highlights
+        highlights: state.getIn(['data', 'highlights'])
     }
 )
 

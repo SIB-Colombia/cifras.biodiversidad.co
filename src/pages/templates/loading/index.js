@@ -10,7 +10,7 @@ class LoadingTemplate extends Component {
     render () {
         return (
             <Fragment>
-                <LoadingTemplateLayout sidebarActive={this.props.sidebarVisible}>
+                <LoadingTemplateLayout>
                     <h1>Cargando datos</h1>
                     <Panel loading={true}>
 

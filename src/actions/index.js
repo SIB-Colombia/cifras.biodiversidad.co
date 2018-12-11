@@ -1,7 +1,8 @@
 import {
     BUTTON_SIDEBAR_VISIBILITY,
     SIDEBAR_VISIBILITY,
-    FILTER_GROUP, FETCH_GROUPS
+    FILTER_GROUP,
+    FETCH_GROUPS
 } from "./types"
 
 export const sidebarVisibility = visibility => (

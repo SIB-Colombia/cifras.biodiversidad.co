@@ -17,7 +17,7 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import logger from "redux-logger"
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
-
+import { Map as map } from 'immutable'
 const cache = new InMemoryCache({
     dataIdFromObject: object => object.key || null
 
@@ -33,7 +33,7 @@ const client = new ApolloClient({
 
 const store = createStore(
     reducer,
-    {},
+    map(),
     composeWithDevTools(
         applyMiddleware(
             //logger,

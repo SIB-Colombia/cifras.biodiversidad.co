@@ -16,21 +16,10 @@ const initialState = fromJS({
 const dataReducer = (state = initialState, action ) => {
     switch ( action.type ) {
         case FETCH_GROUPS: {
-            return {
-                ...state,
-                groups: {
-                    data: action.payload.groups
-                }
-            }
+            return state.setIn(['groups', 'data'], action.payload.groups)
         }
         case FILTER_GROUP: {
-            return {
-                ...state,
-                groups: {
-                    active: action.payload.activeGroup,
-                    ...state.data
-                }
-            }
+            return state.setIn(['groups', 'active'], action.payload.activeGroup)
         }
         default:
             return state

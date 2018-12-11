@@ -12,8 +12,8 @@ class HomeLinks extends Component {
                     {
                         this.props.links.map( item => (
 
-                            <div className="col-3" key={item.id}>
-                                <HomeLink {...item}/>
+                            <div className="col-3" key={item.get('id')}>
+                                <HomeLink {...item.toJS()}/>
                             </div>
 
                         ))
@@ -27,7 +27,7 @@ class HomeLinks extends Component {
 
 const mapStateToProps = ( state, props ) => (
     {
-        links: state.data.sections
+        links: state.getIn(['data', 'sections'])
     }
 )
 
