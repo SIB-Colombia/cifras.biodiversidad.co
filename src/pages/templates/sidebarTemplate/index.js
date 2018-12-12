@@ -8,26 +8,25 @@ import queryString from "query-string";
 import { bindActionCreators } from "redux";
 import * as actions from "../../../actions";
 import connect from "react-redux/es/connect/connect";
+import { Map as map } from 'immutable'
 
 
 class SidebarTemplate extends Component {
 
     componentDidMount () {
         const urlValue = queryString.parse(this.props.location.search)
-        //console.log(urlValue)
         //this.props.actions.filterGroup(urlValue)
-
         this.props.actions.fetchGroups(this.props.data)
-
         this.props.actions.sidebarVisibility(true)
         this.props.actions.buttonSidebarVisibility(true)
+        this.props.actions.filterGroup("")
     }
+
     render () {
 
         return (
 
             <Fragment>
-                {console.log(this.props.activeGroup)}
                 {
                     this.props.sidebarVisible &&
                     <Sidebar items={this.props.sidebarItems}/>
@@ -41,7 +40,7 @@ class SidebarTemplate extends Component {
                             type='radar'
                         />
                     </Panel>
-                    <TableComponent/>
+                    <TableComponent dataTable={this.props.dataActive}/>
                 </SidebarTemplateLayout>
             </Fragment>
         )
@@ -50,14 +49,17 @@ class SidebarTemplate extends Component {
 }
 
 const mapStateToProps = ( state ) => {
-    let activeIdToRender = state.getIn(['data', 'groups', 'data'])
-    const activeeDataToRender = state.getIn(['data', 'groups', 'active'])
+    let dataActive = {}
+    let activeIdToRender = state.getIn(['data', 'groups', 'active'])
+    const groupsData = state.getIn(['data', 'groups', 'data'])
+    dataActive = groupsData.filter(item => (
+        item.id === activeIdToRender.toString()
+    ))
 
-    console.log(activeIdToRender)
-    console.log(activeeDataToRender)
     return (
         {
             sidebarVisible: state.getIn(['interaction', 'sidebar']),
+            dataActive:  dataActive
         }
     )
 }

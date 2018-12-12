@@ -61,6 +61,7 @@ class TableComponent extends Component {
         }]
         return (
             <TableComponentLayout>
+                { console.log(this.props.dataTable[0].especies ? 1 : 0 )}
                 <ReactTable
                     data={data}
                     columns={columns}
