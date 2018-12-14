@@ -25,7 +25,7 @@ const cache = new InMemoryCache({
 
 
 const client = new ApolloClient({
-   uri: 'https://cors-anywhere.herokuapp.com/http://ec2-34-207-172-223.compute-1.amazonaws.com:8080/graphql',
+   uri: 'http://192.168.11.92:8001/graphql',
     cache
 //    uri: 'https://countries.trevorblades.com/'
 
