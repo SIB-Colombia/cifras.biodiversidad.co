@@ -8,14 +8,9 @@ import * as actions from "../../actions";
 import { bindActionCreators } from 'redux'
 
 class Navbar extends Component {
-    state = {
-        menuVisible: this.props.toggleVisible,
-        sidebarVisible: this.props.sidebarVisible
-    }
     handleToggleMainMenu = e => {
-        this.setState({
-            menuVisible: !this.state.menuVisible,
-        })
+        this.props.actions.menuVisibility(!this.props.menuVisible)
+
     }
     handleSidebar = e => {
         this.props.actions.sidebarVisibility(!this.props.sidebarVisible)
@@ -36,7 +31,7 @@ class Navbar extends Component {
                 </div>
                 <p onClick={this.handleToggleMainMenu} className="ToggleMainMenu">EXPLORAR</p>
                 {
-                    this.state.menuVisible &&
+                    this.props.menuVisible &&
                     <Menu items={this.props.items} handleClick={this.handleToggleMainMenu}/>
                 }
             </NavbarLayout>
@@ -48,7 +43,8 @@ const mapStateToProps = (state, props) => (
     {
         items: state.getIn(['data', 'sections']),
         toggleVisible: state.getIn(['interaction', 'buttonSidebar']),
-        sidebarVisible: state.getIn(['interaction', 'sidebar'])
+        sidebarVisible: state.getIn(['interaction', 'sidebar']),
+        menuVisible: state.getIn(['interaction', 'menu'])
     }
 )
 

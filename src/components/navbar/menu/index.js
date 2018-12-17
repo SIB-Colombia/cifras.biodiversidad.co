@@ -6,12 +6,10 @@ const Menu = props => (
     <div className="MainMenu">
         <ul>
             {
-                props.items.length &&
                 props.items.map( item => (
-
-                    <li className="MainMenu__item" key={item.id} onClick={props.handleClick}>
-                        <NavLink exact to={item.url} activeClassName="is-active">
-                            {item.title}
+                    <li className="MainMenu__item" key={item.get('id')} onClick={props.handleClick}>
+                        <NavLink exact to={item.get('url')} activeClassName="is-active">
+                            {item.get('title')}
                         </NavLink>
                     </li>
                 ))

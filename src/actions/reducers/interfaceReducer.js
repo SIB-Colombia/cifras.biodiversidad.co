@@ -2,12 +2,14 @@ import { fromJS } from 'immutable'
 
 import {
     BUTTON_SIDEBAR_VISIBILITY,
-    SIDEBAR_VISIBILITY
+    SIDEBAR_VISIBILITY,
+    MENU_VISIBILITY
 } from "../types/index"
 
 const initialState = fromJS({
     sidebar: false,
     buttonSidebar: false,
+    menu: false
 })
 
 const interfaceReducer = (state = initialState, action ) => {
@@ -17,6 +19,9 @@ const interfaceReducer = (state = initialState, action ) => {
         }
         case SIDEBAR_VISIBILITY: {
             return state.set('sidebar', action.payload.sidebarVisible)
+        }
+        case MENU_VISIBILITY: {
+            return state.set('menu', action.payload.menuVisible)
         }
         default:
             return state

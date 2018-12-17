@@ -1,6 +1,7 @@
 import {
     BUTTON_SIDEBAR_VISIBILITY,
     SIDEBAR_VISIBILITY,
+    MENU_VISIBILITY,
     FILTER_GROUP,
     FETCH_GROUPS
 } from "./types"
@@ -19,6 +20,15 @@ export const buttonSidebarVisibility = visibility => (
         type: BUTTON_SIDEBAR_VISIBILITY,
         payload: {
             toggleSidebarVisible: visibility
+        }
+    }
+)
+
+export const menuVisibility = visibility => (
+    {
+        type: MENU_VISIBILITY,
+        payload: {
+            menuVisible: visibility
         }
     }
 )
