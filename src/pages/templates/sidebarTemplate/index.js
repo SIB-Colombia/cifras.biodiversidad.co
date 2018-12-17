@@ -59,7 +59,7 @@ const mapStateToProps = ( state ) => {
     return (
         {
             sidebarVisible: state.getIn(['interaction', 'sidebar']),
-            dataActive:  dataActive
+            dataActive:  JSON.stringify(dataActive)
         }
     )
 }

@@ -4,6 +4,12 @@ import TableComponentLayout from "./layout";
 
 
 class TableComponent extends Component {
+    componentDidMount() {
+    }
+    componentDidUpdate() {
+        this.props.dataTable
+    }
+
     render() {
         const data = [{
             name: 'Registros',
@@ -61,7 +67,6 @@ class TableComponent extends Component {
         }]
         return (
             <TableComponentLayout>
-                { console.log(this.props.dataTable) }
                 <ReactTable
                     data={data}
                     columns={columns}
