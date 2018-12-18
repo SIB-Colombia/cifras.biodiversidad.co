@@ -34,7 +34,7 @@ export const menuVisibility = visibility => (
 )
 
 
-export const fetchGroups = groups => (
+export const fetchGroupsData = groups => (
     {
         type: FETCH_GROUPS,
         payload: {

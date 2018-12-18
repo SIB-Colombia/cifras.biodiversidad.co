@@ -7,7 +7,7 @@ class TableComponent extends Component {
     componentDidMount() {
     }
     componentDidUpdate() {
-        this.props.dataTable
+        //this.props.dataTable
     }
 
     render() {

@@ -60,33 +60,33 @@ export const GROUPS = gql`
             ...children
         }
         
-        allVistagrupobiologico {
-            id
-            registros
-            especies
-            especiesAmenaza
-            especiesVU
-            especiesEN
-            especiesCR
-            registrosAmenaza
-            registrosVU
-            registrosEN
-            especiesCR
-            especiesCites
-            especiesCitesI
-            especiesCitesII
-            especiesCitesIII
-            registrosCites
-            registrosCitesI
-            registrosCitesII
-            registrosCitesIII
-            especiesExoticas
-            especiesEndemicas
-            especiesMigratorias
-            registrosExoticas
-            registrosEndemicas
-            registrosMigratorias
-        }
+            allVistagrupobiologico {
+                id
+                registros
+                especies
+                especiesAmenaza
+                especiesVU
+                especiesEN
+                especiesCR
+                registrosAmenaza
+                registrosVU
+                registrosEN
+                especiesCR
+                especiesCites
+                especiesCitesI
+                especiesCitesII
+                especiesCitesIII
+                registrosCites
+                registrosCitesI
+                registrosCitesII
+                registrosCitesIII
+                especiesExoticas
+                especiesEndemicas
+                especiesMigratorias
+                registrosExoticas
+                registrosEndemicas
+                registrosMigratorias
+            }
     }
 
     ${GroupListFragment.children}

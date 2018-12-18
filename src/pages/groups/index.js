@@ -1,11 +1,22 @@
 import React, {Component, Fragment} from 'react'
-import SearchSidebarPage from "../templates/sidebarTemplate/index";
 import {GROUPS} from "../../actions/services/queries";
 import {Query} from "react-apollo";
 import LoadingTemplate from '../templates/loading';
+import {bindActionCreators} from "redux";
+import * as actions from "../../actions";
+import connect from "react-redux/es/connect/connect";
+import Sidebar from "../../components/sidebar";
+import queryString from "query-string";
+import DataTemplateLayout from "../templates/DataTemplate/layout";
 
 class Groups extends Component {
-
+    componentDidMount () {
+        const urlValue = queryString.parse(this.props.location.search)
+        //this.props.actions.filterGroup(urlValue)
+        this.props.actions.sidebarVisibility(true)
+        this.props.actions.buttonSidebarVisibility(true)
+        //this.props.actions.filterTopic("")
+    }
 
     render () {
         return (
@@ -21,19 +32,47 @@ class Groups extends Component {
                             data.algas,
                             data.liquenes,
                         ]
+                        this.saveDataToState(data)
                         return (
-                            <SearchSidebarPage
-                                {...this.props}
-                                data={data.allVistagrupobiologico}
-                                sidebarItems={sidebarItems}
-                                title="Búsqueda por grupos biológicos"
-                            />
+                            <Fragment>
+                                {
+                                    this.props.sidebarVisible &&
+                                    <Sidebar items={sidebarItems}/>
+                                }
+                                <DataTemplateLayout sidebarActive={this.props.sidebarVisible}>
+                                    <SidebarTemplate
+                                        {...this.props}
+                                        page={'groups'}
+                                        title="Búsqueda por grupos biológicos"
+                                    />
+                                </DataTemplateLayout>
+                            </Fragment>
                         )
                     }
                 }
             </Query>
         )
     }
+
+    saveDataToState(data) {
+        this.props.actions.fetchGroupsData(data)
+        this.props.actions.filterGroup('1150')
+    }
 }
 
-export default Groups
+const mapStateToProps = ( state ) => {
+    return (
+        {
+            sidebarVisible: state.getIn(['interaction', 'sidebar']),
+        }
+    )
+}
+
+const mapDispatchToProps = dispatch => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+
+    }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Groups)
