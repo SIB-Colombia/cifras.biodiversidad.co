@@ -7,7 +7,7 @@ import * as actions from "../../actions";
 import connect from "react-redux/es/connect/connect";
 import Sidebar from "../../components/sidebar";
 import queryString from "query-string";
-import DataTemplateLayout from "../templates/DataTemplate/layout";
+import DataTemplate from "../templates/DataTemplate";
 
 class Groups extends Component {
     componentDidMount () {
@@ -39,13 +39,11 @@ class Groups extends Component {
                                     this.props.sidebarVisible &&
                                     <Sidebar items={sidebarItems}/>
                                 }
-                                <DataTemplateLayout sidebarActive={this.props.sidebarVisible}>
-                                    <SidebarTemplate
-                                        {...this.props}
-                                        page={'groups'}
-                                        title="Búsqueda por grupos biológicos"
-                                    />
-                                </DataTemplateLayout>
+                                <DataTemplate
+                                    sidebar={this.props.sidebarVisible}
+                                    page={'groups'}
+                                    title="Búsqueda por grupos biológicos"
+                                />
                             </Fragment>
                         )
                     }
