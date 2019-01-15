@@ -1,8 +1,10 @@
 @import "../_utilities/variables";
 @import "../_utilities/grid";
 @import "../elements/card";
+@import "../_utilities/typo";
 
 .HighlightsLayout {
+  padding-bottom: 4em;
   .row{
     flex-wrap: wrap;
   }
