@@ -6,6 +6,9 @@ import { connect } from 'react-redux'
 import {sidebarVisibility} from "../../actions";
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
+import { Query } from 'react-apollo';
+import {SANTANDER} from "../../actions/services/queries";
+import LoadingTemplate from "../templates/loading";
 
 class Home extends Component {
     componentDidMount () {
@@ -14,10 +17,20 @@ class Home extends Component {
     }
     render () {
         return (
-            <HomeLayout>
-                <HomeSlider slides={this.props.slides}/>
-                <HomeLinks/>
-            </HomeLayout>
+            <Query query={SANTANDER}>
+                {
+                    ({ loading, error, data }) => {
+                        if (loading) return <LoadingTemplate/>
+                        if (error) console.log(error)
+                        return (
+                            <HomeLayout>
+                                <HomeSlider slides={this.props.slides}/>
+                                <HomeLinks/>
+                            </HomeLayout>
+                        )
+                    }
+                }
+            </Query>
         )
     }
 }

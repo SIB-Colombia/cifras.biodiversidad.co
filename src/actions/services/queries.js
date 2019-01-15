@@ -92,9 +92,87 @@ export const GROUPS = gql`
     ${GroupListFragment.children}
 `
 
+export const TOWNS_LIST = gql`
+    query towns {
+      vistaGeoByGeografiaPadre(geografiaPadreId: 29) {
+        id
+        registros
+        especies
+        especiesAmenaza
+        especiesVU
+        especiesEN
+        especiesCR
+        registrosAmenaza
+        registrosVU
+        registrosEN
+        especiesCR
+        especiesCites
+        especiesCitesI
+        especiesCitesII
+        especiesCitesIII
+        registrosCites
+        registrosCitesI
+        registrosCitesII
+        registrosCitesIII
+        especiesExoticas
+        especiesEndemicas
+        especiesMigratorias
+        registrosExoticas
+        registrosEndemicas
+        registrosMigratorias
+        geografia {
+          nombre
+        }
+      }
+    }
+`
+export const COMPANIES_LIST = gql`
+    query entidades {
+      vistaEntidadPublicadoraByGeografia(geografiaId: 29) {
+        id
+        registros
+        especies
+        entidadPublicadoraGeografia {
+          entidadPublicadora {
+            id
+            nombre
+          }
+        }
+      }
+    }
+`
 
-/*
-especiesEstimadasPais
-registrosEvidenciaPais
-especiesEvidenciaPais
-*/
+export const SANTANDER = gql`
+    query cifrasSatander {
+      vistaGeoByGeografia(geografiaId: 29) {
+        id
+        registros
+        especies
+        especiesAmenaza
+        especiesVU
+        especiesEN
+        especiesCR
+        registrosAmenaza
+        registrosVU
+        registrosEN
+        especiesCR
+        especiesCites
+        especiesCitesI
+        especiesCitesII
+        especiesCitesIII
+        registrosCites
+        registrosCitesI
+        registrosCitesII
+        registrosCitesIII
+        especiesExoticas
+        especiesEndemicas
+        especiesMigratorias
+        registrosExoticas
+        registrosEndemicas
+        registrosMigratorias
+        geografia {
+          nombre
+        }
+      }
+    }
+`

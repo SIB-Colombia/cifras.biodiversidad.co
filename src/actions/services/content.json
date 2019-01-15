@@ -91,6 +91,77 @@
       "link": "/",
       "color": "white",
       "align": "left"
+    },
+    {
+      "id": "5",
+      "number": "9.563",
+      "title": "Especies",
+      "text": "5to lugar a nivel nacional",
+      "size": "6",
+      "link": "/",
+      "color": "white",
+      "align": "left"
+    },
+    {
+      "id": "6",
+      "number": "9.563",
+      "title": "Especies",
+      "text": "5to lugar a nivel nacional",
+      "size": "6",
+      "link": "/",
+      "color": "teal",
+      "align": "left"
+    },
+    {
+      "id": "7",
+      "number": "9.563",
+      "title": "Especies",
+      "text": "5to lugar a nivel nacional",
+      "size": "8",
+      "link": "/",
+      "color": "white",
+      "align": "left"
+    },
+    {
+      "id": "8",
+      "number": "9.563",
+      "title": "Especies",
+      "text": "5to lugar a nivel nacional",
+      "size": "4",
+      "link": "/",
+      "color": "orange",
+      "align": "left"
+    },
+    {
+      "id": "9",
+      "number": "9.563",
+      "title": "Especies",
+      "text": "5to lugar a nivel nacional",
+      "size": "4",
+      "link": "/",
+      "color": "orange",
+      "align": "left"
+    },
+    {
+      "id": "10",
+      "number": "9.563",
+      "title": "Especies",
+      "text": "5to lugar a nivel nacional",
+      "size": "8",
+      "link": "/",
+      "color": "white",
+      "align": "left"
+    },
+    {
+      "id": "11",
+      "number": "9.563",
+      "title": "Especies",
+      "text": "5to lugar a nivel nacional",
+      "size": "12",
+      "link": "/",
+      "color": "white",
+      "align": "left"
     }
+
   ]
 }

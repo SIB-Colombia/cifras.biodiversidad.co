@@ -7,7 +7,7 @@ class Sidebar extends Component {
 
         return (
                 <SidebarLayout>
-                    <h3>Sidebar</h3>
+                    <h4>Sidebar</h4>
                     {
                         this.props.items.map(item => (
                             <Fragment key={item.id}>

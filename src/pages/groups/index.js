@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react'
-import {GROUPS} from "../../actions/services/queries";
+import {GROUPS, GROUPS_LIST} from "../../actions/services/queries";
 import {Query} from "react-apollo";
 import LoadingTemplate from '../templates/loading';
 import {bindActionCreators} from "redux";
@@ -43,6 +43,7 @@ class Groups extends Component {
                                     sidebar={this.props.sidebarVisible}
                                     page={'groups'}
                                     title="Búsqueda por grupos biológicos"
+                                    dataVisualization={true}
                                 />
                             </Fragment>
                         )
@@ -54,7 +55,7 @@ class Groups extends Component {
 
     saveDataToState(data) {
         this.props.actions.fetchGroupsData(data)
-        this.props.actions.filterGroup('1150')
+        // this.props.actions.filterGroup('29')
     }
 }
 

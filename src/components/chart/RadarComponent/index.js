@@ -28,7 +28,12 @@ const data = {
 };
 
 class RadarComponent extends Component {
+    componentDidUpdate () {
+        console.log('props radar')
+        console.log(this.props.active[0].registros)
+    }
     render() {
+
         return (
             <div>
                 <Radar data={data} />

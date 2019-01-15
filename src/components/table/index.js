@@ -8,6 +8,8 @@ class TableComponent extends Component {
     }
     componentDidUpdate() {
         //this.props.dataTable
+        console.log('props tabla')
+        console.log(this.props.active[0].especies)
     }
 
     render() {
