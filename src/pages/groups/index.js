@@ -19,6 +19,7 @@ class Groups extends Component {
     }
 
     render () {
+        {console.log(this.props)}
         return (
             <Query query={GROUPS}>
                 {
@@ -63,6 +64,7 @@ const mapStateToProps = ( state ) => {
     return (
         {
             sidebarVisible: state.getIn(['interaction', 'sidebar']),
+            departmentData: state.getIn(['data', 'department', 'data', 'vistaGeoByGeografia'])[0]
         }
     )
 }

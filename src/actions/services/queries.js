@@ -142,7 +142,7 @@ export const COMPANIES_LIST = gql`
     }
 `
 
-export const SANTANDER = gql`
+export const DEPARTMENT = gql`
     query cifrasSatander {
       vistaGeoByGeografia(geografiaId: 29) {
         id

@@ -3,7 +3,8 @@ import {
     SIDEBAR_VISIBILITY,
     MENU_VISIBILITY,
     FILTER_GROUP,
-    FETCH_GROUPS
+    FETCH_GROUPS,
+    FETCH_DEPARTMENT_DATA
 } from "./types"
 
 export const sidebarVisibility = visibility => (
@@ -39,6 +40,16 @@ export const fetchGroupsData = groups => (
         type: FETCH_GROUPS,
         payload: {
             groups: groups
+        }
+    }
+
+)
+
+export const fetchDepartmentData = data => (
+    {
+        type: FETCH_DEPARTMENT_DATA,
+        payload: {
+            departmentData: data
         }
     }
 
