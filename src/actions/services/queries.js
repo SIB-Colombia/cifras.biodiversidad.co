@@ -142,9 +142,74 @@ export const COMPANIES_LIST = gql`
     }
 `
 
-export const DEPARTMENT = gql`
+export const COUNTRY_DEPARTMENT_VIEW = gql`
+    query{
+      santander: vistaGeoByGeografia(geografiaId: 29) {
+        id
+        registros
+        especies
+        especiesAmenaza
+        especiesVU
+        especiesEN
+        especiesCR
+        registrosAmenaza
+        registrosVU
+        registrosEN
+        especiesCR
+        especiesCites
+        especiesCitesI
+        especiesCitesII
+        especiesCitesIII
+        registrosCites
+        registrosCitesI
+        registrosCitesII
+        registrosCitesIII
+        especiesExoticas
+        especiesEndemicas
+        especiesMigratorias
+        registrosExoticas
+        registrosEndemicas
+        registrosMigratorias
+        geografia {
+          nombre
+        }
+      }
+      colombia: vistaGeoByGeografia(geografiaId: 1) {
+        id
+        registros
+        especies
+        especiesAmenaza
+        especiesVU
+        especiesEN
+        especiesCR
+        registrosAmenaza
+        registrosVU
+        registrosEN
+        especiesCR
+        especiesCites
+        especiesCitesI
+        especiesCitesII
+        especiesCitesIII
+        registrosCites
+        registrosCitesI
+        registrosCitesII
+        registrosCitesIII
+        especiesExoticas
+        especiesEndemicas
+        especiesMigratorias
+        registrosExoticas
+        registrosEndemicas
+        registrosMigratorias
+        geografia {
+          nombre
+        }
+      }
+    }
+`
+
+export const COLOMBIA = gql`
     query cifrasSatander {
-      vistaGeoByGeografia(geografiaId: 29) {
+      vistaGeoByGeografia(geografiaId: 1) {
         id
         registros
         especies

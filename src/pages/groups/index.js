@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react'
-import {GROUPS, GROUPS_LIST} from "../../actions/services/queries";
+import {GROUPS, COUNTRY_DEPARTMENT_VIEW} from "../../actions/services/queries";
 import {Query} from "react-apollo";
 import LoadingTemplate from '../templates/loading';
 import {bindActionCreators} from "redux";
@@ -19,34 +19,44 @@ class Groups extends Component {
     }
 
     render () {
-        {console.log(this.props)}
         return (
-            <Query query={GROUPS}>
+            <Query query={COUNTRY_DEPARTMENT_VIEW}>
                 {
                     ({ loading, error, data }) => {
                         if(loading) return <LoadingTemplate />
                         if(error) console.log(error)
-                        const sidebarItems = [
-                            data.animales,
-                            data.plantas,
-                            data.hongos,
-                            data.algas,
-                            data.liquenes,
-                        ]
-                        this.saveDataToState(data)
+                        this.saveCountryDataToState(data)
                         return (
-                            <Fragment>
+                            <Query query={GROUPS}>
                                 {
-                                    this.props.sidebarVisible &&
-                                    <Sidebar items={sidebarItems}/>
+                                    ({ loading, error, data }) => {
+                                        if(loading) return <LoadingTemplate />
+                                        if(error) console.log(error)
+                                        const sidebarItems = [
+                                            data.animales,
+                                            data.plantas,
+                                            data.hongos,
+                                            data.algas,
+                                            data.liquenes,
+                                        ]
+                                        this.saveDataToState(data)
+                                        return (
+                                            <Fragment>
+                                                {
+                                                    this.props.sidebarVisible &&
+                                                    <Sidebar items={sidebarItems}/>
+                                                }
+                                                <DataTemplate
+                                                    sidebar={this.props.sidebarVisible}
+                                                    page={'groups'}
+                                                    title="Búsqueda por grupos biológicos"
+                                                    dataVisualization={true}
+                                                />
+                                            </Fragment>
+                                        )
+                                    }
                                 }
-                                <DataTemplate
-                                    sidebar={this.props.sidebarVisible}
-                                    page={'groups'}
-                                    title="Búsqueda por grupos biológicos"
-                                    dataVisualization={true}
-                                />
-                            </Fragment>
+                            </Query>
                         )
                     }
                 }
@@ -54,7 +64,11 @@ class Groups extends Component {
         )
     }
 
+    saveCountryDataToState(data) {
+        console.log(data)
+    }
     saveDataToState(data) {
+        console.log(data)
         this.props.actions.fetchGroupsData(data)
         // this.props.actions.filterGroup('29')
     }
@@ -64,7 +78,7 @@ const mapStateToProps = ( state ) => {
     return (
         {
             sidebarVisible: state.getIn(['interaction', 'sidebar']),
-            departmentData: state.getIn(['data', 'department', 'data', 'vistaGeoByGeografia'])[0]
+            //departmentData: state.getIn(['data', 'department', 'data', 'vistaGeoByGeografia'])[0]
         }
     )
 }
