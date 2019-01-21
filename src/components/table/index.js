@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
 import ReactTable from "react-table";
 import TableComponentLayout from "./layout";
+import connect from "react-redux/es/connect/connect";
 
 
 class TableComponent extends Component {
-    componentDidMount() {
+    state = {
+        stateData: 0
     }
     componentDidUpdate() {
-        //this.props.dataTable
-        //console.log(this.props.active[0].especies)
+        this.setState({
+            stateData: 100,
+        })
+
     }
 
     render() {
         const data = [{
             name: 'Registros',
-            RRBBSant: 182489,
+            RRBBSant: this.state.stateData,
             RRBBCol: 5231819,
             ESPSant: 9563,
             ESPCol: 62829,
@@ -50,6 +54,7 @@ class TableComponent extends Component {
             ESPCol: 5467,
         },]
 
+
         const columns = [{
             Header: 'Indicador',
             accessor: 'name'
@@ -78,7 +83,15 @@ class TableComponent extends Component {
     }
 }
 
-export default TableComponent
+const mapStateToProps = state => (
+    {
+        sidebarVisible: state.getIn(['interaction', 'sidebar', 'active']),
+        activeData: state.getIn(['data', 'groups', 'active', 'active'])
+
+    }
+)
+
+export default connect(mapStateToProps)(TableComponent)
 
 /*
 

@@ -33,7 +33,7 @@ class FilterList extends Component {
                     ref={this.setRef}
                     key={this.props.id}
                 >
-                    <Link to={`?grupo=${this.props.nombre}`}>{this.props.nombre}</Link>
+                    <Link to={`?name=${this.props.nombre}&id=${this.props.id}`}>{this.props.nombre}</Link>
 
 
                     {

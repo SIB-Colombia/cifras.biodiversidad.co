@@ -3,19 +3,20 @@ import { fromJS } from 'immutable'
 import {
     FETCH_GROUPS,
     FILTER_GROUP,
-    FETCH_DEPARTMENT_DATA
-} from "../types/index"
+    SIDEBAR_ITEMS,
+    ACTIVE_GROUP_DATA
+} from "../types"
 
 const initialState = fromJS({
     ...content,
-    department: {
-        data: {},
-        active: ""
-    },
     groups: {
         data: {},
-        active: ""
-    }
+        active: {
+            id: "",
+            data: {}
+        }
+    },
+
 })
 
 const dataReducer = (state = initialState, action ) => {
@@ -23,11 +24,14 @@ const dataReducer = (state = initialState, action ) => {
         case FETCH_GROUPS: {
             return state.setIn(['groups', 'data'], action.payload.groups)
         }
-        case FETCH_DEPARTMENT_DATA: {
-            return state.setIn(['department', 'data'], action.payload.departmentData)
-        }
         case FILTER_GROUP: {
-            return state.setIn(['groups', 'active'], action.payload.activeGroup)
+            return state.setIn(['groups', 'active', 'id'], action.payload.activeGroup)
+        }
+        case ACTIVE_GROUP_DATA: {
+            return state.setIn(['groups', 'active', 'data'], action.payload.activeGroupData)
+        }
+        case SIDEBAR_ITEMS: {
+            return state.setIn(['sidebar', 'items'], action.payload.itemsList)
         }
         default:
             return state

@@ -4,9 +4,20 @@ import TableComponent from "../../../components/table/index";
 import Panel from "../../../components/panel/index";
 import DataTemplateLayout from "./layout";
 import connect from "react-redux/es/connect/connect";
+import {bindActionCreators} from "redux";
+import * as actions from "../../../actions";
 
 class DataTemplate extends Component {
+    componentDidMount() {
+        this.saveDataToState(this.props.data)
+    }
+
+    componentDidUpdate () {
+        this.props.actions.activeGroupData(this.props.dataStateActive)
+    }
+
     render () {
+        console.log(this.props)
         return (
             <DataTemplateLayout sidebarActive={this.props.sidebar}>
                 <h1>{this.props.title}</h1>
@@ -25,20 +36,39 @@ class DataTemplate extends Component {
         )
     }
 
+    saveDataToState(data) {
+        let groupsView = {
+            country: data.vistaGeneralColombia,
+            state: data.vistaGeneralDepartamento,
+            countryGroups: data.vistaGruposColombia,
+            stateGroups: data.vistaGruposDepartamento
+        }
+        let groupsList = [
+            data.animales,
+            data.plantas,
+            data.hongos,
+            data.algas,
+            data.liquenes,
+        ]
+
+        this.props.actions.fetchGroupsData(groupsView)
+        this.props.actions.sidebarItems(groupsList)
+    }
+
 }
 
 const mapStateToProps = ( state, props ) => {
-    let dataActive = {}
+    let dataStateActive = {}
+    let activeIdToRender = state.getIn(['data', 'groups', 'active', 'id'])
     switch ( props.page ) {
         case 'groups': {
-            let activeIdToRender = state.getIn(['data', 'groups', 'active'])
             const groupsData = state.getIn(['data', 'groups', 'data'])
-            dataActive = groupsData.allVistagrupobiologico.filter(item => (
-                item.id === activeIdToRender.toString()
+            dataStateActive = groupsData.stateGroups.filter(item => (
+                item.grupoBiologicoGeografia.grupoBiologico.id === activeIdToRender
             ))
             return {
                 data: state.getIn(['data', 'groups', 'data']),
-                active: dataActive
+                dataStateActive
             }
         }
         case 'geo': {
@@ -52,9 +82,12 @@ const mapStateToProps = ( state, props ) => {
         default:
             return state
     }
-
-
-
 }
 
-export default connect(mapStateToProps)(DataTemplate)
+const mapDispatchToProps = dispatch => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+    }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(DataTemplate)
