@@ -8,7 +8,6 @@ import * as actions from "../../actions";
 class Geo extends Component {
     componentDidMount () {
         this.props.actions.sidebarVisibility(true)
-
         this.props.actions.buttonSidebarVisibility(true)
     }
     render () {

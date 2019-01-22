@@ -64,11 +64,12 @@ export const filterGroup = activeGroup => (
     }
 )
 
-export const activeGroupData = data => (
-    {
+export const activeGroupData = data => {
+    return ({
         type: ACTIVE_GROUP_DATA,
         payload: {
             activeGroupData: data
         }
-    }
-)
+    })
+}
+

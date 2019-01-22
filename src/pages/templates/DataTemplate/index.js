@@ -8,16 +8,11 @@ import {bindActionCreators} from "redux";
 import * as actions from "../../../actions";
 
 class DataTemplate extends Component {
-    componentDidMount() {
-        this.saveDataToState(this.props.data)
-    }
-
     componentDidUpdate () {
-        this.props.actions.activeGroupData(this.props.dataStateActive)
+        console.log(this.props)
     }
 
     render () {
-        console.log(this.props)
         return (
             <DataTemplateLayout sidebarActive={this.props.sidebar}>
                 <h1>{this.props.title}</h1>
@@ -31,44 +26,21 @@ class DataTemplate extends Component {
                         />
                     </Panel>
                 }
-                <TableComponent {...this.props}/>
+                <TableComponent/>
             </DataTemplateLayout>
         )
     }
 
-    saveDataToState(data) {
-        let groupsView = {
-            country: data.vistaGeneralColombia,
-            state: data.vistaGeneralDepartamento,
-            countryGroups: data.vistaGruposColombia,
-            stateGroups: data.vistaGruposDepartamento
-        }
-        let groupsList = [
-            data.animales,
-            data.plantas,
-            data.hongos,
-            data.algas,
-            data.liquenes,
-        ]
 
-        this.props.actions.fetchGroupsData(groupsView)
-        this.props.actions.sidebarItems(groupsList)
-    }
 
 }
 
 const mapStateToProps = ( state, props ) => {
-    let dataStateActive = {}
-    let activeIdToRender = state.getIn(['data', 'groups', 'active', 'id'])
     switch ( props.page ) {
         case 'groups': {
-            const groupsData = state.getIn(['data', 'groups', 'data'])
-            dataStateActive = groupsData.stateGroups.filter(item => (
-                item.grupoBiologicoGeografia.grupoBiologico.id === activeIdToRender
-            ))
             return {
                 data: state.getIn(['data', 'groups', 'data']),
-                dataStateActive
+                activeIdToRender: state.getIn(['data', 'groups', 'active', 'id']),
             }
         }
         case 'geo': {

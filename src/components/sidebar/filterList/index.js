@@ -18,7 +18,6 @@ class FilterList extends Component {
 
     handleClick = e => {
         e.stopPropagation();
-        this.props.actions.filterGroup(this.props.id)
         this.setState({
             showChildren: !this.state.showChildren,
         })
@@ -54,10 +53,6 @@ class FilterList extends Component {
 }
 
 
-const mapDispatchToProps = dispatch => (
-    {
-        actions: bindActionCreators(actions, dispatch)
-    }
-)
 
-export default connect(null, mapDispatchToProps)(FilterList)
+
+export default FilterList

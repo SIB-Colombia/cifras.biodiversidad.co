@@ -5,20 +5,15 @@ import connect from "react-redux/es/connect/connect";
 
 
 class TableComponent extends Component {
-    state = {
-        stateData: 0
-    }
-    componentDidUpdate() {
-        this.setState({
-            stateData: 100,
-        })
 
+    componentDidUpdate() {
+        console.log(this.props)
     }
 
     render() {
         const data = [{
             name: 'Registros',
-            RRBBSant: this.state.stateData,
+            RRBBSant: 1000,
             RRBBCol: 5231819,
             ESPSant: 9563,
             ESPCol: 62829,
@@ -85,9 +80,7 @@ class TableComponent extends Component {
 
 const mapStateToProps = state => (
     {
-        sidebarVisible: state.getIn(['interaction', 'sidebar', 'active']),
         activeData: state.getIn(['data', 'groups', 'active', 'active'])
-
     }
 )
 

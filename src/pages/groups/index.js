@@ -10,12 +10,15 @@ import queryString from "query-string";
 import DataTemplate from "../templates/DataTemplate";
 
 class Groups extends Component {
+
     componentDidMount () {
-        const urlValue = queryString.parse(this.props.location.search)
-       // console.log(urlValue)
-        this.props.actions.filterGroup(urlValue)
         this.props.actions.sidebarVisibility(true)
         this.props.actions.buttonSidebarVisibility(true)
+    }
+
+    componentDidUpdate () {
+        const urlValue = queryString.parse(this.props.location.search)
+        this.setActiveGroup(urlValue)
     }
 
     render () {
@@ -47,6 +50,10 @@ class Groups extends Component {
         )
     }
 
+    setActiveGroup(value) {
+        this.props.actions.filterGroup(value)
+
+    }
     saveDataToState(data) {
         let groupsView = {
             country: data.vistaGeneralColombia,
@@ -61,7 +68,6 @@ class Groups extends Component {
             data.algas,
             data.liquenes,
         ]
-
         this.props.actions.fetchGroupsData(groupsView)
         this.props.actions.sidebarItems(groupsList)
     }

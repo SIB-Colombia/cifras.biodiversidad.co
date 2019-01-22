@@ -42,8 +42,8 @@ class Navbar extends Component {
 const mapStateToProps = (state, props) => (
     {
         items: state.getIn(['data', 'sections']),
-        toggleVisible: state.getIn(['interaction', 'buttonSidebar']),
-        sidebarVisible: state.getIn(['interaction', 'sidebar']),
+        toggleVisible: state.getIn(['interaction', 'sidebar', 'button']),
+        sidebarVisible: state.getIn(['interaction', 'sidebar', 'active']),
         menuVisible: state.getIn(['interaction', 'menu'])
     }
 )
