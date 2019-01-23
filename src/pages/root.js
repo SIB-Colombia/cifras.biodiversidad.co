@@ -25,9 +25,9 @@ const cache = new InMemoryCache({
 
 
 const client = new ApolloClient({
-   uri: 'https://c4c1ceab.ngrok.io/graphql',
+    uri: 'http://192.168.11.92:8001/graphql',
+    //uri: 'https://c4c1ceab.ngrok.io/graphql',
     cache
-//    uri: 'https://countries.trevorblades.com/'
 
 })
 
