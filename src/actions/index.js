@@ -3,13 +3,17 @@ import {
     SIDEBAR_VISIBILITY,
     MENU_VISIBILITY,
     FILTER_GROUP,
-    FETCH_GROUPS,
     SIDEBAR_ITEMS,
-    ACTIVE_GROUP_DATA,
+    GENERAL_DATA_COUNTRY,
+    GENERAL_DATA_DEPARTMENT,
     ACTIVE_GROUP_DATA_DEPARTMENT,
     ACTIVE_GROUP_DATA_COUNTRY,
     FETCH_GROUP_DATA_DEPARTMENT,
-    FETCH_GROUP_DATA_COUNTRY
+    FETCH_GROUP_DATA_COUNTRY,
+    FILTER_TOWN,
+    FETCH_TOWNS_DATA,
+    ACTIVE_TOWN_DATA,
+    ACTIVE_DEPARTMENT_DATA
 } from "./types"
 
 export const sidebarVisibility = visibility => (
@@ -39,16 +43,6 @@ export const menuVisibility = visibility => (
     }
 )
 
-
-export const fetchGroupsData = groups => (
-    {
-        type: FETCH_GROUPS,
-        payload: {
-            groups: groups
-        }
-    }
-
-)
 export const sidebarItems = items => (
     {
         type: SIDEBAR_ITEMS,
@@ -68,14 +62,24 @@ export const filterGroup = activeGroup => (
     }
 )
 
-export const activeGroupData = data => {
+export const fetchGeneralDataCountry = data => {
     return ({
-        type: ACTIVE_GROUP_DATA,
+        type: GENERAL_DATA_COUNTRY,
         payload: {
-            activeGroupData: data
+            fetchGeneralDataCountry: data
         }
     })
 }
+
+export const fetchGeneralDataDepartment = data => {
+    return ({
+        type: GENERAL_DATA_DEPARTMENT,
+        payload: {
+            fetchGeneralDataDepartment: data
+        }
+    })
+}
+
 
 export const fetchGroupsDataDepartment = data => {
     return ({
@@ -113,3 +117,38 @@ export const activeGroupsDataCountry = data => {
     })
 }
 
+export const filterTown = townId => {
+    return ({
+        type: FILTER_TOWN,
+        payload: {
+            filterTown: townId
+        }
+    })
+}
+
+export const fetchTownsData= data => {
+    return ({
+        type: FETCH_TOWNS_DATA,
+        payload: {
+            fetchTownsData: data
+        }
+    })
+}
+
+export const activeTownData= data => {
+    return ({
+        type: ACTIVE_TOWN_DATA,
+        payload: {
+            activeTownData: data
+        }
+    })
+}
+
+export const activeDepartmentData= data => {
+    return ({
+        type: ACTIVE_DEPARTMENT_DATA,
+        payload: {
+            activeDepartmentData: data
+        }
+    })
+}
