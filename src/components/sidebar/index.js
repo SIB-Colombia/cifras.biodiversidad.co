@@ -15,9 +15,9 @@ class Sidebar extends Component {
                     this.props.items.map(item => (
                         <Fragment key={item.id}>
                             <FilterList
-                                name={item.nombre}
-                                children={true}
-                                {...item}
+                            name={item.nombre}
+                            children={!!item.grupoBiologicoHijos}
+                            {...item}
                             />
                         </Fragment>
                     ))
