@@ -5,7 +5,11 @@ import {
     FILTER_GROUP,
     FETCH_GROUPS,
     SIDEBAR_ITEMS,
-    ACTIVE_GROUP_DATA
+    ACTIVE_GROUP_DATA,
+    ACTIVE_GROUP_DATA_DEPARTMENT,
+    ACTIVE_GROUP_DATA_COUNTRY,
+    FETCH_GROUP_DATA_DEPARTMENT,
+    FETCH_GROUP_DATA_COUNTRY
 } from "./types"
 
 export const sidebarVisibility = visibility => (
@@ -69,6 +73,42 @@ export const activeGroupData = data => {
         type: ACTIVE_GROUP_DATA,
         payload: {
             activeGroupData: data
+        }
+    })
+}
+
+export const fetchGroupsDataDepartment = data => {
+    return ({
+        type: FETCH_GROUP_DATA_DEPARTMENT,
+        payload: {
+            fetchGroupsDataDepartment: data
+        }
+    })
+}
+
+export const fetchGroupsDataCountry = data => {
+    return ({
+        type: FETCH_GROUP_DATA_COUNTRY,
+        payload: {
+            fetchGroupsDataCountry: data
+        }
+    })
+}
+
+export const activeGroupsDataDepartment = data => {
+    return ({
+        type: ACTIVE_GROUP_DATA_DEPARTMENT,
+        payload: {
+            activeGroupsDataDepartment: data
+        }
+    })
+}
+
+export const activeGroupsDataCountry = data => {
+    return ({
+        type: ACTIVE_GROUP_DATA_COUNTRY,
+        payload: {
+            activeGroupsDataCountry: data
         }
     })
 }
