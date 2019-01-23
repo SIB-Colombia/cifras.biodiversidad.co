@@ -10,10 +10,11 @@ import queryString from "query-string";
 import DataTemplate from "../templates/DataTemplate";
 
 class Groups extends Component {
-
     componentDidMount () {
+        const urlValue = queryString.parse(this.props.location.search)
         this.props.actions.sidebarVisibility(true)
         this.props.actions.buttonSidebarVisibility(true)
+        this.setActiveGroup(urlValue)
     }
 
     componentDidUpdate () {
@@ -62,13 +63,16 @@ class Groups extends Component {
             stateGroups: data.vistaGruposDepartamento
         }
         let groupsList = [
+            //{id: '0', nombre: 'Todos', grupoBiologicoHijos: []},
             data.animales,
             data.plantas,
             data.hongos,
             data.algas,
             data.liquenes,
         ]
-        this.props.actions.fetchGroupsData(groupsView)
+
+        this.props.actions.fetchGroupsDataDepartment(data.vistaGruposDepartamento)
+        this.props.actions.fetchGroupsDataCountry(data.vistaGruposColombia)
         this.props.actions.sidebarItems(groupsList)
     }
 }
