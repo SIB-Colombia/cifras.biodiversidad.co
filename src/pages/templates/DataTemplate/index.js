@@ -8,8 +8,30 @@ import {bindActionCreators} from "redux";
 import * as actions from "../../../actions";
 
 class DataTemplate extends Component {
+    componentDidMount() {
+        let dataCountryActive = this.props.dataCountry.filter(item => (
+            item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
+            //item.id === this.props.activeIdToRender.id
+        ))
+        let dataDepartmentActive = this.props.dataDepartment.filter(item => (
+            item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
+            //item.id === this.props.activeIdToRender.id
+        ))
+        this.props.actions.activeGroupsDataCountry(dataCountryActive)
+        this.props.actions.activeGroupsDataDepartment(dataDepartmentActive)
+    }
     componentDidUpdate () {
-        console.log(this.props)
+        let dataCountryActive = this.props.dataCountry.filter(item => (
+            item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
+            //item.id === this.props.activeIdToRender.id
+        ))
+        let dataDepartmentActive = this.props.dataDepartment.filter(item => (
+            item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
+            //item.id === this.props.activeIdToRender.id
+        ))
+        this.props.actions.activeGroupsDataCountry(dataCountryActive)
+        this.props.actions.activeGroupsDataDepartment(dataDepartmentActive)
+
     }
 
     render () {
@@ -39,7 +61,8 @@ const mapStateToProps = ( state, props ) => {
     switch ( props.page ) {
         case 'groups': {
             return {
-                data: state.getIn(['data', 'groups', 'data']),
+                dataCountry: state.getIn(['data', 'groups', 'data', 'country']),
+                dataDepartment: state.getIn(['data', 'groups', 'data', 'department']),
                 activeIdToRender: state.getIn(['data', 'groups', 'active', 'id']),
             }
         }
