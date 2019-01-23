@@ -20,6 +20,7 @@ const Fragments = {
     }`,
     numbers: gql`
     fragment numeros on VistaGrupoBiologicoType {
+        id
         registros
         especies
         especiesAmenaza
@@ -106,7 +107,16 @@ export const GROUPS = gql`
                 id
             }
         }
-        vistaGruposColombia: vistaGrupoBiologicoByGeografia(geografiaId: 1) {
+        vistaGruposColombia: allVistagrupobiologico {
+            ...numeros
+            grupoBiologicoGeografia{
+              grupoBiologico{
+                id
+                nombre
+              }
+            }
+        }
+        vistaGruposColombias: vistaGrupoBiologicoByGeografia(geografiaId: 1) {
             ...numeros
             grupoBiologicoGeografia {
                 grupoBiologico {
@@ -115,7 +125,17 @@ export const GROUPS = gql`
                 }
             }
         }
-        vistaGruposDepartamento: vistaGrupoBiologicoByGeografia(geografiaId: 29) {
+        vistaGruposDepartamento: allVistagrupobiologico {
+            ...numeros
+            grupoBiologicoGeografia{
+              grupoBiologico{
+                id
+                nombre
+              }
+            }
+        }
+        
+        vistaGruposDepartamentos: vistaGrupoBiologicoByGeografia(geografiaId: 29) {
             ...numeros
             grupoBiologicoGeografia {
                 grupoBiologico {
