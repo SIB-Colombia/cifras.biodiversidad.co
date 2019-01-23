@@ -30,7 +30,7 @@ const Fragments = {
         registrosAmenaza
         registrosVU
         registrosEN
-        especiesCR
+        registrosCR
         especiesCites
         especiesCitesI
         especiesCitesII
@@ -57,7 +57,7 @@ const Fragments = {
         registrosAmenaza
         registrosVU
         registrosEN
-        especiesCR
+        registrosCR
         especiesCites
         especiesCitesI
         especiesCitesII
@@ -107,7 +107,7 @@ export const GROUPS = gql`
                 id
             }
         }
-        vistaGruposColombia: allVistagrupobiologico {
+        vistaGruposColombias: allVistagrupobiologico {
             ...numeros
             grupoBiologicoGeografia{
               grupoBiologico{
@@ -116,16 +116,19 @@ export const GROUPS = gql`
               }
             }
         }
-        vistaGruposColombias: vistaGrupoBiologicoByGeografia(geografiaId: 1) {
+        vistaGruposColombia: vistaGrupoBiologicoByGeografia(geografiaId: 1) {
             ...numeros
             grupoBiologicoGeografia {
+                geografia{
+                    nombre
+                }
                 grupoBiologico {
                     nombre
                     id
                 }
             }
         }
-        vistaGruposDepartamento: allVistagrupobiologico {
+        vistaGruposDepartamentos: allVistagrupobiologico {
             ...numeros
             grupoBiologicoGeografia{
               grupoBiologico{
@@ -135,9 +138,12 @@ export const GROUPS = gql`
             }
         }
         
-        vistaGruposDepartamentos: vistaGrupoBiologicoByGeografia(geografiaId: 29) {
+        vistaGruposDepartamento: vistaGrupoBiologicoByGeografia(geografiaId: 29) {
             ...numeros
             grupoBiologicoGeografia {
+                geografia{
+                    nombre
+                }
                 grupoBiologico {
                     nombre
                     id
@@ -167,6 +173,7 @@ export const GEO = gql`
         }
         vistaMunicipios: vistaGeoByGeografiaPadre(geografiaPadreId: 29) {
             ...numeros2
+            id
             geografia {
                 nombre
             }
@@ -185,6 +192,7 @@ export const COMPANIES = gql`
           entidadPublicadora {
             id
             nombre
+            tipo
           }
         }
       }
