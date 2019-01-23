@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../_styles/components/data-page.scss'
 
 const GeoLayout = props => (
     <section className={`DataPageLayout ${props.sidebarActive ? `sidebarActive`: ` ` }`}>

@@ -1,39 +1,71 @@
 import React, {Component, Fragment} from 'react'
-import GeoLayout from "./layout";
-import Sidebar from "../../components/sidebar";
-import connect from "react-redux/es/connect/connect";
+import {GEO} from "../../actions/services/queries";
+import {Query} from "react-apollo";
+import LoadingTemplate from "../templates/loading";
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
-import DataTemplate from "../templates/DataTemplate";
-import Panel from "../../components/panel";
-import RadarComponent from "../../components/chart/RadarComponent";
-import TableComponent from "../../components/table";
-import DataTemplateLayout from "../templates/DataTemplate/layout";
+import connect from "react-redux/es/connect/connect";
+import Sidebar from "../../components/sidebar";
+import queryString from "query-string";
+import GeoContainer from "./container";
 
 class Geo extends Component {
     componentDidMount () {
         this.props.actions.sidebarVisibility(true)
         this.props.actions.buttonSidebarVisibility(true)
+        this.setActiveGroup()
     }
+
+    componentDidUpdate () {
+        this.setActiveGroup()
+    }
+
     render () {
         return (
-            <Fragment>
+            <Query query={GEO}>
                 {
-                    this.props.sidebarVisible &&
-                    <Sidebar/>
+                    ({ loading, error, data }) => {
+                        if ( loading ) return <LoadingTemplate/>
+                        if ( error ) console.log(error)
+
+                        this.saveDataToState(data)
+                        return (
+                            <Fragment>
+                                {
+                                    this.props.sidebarVisible &&
+                                        <Sidebar/>
+                                }
+                                <GeoContainer
+                                    sidebar={this.props.sidebarVisible}
+                                    page='geo'
+                                    title='Búsqueda por municipios'
+                                    dataVisualization={false}
+                                />
+                            </Fragment>
+                        )
+                    }
                 }
-                <GeoLayout sidebarActive={this.props.sidebarVisible}>
-                    <h1>Búsqueda por municipios</h1>
-                    <Panel>
-                        <RadarComponent
-                            ref={ref => this.chartInstance = ref && ref.chartInstance}
-                            type='radar'
-                        />
-                    </Panel>
-                    <TableComponent/>
-                </GeoLayout>
-            </Fragment>
+            </Query>
         )
+    }
+
+    setActiveGroup () {
+        let urlValue = this.props.location.search.length === 0 ? {id: '0'} : queryString.parse(this.props.location.search)
+        this.props.actions.filterTown(urlValue)
+    }
+
+    saveDataToState (data) {
+        let groupsList = []
+        data.vistaMunicipios.forEach(item => {
+            groupsList.push({id: item.id, nombre: item.geografia.nombre})
+        })
+        this.props.actions.fetchGeneralDataCountry(data.vistaGeneralColombia)
+        this.props.actions.fetchGeneralDataDepartment(data.vistaGeneralDepartamento)
+        this.props.actions.fetchTownsData(data.vistaMunicipios)
+        //activeTownData
+        //filterTown
+        this.props.actions.sidebarItems(groupsList)
+
     }
 }
 
