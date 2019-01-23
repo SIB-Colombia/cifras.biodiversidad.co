@@ -1,37 +1,53 @@
 import React, {Component, Fragment} from 'react'
-import { COMPANIES_LIST } from "../../actions/services/queries";
+import {COMPANIES} from "../../actions/services/queries";
 import {Query} from "react-apollo";
 import LoadingTemplate from '../templates/loading';
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
 import connect from "react-redux/es/connect/connect";
+import CompaniesContainer from './container'
 import Sidebar from "../../components/sidebar";
 import queryString from "query-string";
-import DataTemplate from "../templates/DataTemplate";
-import GeoLayout from "../geo/layout";
-import Panel from "../../components/panel";
-import RadarComponent from "../../components/chart/RadarComponent";
-import TableComponent from "../../components/table";
 
 class Companies extends Component {
     componentDidMount () {
-        this.props.actions.sidebarVisibility(true)
-        this.props.actions.buttonSidebarVisibility(true)
+        this.props.actions.sidebarVisibility(false)
+        this.props.actions.buttonSidebarVisibility(false)
     }
 
     render () {
         return (
-            <Fragment>
+            <Query query={COMPANIES}>
                 {
-                    this.props.sidebarVisible &&
-                    <Sidebar/>
+                    ({ loading, error, data}) => {
+                        if ( loading ) return <LoadingTemplate/>
+                        if ( error ) console.log(error)
+
+                        this.saveDataToState(data)
+                        return (
+                            <Fragment>
+                                {
+                                /*
+
+                                    this.props.sidebarVisible &&
+                                    <Sidebar/>
+                                */
+                                }
+                                <CompaniesContainer
+                                    sidebar={this.props.sidebarVisible}
+                                    title="Búsqueda por entidades"
+                                    dataVisualization={false}
+                                />
+                            </Fragment>
+                        )
+                    }
                 }
-                <GeoLayout sidebarActive={this.props.sidebarVisible}>
-                    <h1>Entidades</h1>
-                    <TableComponent/>
-                </GeoLayout>
-            </Fragment>
+            </Query>
         )
+    }
+
+    saveDataToState (data) {
+        console.log(data)
     }
 
 
