@@ -8,58 +8,39 @@ import connect from "react-redux/es/connect/connect";
 import Sidebar from "../../components/sidebar";
 import queryString from "query-string";
 import DataTemplate from "../templates/DataTemplate";
+import GeoLayout from "../geo/layout";
+import Panel from "../../components/panel";
+import RadarComponent from "../../components/chart/RadarComponent";
+import TableComponent from "../../components/table";
 
 class Companies extends Component {
     componentDidMount () {
-        const urlValue = queryString.parse(this.props.location.search)
-        //this.props.actions.filterGroup(urlValue)
         this.props.actions.sidebarVisibility(true)
         this.props.actions.buttonSidebarVisibility(true)
-        //this.props.actions.filterTopic("")
     }
 
     render () {
         return (
-            <Query query={COMPANIES_LIST}>
+            <Fragment>
                 {
-                    ({ loading, error, data }) => {
-                        if(loading) return <LoadingTemplate />
-                        if(error) console.log(error)
-                        console.log(data)
-                        const sidebarItems = [
-                            "internacionales",
-                            "Grupos de especialistas"
-                        ]
-                        this.saveDataToState(data)
-                        return (
-                            <Fragment>
-                                {
-                                    this.props.sidebarVisible &&
-                                    <Sidebar items={sidebarItems}/>
-                                }
-                                <DataTemplate
-                                    sidebar={this.props.sidebarVisible}
-                                    page={'companies'}
-                                    title="Entidades que aportan datos"
-                                />
-                            </Fragment>
-                        )
-                    }
+                    this.props.sidebarVisible &&
+                    <Sidebar/>
                 }
-            </Query>
+                <GeoLayout sidebarActive={this.props.sidebarVisible}>
+                    <h1>Entidades</h1>
+                    <TableComponent/>
+                </GeoLayout>
+            </Fragment>
         )
     }
 
-    saveDataToState(data) {
-        //this.props.actions.fetchCompaniesData(data)
-        //this.props.actions.filterComapnyType('29')
-    }
+
 }
 
 const mapStateToProps = ( state ) => {
     return (
         {
-            sidebarVisible: state.getIn(['interaction', 'sidebar']),
+            sidebarVisible: state.getIn(['interaction', 'sidebar', 'active']),
         }
     )
 }
