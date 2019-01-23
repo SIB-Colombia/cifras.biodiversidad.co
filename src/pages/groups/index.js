@@ -7,7 +7,7 @@ import * as actions from "../../actions";
 import connect from "react-redux/es/connect/connect";
 import Sidebar from "../../components/sidebar";
 import queryString from "query-string";
-import DataTemplate from "../templates/DataTemplate";
+import GroupsContainer from "./container";
 
 class Groups extends Component {
     componentDidMount () {
@@ -35,11 +35,11 @@ class Groups extends Component {
                                     this.props.sidebarVisible &&
                                     <Sidebar/>
                                 }
-                                <DataTemplate
+                                <GroupsContainer
                                     sidebar={this.props.sidebarVisible}
-                                    page={'groups'}
+                                    page='groups'
                                     title="Búsqueda por grupos biológicos"
-                                    dataVisualization={true}
+                                    dataVisualization={false}
                                 />
                             </Fragment>
                         )
@@ -55,12 +55,6 @@ class Groups extends Component {
     }
 
     saveDataToState(data) {
-        let groupsView = {
-            country: data.vistaGeneralColombia,
-            state: data.vistaGeneralDepartamento,
-            countryGroups: data.vistaGruposColombia,
-            stateGroups: data.vistaGruposDepartamento
-        }
         let groupsList = [
             {id: '0', nombre: 'Todos', grupoBiologicoHijos: []},
             data.animales,
@@ -70,6 +64,8 @@ class Groups extends Component {
             data.liquenes,
         ]
 
+        this.props.actions.fetchGeneralDataCountry(data.vistaGeneralColombia)
+        this.props.actions.fetchGeneralDataDepartment(data.vistaGeneralDepartamento)
         this.props.actions.fetchGroupsDataDepartment(data.vistaGruposDepartamento)
         this.props.actions.fetchGroupsDataCountry(data.vistaGruposColombia)
         this.props.actions.sidebarItems(groupsList)
