@@ -31,7 +31,7 @@ class TableComponent extends Component {
                 <ReactTable
                     data={this.props.dataTable}
                     columns={columns}
-                    defaultPageSize={10}
+                    defaultPageSize={5}
                 />
             </TableComponentLayout>
         );
@@ -40,44 +40,93 @@ class TableComponent extends Component {
 
 const mapStateToProps = state => {
     const activeDataCountry = state.getIn(['data', 'groups', 'active', 'data', 'country', 0])
-    const activeDataDepartment = state.getIn(['data', 'groups', 'active', 'data', 'department', 1])
+    const activeDataDepartment = state.getIn(['data', 'groups', 'active', 'data', 'department', 0])
     let dataTable = [{
-        name: 'Registros',
+        name: 'Total',
         RRBBSant: activeDataDepartment ? activeDataDepartment.registros : 0,
         RRBBCol: activeDataCountry ? activeDataCountry.registros : 0,
         ESPSant: 1234,
         ESPCol: 62829,
-    }, {
-        name: 'Especies Amenazadas',
+    },
+    {
+        name: 'Total Amenazadas',
         RRBBSant: 12489,
         RRBBCol: 54654,
         ESPSant: 95643,
         ESPCol: 629,
-    }, {
-        name: 'Especies CITES',
+    },
+    {
+        name: 'Amenazadas CR',
+        RRBBSant: 12489,
+        RRBBCol: 54654,
+        ESPSant: 95643,
+        ESPCol: 629,
+    },
+    {
+        name: 'Amenazadas EN',
+        RRBBSant: 12489,
+        RRBBCol: 54654,
+        ESPSant: 95643,
+        ESPCol: 629,
+    },
+    {
+        name: 'Amenazadas VU',
+        RRBBSant: 12489,
+        RRBBCol: 54654,
+        ESPSant: 95643,
+        ESPCol: 629,
+    },
+    {
+        name: 'Total CITES',
         RRBBSant: 1489,
         RRBBCol: 5239,
         ESPSant: 9563,
         ESPCol: 622,
-    }, {
+    },
+    {
+        name: 'CITES I',
+        RRBBSant: 1489,
+        RRBBCol: 5239,
+        ESPSant: 9563,
+        ESPCol: 622,
+    },
+    {
+        name: 'CITES II',
+        RRBBSant: 1489,
+        RRBBCol: 5239,
+        ESPSant: 9563,
+        ESPCol: 622,
+    },
+    {
+        name: 'CITES III',
+        RRBBSant: 1489,
+        RRBBCol: 5239,
+        ESPSant: 9563,
+        ESPCol: 622,
+    },
+
+    {
         name: 'Especies Exóticas',
         RRBBSant: 1489,
         RRBBCol: 31819,
         ESPSant: 953,
         ESPCol: 62,
-    }, {
+    },
+    {
         name: 'Especies Endémicas',
         RRBBSant: 8979,
         RRBBCol: 564,
         ESPSant: 54,
         ESPCol: 56465,
-    }, {
+    },
+    {
         name: 'Especies Migratorias',
         RRBBSant: 564,
         RRBBCol: 2541,
         ESPSant: 657,
         ESPCol: 5467,
     }]
+
     return (
         {
             activeDataCountry,
