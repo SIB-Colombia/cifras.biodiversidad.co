@@ -9,29 +9,10 @@ import * as actions from "../../../actions";
 
 class DataTemplate extends Component {
     componentDidMount() {
-        let dataCountryActive = this.props.dataCountry.filter(item => (
-            item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
-            //item.id === this.props.activeIdToRender.id
-        ))
-        let dataDepartmentActive = this.props.dataDepartment.filter(item => (
-            item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
-            //item.id === this.props.activeIdToRender.id
-        ))
-        this.props.actions.activeGroupsDataCountry(dataCountryActive)
-        this.props.actions.activeGroupsDataDepartment(dataDepartmentActive)
+        this.filterGroup()
     }
     componentDidUpdate () {
-        let dataCountryActive = this.props.dataCountry.filter(item => (
-            item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
-            //item.id === this.props.activeIdToRender.id
-        ))
-        let dataDepartmentActive = this.props.dataDepartment.filter(item => (
-            item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
-            //item.id === this.props.activeIdToRender.id
-        ))
-        this.props.actions.activeGroupsDataCountry(dataCountryActive)
-        this.props.actions.activeGroupsDataDepartment(dataDepartmentActive)
-
+        this.filterGroup()
     }
 
     render () {
@@ -53,6 +34,19 @@ class DataTemplate extends Component {
         )
     }
 
+    filterGroup() {
+        console.log(this.props.activeIdToRender.id)
+        let dataCountryActive = this.props.dataCountry.filter(item => (
+            //item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
+            item.id === this.props.activeIdToRender.id
+        ))
+        let dataDepartmentActive = this.props.dataDepartment.filter(item => (
+            //item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
+            item.id === this.props.activeIdToRender.id
+        ))
+        this.props.actions.activeGroupsDataCountry(dataCountryActive)
+        this.props.actions.activeGroupsDataDepartment(dataDepartmentActive)
+    }
 
 
 }
