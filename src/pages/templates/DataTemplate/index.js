@@ -9,10 +9,10 @@ import * as actions from "../../../actions";
 
 class DataTemplate extends Component {
     componentDidMount() {
-        this.filterGroup()
+        //this.filterGroup()
     }
     componentDidUpdate () {
-        this.filterGroup()
+        //this.filterGroup()
     }
 
     render () {
@@ -35,17 +35,23 @@ class DataTemplate extends Component {
     }
 
     filterGroup() {
-        console.log(this.props.activeIdToRender.id)
-        let dataCountryActive = this.props.dataCountry.filter(item => (
+        let dataCountryActive = this.props.dataGroupsCountry.filter(item => (
             //item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
             item.id === this.props.activeIdToRender.id
         ))
-        let dataDepartmentActive = this.props.dataDepartment.filter(item => (
+        let dataDepartmentActive = this.props.dataGroupsDepartment.filter(item => (
             //item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
             item.id === this.props.activeIdToRender.id
         ))
-        this.props.actions.activeGroupsDataCountry(dataCountryActive)
-        this.props.actions.activeGroupsDataDepartment(dataDepartmentActive)
+
+        if (this.props.activeIdToRender.id === '0') {
+            this.props.actions.activeGroupsDataCountry(this.props.dataCountry)
+            this.props.actions.activeGroupsDataDepartment(this.props.dataDepartment)
+        } else {
+            this.props.actions.activeGroupsDataCountry(dataCountryActive)
+            this.props.actions.activeGroupsDataDepartment(dataDepartmentActive)
+        }
+
     }
 
 
@@ -55,8 +61,10 @@ const mapStateToProps = ( state, props ) => {
     switch ( props.page ) {
         case 'groups': {
             return {
-                dataCountry: state.getIn(['data', 'groups', 'data', 'country']),
-                dataDepartment: state.getIn(['data', 'groups', 'data', 'department']),
+                dataCountry: state.getIn(['data', 'general', 'country']),
+                dataDepartment: state.getIn(['data', 'general', 'department']),
+                dataGroupsCountry: state.getIn(['data', 'groups', 'data', 'country']),
+                dataGroupsDepartment: state.getIn(['data', 'groups', 'data', 'department']),
                 activeIdToRender: state.getIn(['data', 'groups', 'active', 'id']),
             }
         }
@@ -64,12 +72,13 @@ const mapStateToProps = ( state, props ) => {
             console.log('geo')
             //return state.setIn(['groups', 'active'], action.payload.activeGroup)
         }
-        case 'companies': {
+        /*case 'companies': {
             console.log('companies')
             //return state.setIn(['groups', 'active'], action.payload.activeGroup)
         }
         default:
             return state
+        */
     }
 }
 
