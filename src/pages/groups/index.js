@@ -11,15 +11,13 @@ import DataTemplate from "../templates/DataTemplate";
 
 class Groups extends Component {
     componentDidMount () {
-        const urlValue = queryString.parse(this.props.location.search)
         this.props.actions.sidebarVisibility(true)
         this.props.actions.buttonSidebarVisibility(true)
-        this.setActiveGroup(urlValue)
+        this.setActiveGroup()
     }
 
     componentDidUpdate () {
-        const urlValue = queryString.parse(this.props.location.search)
-        this.setActiveGroup(urlValue)
+        this.setActiveGroup()
     }
 
     render () {
@@ -51,10 +49,11 @@ class Groups extends Component {
         )
     }
 
-    setActiveGroup(value) {
-        this.props.actions.filterGroup(value)
-
+    setActiveGroup() {
+        let urlValue = this.props.location.search.length === 0 ? {id: '0'} : queryString.parse(this.props.location.search)
+        this.props.actions.filterGroup(urlValue)
     }
+
     saveDataToState(data) {
         let groupsView = {
             country: data.vistaGeneralColombia,
@@ -63,7 +62,7 @@ class Groups extends Component {
             stateGroups: data.vistaGruposDepartamento
         }
         let groupsList = [
-            //{id: '0', nombre: 'Todos', grupoBiologicoHijos: []},
+            {id: '0', nombre: 'Todos', grupoBiologicoHijos: []},
             data.animales,
             data.plantas,
             data.hongos,
