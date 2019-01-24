@@ -18,6 +18,7 @@ import logger from "redux-logger"
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 import { Map as map } from 'immutable'
+import About from "./about";
 const cache = new InMemoryCache({
     dataIdFromObject: object => object.key || null
 
@@ -56,6 +57,7 @@ class Root extends Component {
                                 <Route exact path="/grupos" component={Groups}/>
                                 <Route exact path="/municipios" component={Geo}/>
                                 <Route exact path="/entidades" component={Companies}/>
+                                <Route exact path="/sobre-el-portal" component={About}/>
                                 <Route component={NotFound}/>
                             </Switch>
                             <Footer/>
