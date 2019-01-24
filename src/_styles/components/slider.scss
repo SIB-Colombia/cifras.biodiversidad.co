@@ -1,45 +1,86 @@
 @import "../_utilities/variables";
+@import "../_utilities/grid";
 @import "~slick-carousel/slick/slick.css";
 
 .SliderLayout {
   height: 600px;
-  height: 60vh;
+  //height: 60vh;
+  height: 90vh;
 }
-
 .SlideLayout {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  height: 60vh;
+  height: 90vh;
   justify-content: center;
   padding: 0 5%;
-
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: color("gray", "darken-2");
+    opacity: 0.4;
+  }
+  &__slide{
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+  }
   &__number {
-    color: $title-color;
+    //color: $title-color;
+    color: white;
     font-family: $secondary-font;
     font-size: 5em;
     font-weight: $bold;
   }
   &__title {
-    color: $title-color;
+    //color: $title-color;
+    color: white;
     font-family: $secondary-font;
     font-size: 2.5em;
     font-weight: $bold;
     text-transform: uppercase;
   }
   &__subtitle {
-    color: $title-color;
+    //color: $title-color;
+    color: white;
     font-family: $main-font;
     font-size: 1.3em;
     font-weight: $light;
     margin-top: 0.3em;
   }
   &__disclaimer {
-    color: $text-color;
+    //color: $title-color;
+    color: white;
     font-family: $secondary-font;
     font-size: 0.6em;
     font-weight: $light;
     margin-top: 1.3em;
+  }
+  &__credit {
+    //color: $title-color;
+    color: white;
+    font-family: $main-font;
+    font-size: 0.6em;
+    font-weight: $light;
+    position: absolute;
+    right: 1em;
+    top: 2em;
+    &:before{
+      content:"";
+      position: absolute;
+      left: -20px;
+      width: 18px;
+      height: 12px;
+      background-size: contain;
+      background: url(https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/ph-credito.png) no-repeat;
+    }
   }
 }
 
@@ -53,7 +94,8 @@
   top: 50%;
   width: 30px;
   &:before, &:after {
-    background-color: $link-color;
+    //background-color: $link-color;
+    background-color: white;
     content: "";
     height: 2px;
     position: absolute;

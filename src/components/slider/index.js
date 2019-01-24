@@ -3,6 +3,7 @@ import SliderLayout from "./layout";
 import Slide from "./slide";
 import Slider from "react-slick"
 import SliderNav from "./nav";
+import Counter from "../../pages/home/components/counter";
 
 class HomeSlider extends Component {
     setSliderRef = e => {
@@ -21,10 +22,10 @@ class HomeSlider extends Component {
             fade: true,
             autoplay: true,
             speed: 100,
-            autoplaySpeed: 10000,
+            autoplaySpeed: 12000,
             arrows: false
-
         };
+
         return (
             <SliderLayout>
                 <Slider ref={this.setSliderRef}{ ...settings }>
@@ -36,6 +37,8 @@ class HomeSlider extends Component {
                                 title={item.get('title')}
                                 subtitle={item.get('subtitle')}
                                 disclaimer={item.get('disclaimer')}
+                                credit={item.get('credit')}
+                                background={item.get('background')}
                             />
                         ))
                     }

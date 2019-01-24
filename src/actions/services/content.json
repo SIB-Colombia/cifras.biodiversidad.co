@@ -25,30 +25,38 @@
     {
       "id": "1",
       "title": "Registros biológicos",
-      "number": "182.246",
+      "number": "182.489",
       "subtitle": "8vo a nivel nacional",
-      "disclaimer": "Datos con corte a noviembre de 2017"
+      "disclaimer": "Datos con corte a noviembre de 2017",
+      "background": "https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/CIM13285_Felipe-Villegas.jpg",
+      "credit": "Felipe Villegas / Instituto Humboldt"
     },
     {
       "id": "2",
       "title": "Especies",
-      "number": "182",
-      "subtitle": "8vo a nivel nacional",
-      "disclaimer": "Datos con corte a noviembre de 2017"
+      "number": "9563",
+      "subtitle": "5to a nivel nacional",
+      "disclaimer": "Datos con corte a noviembre de 2017",
+      "background": "https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/_O7A8628_FelipeVillegas.jpg",
+      "credit": "Felipe Villegas / Instituto Humboldt"
     },
     {
       "id": "3",
       "title": "Especies amenzadas",
-      "number": "246",
-      "subtitle": "1 a nivel nacional",
-      "disclaimer": "Datos con corte a noviembre de 2017"
+      "number": "222",
+      "subtitle": "",
+      "disclaimer": "Datos con corte a noviembre de 2017",
+      "background": "https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/CIM13643_Felipe-Villegas.jpg",
+      "credit": "Felipe Villegas / Instituto Humboldt"
     },
     {
       "id": "4",
-      "title": "Especies exóticas",
-      "number": "182.246",
-      "subtitle": "8vo a nivel nacional",
-      "disclaimer": "Datos con corte a noviembre de 2017"
+      "title": "Especies endémicas",
+      "number": "980",
+      "subtitle": "",
+      "disclaimer": "Datos con corte a noviembre de 2017",
+      "background": "https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/_CIX1068_Felipe-Villegas.jpg",
+      "credit": "Felipe Villegas / Instituto Humboldt"
     }
   ],
   "highlights": [

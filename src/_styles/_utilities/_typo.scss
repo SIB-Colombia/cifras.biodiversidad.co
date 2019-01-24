@@ -12,12 +12,12 @@ h1, h2, h3, h4, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.8em;
   font-weight: $bold;
   font-size: 1.8rem;
   font-weight: 100;
   margin-bottom: 3rem;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 h2 {
   font-size: 1.6em;
@@ -26,32 +26,47 @@ h2 {
 
 h3 {
   font-size: 1.4em;
-  font-weight: $medium;
+  font-weight: $regular;
 }
 
 h4 {
   font-size: 1.2em;
-  font-weight: $medium;
+  font-weight: $regular;
 }
 
 h5 {
-  font-size: 1.3em;
-  font-weight: $medium;
+  font-size: 1em;
+  font-weight: $regular;
 }
 
 h6 {
-  font-size: 1.3em;
+  font-size: 1.1em;
   font-weight: $light;
 }
 
 p {
   color: $text-color;
   font-size: 1em;
-  font-weight: $bold;
+  font-weight: $light;
+  line-height: 1.4em;
 }
 
 a {
   color: $link-color;
   font-size: 1em;
   font-weight: $light;
+}
+
+.underline-title {
+  position: relative;
+  margin-bottom: 3rem;
+}
+.underline-title:after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100px;
+  background: linear-gradient(95deg, #FF7847, #C15C19);
+  bottom: -15px;
+  left: 0;
 }
