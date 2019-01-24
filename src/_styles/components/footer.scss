@@ -1,14 +1,41 @@
 @import "../_utilities/variables";
 @import "../_utilities/grid";
 
-
+.FooterLayout{
+  z-index: 1;
+  position: relative;
+}
 .Footer{
-  &__logos {
+  &-logos {
     background-color: color("teal", "darken-1");
     padding: 40px 0;
+    text-align: center;
+    img {
+      height: 3em;
+    }
   }
-  &__bar {
+  &-bar {
     background-color: color("teal", "darken-2");
     padding: 15px 0;
+    &__logos{
+      text-align: left;
+      img{
+        height: 40px;
+      }
+    }
+    &__links{
+      text-align: center;
+      a {
+        color: white;
+        font-size: 0.8em;
+        opacity: 0.8;
+        padding: .4em 1.5em;
+        text-decoration: none;
+        border: 1px solid white;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
