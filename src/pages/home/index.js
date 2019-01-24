@@ -9,6 +9,7 @@ import * as actions from "../../actions";
 import { Query } from 'react-apollo';
 import {SANTANDER} from "../../actions/services/queries";
 import LoadingTemplate from "../templates/loading";
+import Counter from "./components/counter";
 
 class Home extends Component {
     componentDidMount () {
@@ -19,7 +20,8 @@ class Home extends Component {
         return (
             <HomeLayout>
                 <HomeSlider slides={this.props.slides}/>
-                <HomeLinks/>
+                <Counter/>
+                {/*<HomeLinks/>*/}
             </HomeLayout>
         )
     }

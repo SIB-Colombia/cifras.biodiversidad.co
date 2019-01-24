@@ -1,0 +1,20 @@
+@import "../_utilities/variables";
+@import "../_utilities/grid";
+@import "../elements/card";
+
+
+.Counter {
+  min-height: 40vh;
+  &__number {
+    font-size: 5em;
+    text-align: center;
+    display: block;
+  }
+  &__label {
+    text-align: center;
+  }
+}
+
+.ToggleMainMenu {
+  display: none;
+}

@@ -21,7 +21,7 @@ class HomeSlider extends Component {
             fade: true,
             autoplay: true,
             speed: 100,
-            autoplaySpeed: 20000,
+            autoplaySpeed: 10000,
             arrows: false
 
         };
