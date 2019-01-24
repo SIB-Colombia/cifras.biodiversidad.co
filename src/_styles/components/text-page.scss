@@ -1,0 +1,34 @@
+@import "../_utilities/variables";
+@import "../_utilities/grid";
+@import "../_utilities/helpers";
+@import "../elements/card";
+
+.TextPageLayout {
+  padding-left: 0;
+  overflow-y: hidden;
+  padding-bottom: 3rem;
+  h4{
+    margin: 1.5em 0 .5em;
+  }
+  h5{
+    margin: 1.5em 0 .5em;
+  }
+  .sideNav {
+    align-self: flex-start;
+    ul{
+      margin: 0;
+      padding-left: 0.5em;
+    }
+    li{
+      padding: .4em 0;
+      a{
+        text-decoration: none;
+        font-size: .9em
+      }
+    }
+  }
+  .card {
+    padding: 2em;
+    margin-bottom: 2em;
+  }
+}
