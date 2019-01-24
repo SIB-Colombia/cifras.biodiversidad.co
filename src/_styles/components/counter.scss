@@ -4,14 +4,19 @@
 
 
 .Counter {
-  min-height: 40vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 1em;
   &__number {
-    font-size: 5em;
+    font-size: 4em;
     text-align: center;
     display: block;
+    color: white;
   }
   &__label {
     text-align: center;
+    color: white;
   }
 }
 

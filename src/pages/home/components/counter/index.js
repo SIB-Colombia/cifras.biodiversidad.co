@@ -8,34 +8,34 @@ class Counter extends Component {
         this.reverseCounter ()
     }
 
-    componentDidUpdate () {
-        this.reverseCounter()
-    }
-
-
-
-
     render () {
         return (
             <div id="counter" className="Counter container">
-                   <div className="row">
-                    <div className="col-4">
-                        <span id="counterDays" className="Counter__number">0</span>
-                        <div className="Counter__label">Días</div>
+                <div className="row">
+                    <div className="col-1"></div>
+                    <div className="col-10">
+                        <div className="row">
+                            <div className="col-4">
+                                <span id="counterDays" className="Counter__number">...</span>
+                                <div className="Counter__label">Días</div>
+                            </div>
+                            <div className="col-4">
+                                <span id="counterHours" className="Counter__number">...</span>
+                                <div className="Counter__label">Horas</div>
+                            </div>
+                            <div className="col-4">
+                                <span id="counterMinutes" className="Counter__number">...</span>
+                                <div className="Counter__label">Minutos</div>
+                            </div>
+                            <div className="col-4">
+                                <span id="counterSeconds" className="Counter__number">...</span>
+                                <div className="Counter__label">Segundos</div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="col-4">
-                        <span id="counterHours" className="Counter__number">0</span>
-                        <div className="Counter__label">Horas</div>
-                    </div>
-                    <div className="col-4">
-                        <span id="counterMinutes" className="Counter__number">0</span>
-                        <div className="Counter__label">Minutos</div>
-                    </div>
-                    <div className="col-4">
-                        <span id="counterSeconds" className="Counter__number">0</span>
-                        <div className="Counter__label">Segundos</div>
-                    </div>
+                    <div className="col-1"></div>
                 </div>
+
             </div>
         )
     }
