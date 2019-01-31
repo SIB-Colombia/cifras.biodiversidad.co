@@ -15,7 +15,7 @@ class Footer extends Component {
 
 const mapStateToProps = ( state ) => (
     {
-        sidebarVisible: state.sidebar
+        sidebarVisible: state.getIn(['interaction', 'sidebar', 'active']),
     }
 )
 

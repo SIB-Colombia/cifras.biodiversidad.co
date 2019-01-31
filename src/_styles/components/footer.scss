@@ -4,6 +4,9 @@
 .FooterLayout{
   z-index: 1;
   position: relative;
+  &.sidebarActive {
+    padding-left: 280px;
+  }
 }
 .Footer{
   &-logos {

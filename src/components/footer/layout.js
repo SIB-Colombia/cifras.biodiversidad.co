@@ -57,12 +57,12 @@ const FooterLayout = props => (
                             </div>
                         </div>
 
-                        {/*<div className="col-3 Footer-bar__links">
+
+                        <div className="col-3 Footer-bar__links">
                             <Link to="/sobre-el-portal">
                                 Sobre el portal
                             </Link>
-
-                        </div>*/}
+                        </div>
                     </div>
                 </div>
             </div>
