@@ -6,6 +6,7 @@
   height: 600px;
   //height: 60vh;
   height: 90vh;
+  position: relative;
 }
 .SlideLayout {
   align-items: flex-start;
@@ -90,9 +91,12 @@
   height: 60px;
   margin-top: -30px;
   position: absolute;
-  text-indent: -9999;
   top: 50%;
   width: 30px;
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+  }
   &:before, &:after {
     //background-color: $link-color;
     background-color: white;
@@ -111,22 +115,22 @@
     left: 0;
     &:before {
       transform: rotate(-50deg);
-      left: 5px;
+      left: 15px;
     }
     &:after{
       transform: rotate(50deg);
-      left:5px;
+      left: 15px;
     }
   }
   &.next {
     right: 0;
     &:before {
       transform: rotate(50deg);
-      right:5px;
+      right: 15px;
     }
     &:after{
       transform: rotate(-50deg);
-      right: 5px;
+      right: 15px;
     }
   }
 }

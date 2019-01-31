@@ -4,24 +4,34 @@
 
 
 .HomeLinks {
-  min-height: 40vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 150px;
 }
 .HomeLink {
   @extend .card;
+  background-color: rgba(255,255,255,0.1);
   display: block;
   list-style-type: none;
   padding: 2em 1em;
   text-decoration: none;
-  border-bottom: 3px solid $secondary-color;
+  border-radius: 5px;
+  border: 1px solid white;
+  border-bottom: 2px solid $secondary-color;
   height: 100px;
   box-sizing: border-box;
   &:hover {
-    @extend .card--hover
+    @extend .card--hover;
+    background-color: rgba(255,255,255,0.4);
+    border-bottom: 4px solid $secondary-color;
   }
 }
 
 .HomeLink__title {
-  color: color("teal", "base");
+  //color: color("teal", "base");
+  color: white;
   display: block;
   font-family: $secondary-font;
   font-size: 1em;
@@ -31,10 +41,13 @@
 }
 
 .HomeLink__action {
-  color: color("teal", "darken-1");
+  //color: color("teal", "darken-1");
+  color: white;
   font-family: $main-font;
   font-size: 0.8em;
   font-weight: $light;
   line-height: 1em;
 
 }
+
+

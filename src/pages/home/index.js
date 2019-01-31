@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
 import {SANTANDER} from "../../actions/services/queries";
-import Counter from "./components/counter";
 
 class Home extends Component {
 
@@ -18,9 +17,7 @@ class Home extends Component {
         return (
             <HomeLayout>
                 <HomeSlider slides={this.props.slides}/>
-                <Counter/>
-
-                {/*<HomeLinks/>*/}
+                <HomeLinks/>
             </HomeLayout>
         )
     }
