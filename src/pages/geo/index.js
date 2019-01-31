@@ -56,14 +56,14 @@ class Geo extends Component {
 
     saveDataToState (data) {
         let groupsList = []
+        console.log(data)
         data.vistaMunicipios.forEach(item => {
             groupsList.push({id: item.id, nombre: item.geografia.nombre})
         })
         this.props.actions.fetchGeneralDataCountry(data.vistaGeneralColombia)
         this.props.actions.fetchGeneralDataDepartment(data.vistaGeneralDepartamento)
         this.props.actions.fetchTownsData(data.vistaMunicipios)
-        //activeTownData
-        //filterTown
+        console.log(groupsList)
         this.props.actions.sidebarItems(groupsList)
 
     }

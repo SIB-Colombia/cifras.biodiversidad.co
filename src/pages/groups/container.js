@@ -6,10 +6,12 @@ import GroupsLayout from "./layout";
 import connect from "react-redux/es/connect/connect";
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
+import GroupIconComponent from "../../components/illustration/groupIcon";
 
 class GroupsContainer extends Component {
     componentDidMount() {
         this.filterGroup()
+        this.props.actions.sidebarVisibility(true)
     }
     componentDidUpdate () {
         this.filterGroup()
@@ -22,11 +24,16 @@ class GroupsContainer extends Component {
                 {
                     this.props.dataVisualization &&
                     <Panel>
-                        <RadarComponent
-                            ref={ref => this.chartInstance = ref && ref.chartInstance}
-                            type='radar'
-                            {...this.props}
-                        />
+                        <div className="col-6">
+                            <GroupIconComponent/>
+                        </div>
+                        <div className="col-6">
+                            <RadarComponent
+                                ref={ref => this.chartInstance = ref && ref.chartInstance}
+                                type='radar'
+                                {...this.props}
+                            />
+                        </div>
                     </Panel>
                 }
                 <TableComponent/>
@@ -36,12 +43,12 @@ class GroupsContainer extends Component {
 
     filterGroup() {
         let dataCountryActive = this.props.dataGroupsCountry.filter(item => (
-            item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
-            //item.id === this.props.activeIdToRender.id
+            //item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
+            item.id === this.props.activeIdToRender.id
         ))
         let dataDepartmentActive = this.props.dataGroupsDepartment.filter(item => (
-            item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
-            //item.id === this.props.activeIdToRender.id
+            //item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
+            item.id === this.props.activeIdToRender.id
         ))
 
         if (this.props.activeIdToRender.id === '0') {

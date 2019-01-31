@@ -11,7 +11,7 @@ import GroupsContainer from "./container";
 
 class Groups extends Component {
     componentDidMount () {
-        this.props.actions.sidebarVisibility(true)
+        this.props.actions.sidebarVisibility(false)
         this.props.actions.buttonSidebarVisibility(true)
         this.setActiveGroup()
     }
@@ -39,7 +39,7 @@ class Groups extends Component {
                                     sidebar={this.props.sidebarVisible}
                                     page='groups'
                                     title="Búsqueda por grupos biológicos"
-                                    dataVisualization={false}
+                                    dataVisualization={true}
                                 />
                             </Fragment>
                         )
