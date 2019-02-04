@@ -13,7 +13,8 @@ import {
     FILTER_TOWN,
     FETCH_TOWNS_DATA,
     ACTIVE_TOWN_DATA,
-    ACTIVE_DEPARTMENT_DATA
+    ACTIVE_DEPARTMENT_DATA,
+    FETCH_COMPANIES_DATA
 } from "./types"
 
 export const sidebarVisibility = visibility => (
@@ -126,7 +127,7 @@ export const filterTown = townId => {
     })
 }
 
-export const fetchTownsData= data => {
+export const fetchTownsData = data => {
     return ({
         type: FETCH_TOWNS_DATA,
         payload: {
@@ -135,7 +136,7 @@ export const fetchTownsData= data => {
     })
 }
 
-export const activeTownData= data => {
+export const activeTownData = data => {
     return ({
         type: ACTIVE_TOWN_DATA,
         payload: {
@@ -144,7 +145,7 @@ export const activeTownData= data => {
     })
 }
 
-export const activeDepartmentData= data => {
+export const activeDepartmentData = data => {
     return ({
         type: ACTIVE_DEPARTMENT_DATA,
         payload: {
@@ -152,3 +153,13 @@ export const activeDepartmentData= data => {
         }
     })
 }
+
+export const fetchCompaniesData = data => {
+    return ({
+        type: FETCH_COMPANIES_DATA,
+        payload: {
+            fetchCompaniesData: data
+        }
+    })
+}
+

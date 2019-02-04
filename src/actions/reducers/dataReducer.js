@@ -12,7 +12,8 @@ import {
     FILTER_TOWN,
     FETCH_TOWNS_DATA,
     ACTIVE_TOWN_DATA,
-    ACTIVE_DEPARTMENT_DATA
+    ACTIVE_DEPARTMENT_DATA,
+    FETCH_COMPANIES_DATA
 } from "../types"
 
 const initialState = fromJS({
@@ -45,6 +46,15 @@ const initialState = fromJS({
                 department: {},
                 town: {}
             },
+        }
+    },
+    companies: {
+        data: {
+            companies: {},
+        },
+        active: {
+            type: {},
+            companies: {}
         }
     }
 
@@ -87,6 +97,9 @@ const dataReducer = (state = initialState, action ) => {
         }
         case ACTIVE_DEPARTMENT_DATA: {
             return state.setIn(['geo', 'active', 'data', 'department'], action.payload.activeDepartmentData)
+        }
+        case FETCH_COMPANIES_DATA: {
+            return state.setIn(['companies', 'data', 'companies'], action.payload.activeDepartmentData)
         }
 
         default:

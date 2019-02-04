@@ -107,7 +107,7 @@ export const GROUPS = gql`
                 id
             }
         }
-        vistaGruposColombia: allVistagrupobiologico {
+        vistaGruposColombias: allVistagrupobiologico {
             ...numeros
             grupoBiologicoGeografia{
               grupoBiologico{
@@ -116,7 +116,7 @@ export const GROUPS = gql`
               }
             }
         }
-        vistaGruposColombias: vistaGrupoBiologicoByGeografia(geografiaId: 1) {
+        vistaGruposColombia: vistaGrupoBiologicoByGeografia(geografiaId: 1) {
             ...numeros
             grupoBiologicoGeografia {
                 geografia{
@@ -128,7 +128,7 @@ export const GROUPS = gql`
                 }
             }
         }
-        vistaGruposDepartamento: allVistagrupobiologico {
+        vistaGruposDepartamentos: allVistagrupobiologico {
             ...numeros
             grupoBiologicoGeografia{
               grupoBiologico{
@@ -138,7 +138,7 @@ export const GROUPS = gql`
             }
         }
         
-        vistaGruposDepartamentos: vistaGrupoBiologicoByGeografia(geografiaId: 29) {
+        vistaGruposDepartamento: vistaGrupoBiologicoByGeografia(geografiaId: 29) {
             ...numeros
             grupoBiologicoGeografia {
                 geografia{
