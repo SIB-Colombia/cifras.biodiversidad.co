@@ -10,6 +10,7 @@ import * as actions from "../../actions";
 class GeoContainer extends Component {
     componentDidMount() {
         this.filterGroup()
+        this.props.actions.sidebarVisibility(true)
     }
     componentDidUpdate () {
         this.filterGroup()
