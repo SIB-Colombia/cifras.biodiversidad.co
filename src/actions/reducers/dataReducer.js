@@ -99,7 +99,7 @@ const dataReducer = (state = initialState, action ) => {
             return state.setIn(['geo', 'active', 'data', 'department'], action.payload.activeDepartmentData)
         }
         case FETCH_COMPANIES_DATA: {
-            return state.setIn(['companies', 'data', 'companies'], action.payload.activeDepartmentData)
+            return state.setIn(['companies', 'data', 'companies'], action.payload.fetchCompaniesData)
         }
 
         default:
