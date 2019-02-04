@@ -176,6 +176,7 @@ export const GEO = gql`
             id
             geografia {
                 nombre
+                id
             }
         }
     }
