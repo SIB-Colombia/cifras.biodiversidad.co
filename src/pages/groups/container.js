@@ -42,12 +42,12 @@ class GroupsContainer extends Component {
 
     filterGroup() {
         let dataCountryActive = this.props.dataGroupsCountry.filter(item => (
-            //item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
-            item.id === this.props.activeIdToRender.id
+            item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
+            //item.id === this.props.activeIdToRender.id
         ))
         let dataDepartmentActive = this.props.dataGroupsDepartment.filter(item => (
-            //item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
-            item.id === this.props.activeIdToRender.id
+            item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
+            //item.id === this.props.activeIdToRender.id
         ))
 
         if (this.props.activeIdToRender.id === '0') {

@@ -39,7 +39,7 @@ class Geo extends Component {
                                     sidebar={this.props.sidebarVisible}
                                     page='geo'
                                     title='Búsqueda por municipios'
-                                    dataVisualization={false}
+                                    dataVisualization={true}
                                 />
                             </Fragment>
                         )

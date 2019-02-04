@@ -6,6 +6,7 @@ import GeoLayout from "./layout";
 import connect from "react-redux/es/connect/connect";
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
+import Map from "../../components/illustration/map";
 
 class GeoContainer extends Component {
     componentDidMount() {
@@ -23,11 +24,16 @@ class GeoContainer extends Component {
                 {
                     this.props.dataVisualization &&
                     <Panel>
-                        <RadarComponent
-                            ref={ref => this.chartInstance = ref && ref.chartInstance}
-                            type='radar'
-                            {...this.props}
-                        />
+                        <div className="col-6">
+                            <Map/>
+                        </div>
+                        <div className="col-6">
+                            <RadarComponent
+                                ref={ref => this.chartInstance = ref && ref.chartInstance}
+                                type='radar'
+                                {...this.props}
+                            />
+                        </div>
                     </Panel>
                 }
                 <TableComponent/>
