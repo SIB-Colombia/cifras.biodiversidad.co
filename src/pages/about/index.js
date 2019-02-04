@@ -1,7 +1,15 @@
 import React, {Component, Fragment} from 'react'
 import TextTemplate from "../templates/text";
+import {bindActionCreators} from "redux";
+import * as actions from "../../actions";
+import connect from "react-redux/es/connect/connect";
 
 class About extends Component {
+    componentDidMount () {
+        this.props.actions.sidebarVisibility(false)
+        this.props.actions.buttonSidebarVisibility(false)
+    }
+
     render () {
         return (
             <TextTemplate sidebarActive={this.props.sidebar}>
@@ -133,4 +141,11 @@ class About extends Component {
     }
 }
 
-export default About
+const mapDispatchToProps = dispatch => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+
+    }
+)
+
+export default connect(null, mapDispatchToProps)(About)
