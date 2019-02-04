@@ -6,7 +6,6 @@ import GroupsLayout from "./layout";
 import connect from "react-redux/es/connect/connect";
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
-import GroupIconComponent from "../../components/illustration/groupIcon";
 
 class GroupsContainer extends Component {
     componentDidMount() {
@@ -25,7 +24,7 @@ class GroupsContainer extends Component {
                     this.props.dataVisualization &&
                     <Panel>
                         <div className="col-6">
-                            <GroupIconComponent/>
+                            <p>ilustracion</p>
                         </div>
                         <div className="col-6">
                             <RadarComponent
