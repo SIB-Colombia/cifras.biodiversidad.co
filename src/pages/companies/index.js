@@ -12,7 +12,12 @@ import queryString from "query-string";
 class Companies extends Component {
     componentDidMount () {
         this.props.actions.sidebarVisibility(false)
-        this.props.actions.buttonSidebarVisibility(false)
+        this.props.actions.buttonSidebarVisibility(true)
+        this.setActiveGroup()
+    }
+
+    componentDidUpdate() {
+        this.setActiveGroup()
     }
 
     render () {
@@ -27,11 +32,8 @@ class Companies extends Component {
                         return (
                             <Fragment>
                                 {
-                                /*
-
                                     this.props.sidebarVisible &&
                                     <Sidebar/>
-                                */
                                 }
                                 <CompaniesContainer
                                     sidebar={this.props.sidebarVisible}
@@ -46,8 +48,20 @@ class Companies extends Component {
         )
     }
 
+    setActiveGroup() {
+        let urlValue = this.props.location.search.length === 0 ? {id: '0'} : queryString.parse(this.props.location.search)
+        this.props.actions.filterGroup(urlValue)
+    }
+
     saveDataToState (data) {
-        console.log(data)
+        let sidebarItems = []
+        let companiesTypes = [...new Set(data.vistaEntidades.map(item => item.entidadPublicadoraGeografia.entidadPublicadora.tipo))];
+        companiesTypes.forEach((i, k) => {
+            sidebarItems.push({id: k, nombre: i, grupoBiologicoHijos: []})
+        })
+
+        this.props.actions.sidebarItems(sidebarItems)
+
     }
 
 

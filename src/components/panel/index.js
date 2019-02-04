@@ -1,7 +1,6 @@
 import React from 'react'
 import "../../_styles/components/panel.scss"
-import RadarComponent from "../chart/RadarComponent";
-import GroupIconComponent from "../illustration/groupIcon";
+
 
 
 const Panel = props => (

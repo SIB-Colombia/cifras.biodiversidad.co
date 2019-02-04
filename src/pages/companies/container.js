@@ -7,16 +7,18 @@ import * as actions from "../../actions";
 class CompaniesContainer extends Component {
     componentDidMount() {
         //this.filterGroup()
+        this.props.actions.sidebarVisibility(true)
     }
     componentDidUpdate () {
-        //this.filterGroup()
+        this.props.actions.sidebarVisibility(true)
+       //this.filterGroup()
     }
 
     render () {
         return (
             <CompaniesLayout sidebarActive={this.props.sidebar}>
                 <h1>{this.props.title}</h1>
-                <h3>IAVH</h3>
+
             </CompaniesLayout>
         )
     }
