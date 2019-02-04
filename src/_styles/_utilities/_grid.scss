@@ -34,14 +34,15 @@
 }
 .col{
   box-sizing: border-box;
-  margin: 0.5em;
+  //margin: 0.5em;
+
 }
 
 @for $i from 1 through 12 {
   .col-#{$i} {
     width: unquote((90 / (12 / $i)) + "%");
     box-sizing: border-box;
-    margin: 0.5em;
+    //margin: 0.5em;
     @media screen and (max-width: $size-medium) {
       width: 45% !important;
     }

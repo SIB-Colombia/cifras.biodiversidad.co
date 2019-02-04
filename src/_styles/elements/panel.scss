@@ -1,12 +1,15 @@
 @import "../_utilities/variables";
 @import "../_utilities/grid";
-@import "../elements/card";
+@import "card";
 
 .panel {
   @extend %card;
   @extend .row;
   background: white;
-
+  &--list {
+    margin-bottom: 0.2em;
+    padding: 1em;
+  }
   &.loading {
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
