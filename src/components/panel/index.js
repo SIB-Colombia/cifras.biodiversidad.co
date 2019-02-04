@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../_styles/components/panel.scss"
+import "../../_styles/elements/panel.scss"
 
 
 

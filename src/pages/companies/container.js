@@ -3,6 +3,9 @@ import CompaniesLayout from "./layout";
 import connect from "react-redux/es/connect/connect";
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
+import FilterList from "../../components/sidebar/filterList";
+import CompanyLayout from "./company/layout";
+import Company from "./company";
 
 class CompaniesContainer extends Component {
     componentDidMount() {
@@ -10,7 +13,6 @@ class CompaniesContainer extends Component {
         this.props.actions.sidebarVisibility(true)
     }
     componentDidUpdate () {
-        this.props.actions.sidebarVisibility(true)
        //this.filterGroup()
     }
 
@@ -18,7 +20,14 @@ class CompaniesContainer extends Component {
         return (
             <CompaniesLayout sidebarActive={this.props.sidebar}>
                 <h1>{this.props.title}</h1>
-
+                {
+                    this.props.companies.map(item => (
+                        <Company
+                            key={item.id}
+                            {...item}
+                        />
+                    ))
+                }
             </CompaniesLayout>
         )
     }
@@ -46,30 +55,13 @@ class CompaniesContainer extends Component {
 
 }
 
-const mapStateToProps = ( state, props ) => {
-    switch ( props.page ) {
-        case 'groups': {
-            return {
-                dataCountry: state.getIn(['data', 'general', 'country']),
-                dataDepartment: state.getIn(['data', 'general', 'department']),
-                dataGroupsCountry: state.getIn(['data', 'groups', 'data', 'country']),
-                dataGroupsDepartment: state.getIn(['data', 'groups', 'data', 'department']),
-                activeIdToRender: state.getIn(['data', 'groups', 'active', 'id']),
-            }
-        }
-        case 'geo': {
-            console.log('geo')
-            //return state.setIn(['groups', 'active'], action.payload.activeGroup)
-        }
-        /*case 'companies': {
-            console.log('companies')
-            //return state.setIn(['groups', 'active'], action.payload.activeGroup)
-        }
-        default:
-            return state
-        */
+const mapStateToProps = ( state, props ) => (
+    {
+        activeIdToRender: state.getIn(['data', 'groups', 'active', 'item']),
+        companies: state.getIn(['data', 'companies', 'data', 'companies'])
     }
-}
+)
+
 
 const mapDispatchToProps = dispatch => (
     {

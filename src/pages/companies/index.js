@@ -59,7 +59,7 @@ class Companies extends Component {
         companiesTypes.forEach((i, k) => {
             sidebarItems.push({id: k, nombre: i, grupoBiologicoHijos: []})
         })
-
+        this.props.actions.fetchCompaniesData(data.vistaEntidades)
         this.props.actions.sidebarItems(sidebarItems)
 
     }
