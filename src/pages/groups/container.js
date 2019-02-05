@@ -6,6 +6,7 @@ import GroupsLayout from "./layout";
 import connect from "react-redux/es/connect/connect";
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
+import Tabs from "../../components/tabs";
 
 class GroupsContainer extends Component {
     componentDidMount() {
@@ -19,7 +20,11 @@ class GroupsContainer extends Component {
     render () {
         return (
             <GroupsLayout sidebarActive={this.props.sidebar}>
-                <h1>{this.props.title}</h1>
+
+                <div className="breadcrumb">
+                    <h1 className="underline-title">{this.props.title} </h1>
+                    <p><span className="caret">></span>{this.props.activeIdToRender.name}</p>
+                </div>
                 {
                     this.props.dataVisualization &&
                     <Panel>
@@ -27,6 +32,7 @@ class GroupsContainer extends Component {
                             <p>ilustracion</p>
                         </div>
                         <div className="col-6">
+                            {/*<Tabs/>*/}
                             <RadarComponent
                                 ref={ref => this.chartInstance = ref && ref.chartInstance}
                                 type='radar'
@@ -70,6 +76,7 @@ const mapStateToProps = ( state, props ) => (
         dataGroupsCountry: state.getIn(['data', 'groups', 'data', 'country']),
         dataGroupsDepartment: state.getIn(['data', 'groups', 'data', 'department']),
         activeIdToRender: state.getIn(['data', 'groups', 'active', 'item']),
+
     }
 )
 
