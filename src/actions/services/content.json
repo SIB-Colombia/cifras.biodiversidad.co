@@ -28,7 +28,8 @@
       "number": "182.489",
       "subtitle": "8vo a nivel nacional",
       "disclaimer": "Datos con corte a noviembre de 2017",
-      "background": "https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/CIM13285_Felipe-Villegas.jpg",
+      "background": "https://s3.amazonaws.com/sib-resources/images/santander/fnd1.jpg",
+      "svg": "https://s3.amazonaws.com/sib-resources/images/santander/paramo.svg",
       "credit": "Felipe Villegas / Instituto Humboldt"
     },
     {
@@ -37,7 +38,8 @@
       "number": "9563",
       "subtitle": "5to a nivel nacional",
       "disclaimer": "Datos con corte a noviembre de 2017",
-      "background": "https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/_O7A8628_FelipeVillegas.jpg",
+      "background": "https://s3.amazonaws.com/sib-resources/images/santander/fnd2.jpg",
+      "svg": "https://s3.amazonaws.com/sib-resources/images/santander/aves.svg",
       "credit": "Felipe Villegas / Instituto Humboldt"
     },
     {
@@ -46,16 +48,8 @@
       "number": "222",
       "subtitle": "",
       "disclaimer": "Datos con corte a noviembre de 2017",
-      "background": "https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/CIM13643_Felipe-Villegas.jpg",
-      "credit": "Felipe Villegas / Instituto Humboldt"
-    },
-    {
-      "id": "4",
-      "title": "Especies endémicas",
-      "number": "980",
-      "subtitle": "",
-      "disclaimer": "Datos con corte a noviembre de 2017",
-      "background": "https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/_CIX1068_Felipe-Villegas.jpg",
+      "background": "https://s3.amazonaws.com/sib-resources/images/santander/fnd3.jpg",
+      "svg": "https://s3.amazonaws.com/sib-resources/images/santander/yuca.svg",
       "credit": "Felipe Villegas / Instituto Humboldt"
     }
   ],

@@ -12,6 +12,9 @@ class Counter extends Component {
         return (
             <div id="counter" className="Counter container">
                 <div className="row">
+                    <h3 className="counterTitle">PRÓXIMAMENTE</h3>
+                </div>
+                <div className="row">
                     <div className="col-1"></div>
                     <div className="col-10">
                         <div className="row">
@@ -41,7 +44,7 @@ class Counter extends Component {
     }
 
     reverseCounter () {
-        const countDownDate = new Date("Feb 8, 2019 9:00:00").getTime();
+        const countDownDate = new Date("Feb 8, 2019 10:00:00").getTime();
 
         setInterval(function() {
 

@@ -26,7 +26,7 @@ class Navbar extends Component {
                 {/* TODO: convertir logo en componente */}
                 <div className="HeaderLogo">
                     <Link to="/">
-                        <img src="../../../images/logos/logo-cifras-santander.svg" alt="Logo Biodiversidad en cifras - Santander"/>
+                        <img src="https://s3.amazonaws.com/sib-resources/images/logos-canales/svg/logo-cifras-santander.svg" alt="Logo Biodiversidad en cifras - Santander"/>
                     </Link>
                 </div>
                 <p onClick={this.handleToggleMainMenu} className="ToggleMainMenu">EXPLORAR</p>

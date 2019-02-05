@@ -21,7 +21,7 @@ class HomeSlider extends Component {
             slidesToShow: 1,
             fade: true,
             autoplay: true,
-            speed: 100,
+            speed: 1000,
             autoplaySpeed: 12000,
             arrows: false
         };
@@ -39,6 +39,7 @@ class HomeSlider extends Component {
                                 disclaimer={item.get('disclaimer')}
                                 credit={item.get('credit')}
                                 background={item.get('background')}
+                                svg={item.get('svg')}
                             />
                         ))
                     }
