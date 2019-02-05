@@ -7,7 +7,6 @@ import connect from "react-redux/es/connect/connect";
 class RadarComponent extends Component {
 
     render() {
-        console.log(this.props)
         return (
             <div>
                 <Radar data={this.props.radarData} />
@@ -20,39 +19,44 @@ const mapStateToProps = state => {
     const activeDataCountry = state.getIn(['data', 'groups', 'active', 'data', 'country', 0])
     const activeDataDepartment = state.getIn(['data', 'groups', 'active', 'data', 'department', 0])
 
+    let countryDataToRender = [
+        activeDataCountry ? activeDataCountry.especiesAmenaza : 0,
+        activeDataCountry ? activeDataCountry.especiesCites : 0,
+        activeDataCountry ? activeDataCountry.especiesEndemicas : 0,
+        activeDataCountry ? activeDataCountry.especiesMigratorias : 0,
+        activeDataCountry ? activeDataCountry.especiesExoticas : 0
+    ]
+
+    let departmentDataToRender = [
+        activeDataDepartment ? activeDataDepartment.especiesAmenaza : 0,
+        activeDataDepartment ? activeDataDepartment.especiesCites : 0,
+        activeDataDepartment ? activeDataDepartment.especiesEndemicas : 0,
+        activeDataDepartment ? activeDataDepartment.especiesMigratorias : 0,
+        activeDataDepartment ? activeDataDepartment.especiesExoticas : 0
+    ]
 
     const data = {
-        labels: ['Amenazadas', 'CITES', 'Endémicas', 'Migratorias', 'Exóticas'],
+        labels: ['Especies Amenazadas', 'Especies CITES', 'Especies Endémicas', 'Especies Migratorias', 'Especies Exóticas'],
         datasets: [
             {
                 label: 'Colombia',
-                backgroundColor: 'rgba(179,181,198,0.2)',
-                borderColor: 'rgba(179,181,198,1)',
-                pointBackgroundColor: 'rgba(179,181,198,1)',
+                backgroundColor: 'rgba(0, 168, 180, 0.2)',
+                borderColor: 'rgba(0, 168, 180, 1)',
+                pointBackgroundColor: 'rgba(0, 168, 180, 1)',
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: 'rgba(179,181,198,1)',
-                data: [
-                    activeDataCountry ? activeDataCountry.registros : 0,
-                    59,
-                    90,
-                    81,
-                    86]
+                pointHoverBorderColor: 'rgba(0, 168, 180, 1)',
+                data: countryDataToRender
             },
             {
                 label: 'Santander',
-                backgroundColor: 'rgba(255,99,132,0.2)',
-                borderColor: 'rgba(255,99,132,1)',
-                pointBackgroundColor: 'rgba(255,99,132,1)',
+                backgroundColor: 'rgba(255, 120, 71, 0.2)',
+                borderColor: 'rgba(255, 120, 71, 1)',
+                pointBackgroundColor: 'rgba(255, 120, 71, 1)',
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: 'rgba(255,99,132,1)',
-                data: [
-                    activeDataDepartment ? activeDataDepartment.registros : 0,
-                    48,
-                    40,
-                    19,
-                    30]
+                data: departmentDataToRender
             }
         ]
     };
