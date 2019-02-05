@@ -1,0 +1,19 @@
+@import "../_utilities/variables";
+@import "../elements/card";
+
+.tabs {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+
+  .tab {
+    border-bottom: 2px solid color("orange", "base");
+    text-align: center;
+    padding: 1em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+}
