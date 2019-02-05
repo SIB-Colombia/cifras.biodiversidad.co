@@ -5,7 +5,8 @@ class Tab extends Component {
     render () {
         return (
             <TabLayout>
-                <div>Tab Content</div>
+                <p>182.489</p>
+                <span>Registros biológicos</span>
             </TabLayout>
         )
     }

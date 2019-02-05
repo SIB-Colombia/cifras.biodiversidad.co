@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TabLayout = props => (
-    <div className="TabLayout">
+    <div className="tab">
         { props.children}
     </div>
 )
