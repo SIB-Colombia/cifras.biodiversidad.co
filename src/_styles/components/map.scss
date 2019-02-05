@@ -1,0 +1,17 @@
+@import "../_utilities/variables";
+
+.geoPath {
+  fill: color("teal", "lighten-1");
+
+  cursor: pointer;
+  stroke: none;
+  &:hover {
+    fill: color("teal", "base");
+  }
+  &.active {
+    fill: color("teal", "base");
+  }
+  .title {
+
+  }
+}
