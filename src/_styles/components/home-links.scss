@@ -7,7 +7,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 1em;
   max-height: 150px;
 }
 .HomeLink {
@@ -22,6 +22,7 @@
   border-bottom: 2px solid $secondary-color;
   height: 100px;
   box-sizing: border-box;
+  margin: 1em;
   &:hover {
     @extend .card--hover;
     background-color: rgba(255,255,255,0.4);
