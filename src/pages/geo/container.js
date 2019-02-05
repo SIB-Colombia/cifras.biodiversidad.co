@@ -44,7 +44,7 @@ class GeoContainer extends Component {
     filterGroup() {
         let dataTownsActive = this.props.dataTowns.filter(item => (
             //item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
-            item.id === this.props.activeIdToRender.id
+            item.geografia.id === this.props.activeIdToRender.id
         ))
 
 
