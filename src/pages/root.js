@@ -11,26 +11,31 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
 import reducer from '../actions/reducers/index';
-import ApolloClient from 'apollo-boost'
-import { ApolloProvider } from 'react-apollo'
-import { InMemoryCache } from "apollo-cache-inmemory";
 import logger from "redux-logger"
 import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 import { Map as map } from 'immutable'
 import About from "./about";
-const cache = new InMemoryCache({
-    dataIdFromObject: object => object.key || null
 
-});
+import ApolloClient from 'apollo-boost'
+import { ApolloProvider } from 'react-apollo'
+import {concat} from 'apollo-link';
+import {HttpLink} from 'apollo-link-http';
+import {RetryLink} from 'apollo-link-retry';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { persistCache } from 'apollo-cache-persist';
 
+const retry = new RetryLink({ attempts : { max : Infinity } })
+const http = new HttpLink({ uri : 'http://158.69.59.122:8001/graphql' })
+const link = concat(retry, http)
+const cache = new InMemoryCache()
+
+const storage = window.localStorage
+const waitOnCache = persistCache({ cache, storage })
 
 const client = new ApolloClient({
-    //uri: 'http://192.168.11.92:8001/graphql',
-    uri: 'http://158.69.59.122:8001/graphql',
-    //uri: 'http://f37e66b8.ngrok.io/graphql',
-    cache
-
+    //cache,
+    uri : 'http://158.69.59.122:8001/graphql'
 })
 
 const store = createStore(
@@ -38,7 +43,6 @@ const store = createStore(
     map(),
     composeWithDevTools(
         applyMiddleware(
-            //logger,
             thunk
         )
     )
