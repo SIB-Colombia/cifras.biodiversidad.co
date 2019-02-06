@@ -24,6 +24,7 @@ class Highlights extends Component {
                             title={item.get('title')}
                             text={item.get('text')}
                             link={item.get('link')}
+                            background={item.get('background')}
                         />
                     ))
                 }
