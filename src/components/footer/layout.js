@@ -9,22 +9,22 @@ const FooterLayout = props => (
                     <div className="row">
                         <div className="col-3">
                             <a href="http://datos.biodiversidad.co/" target="_blank">
-                                <img src="https://s3.amazonaws.com/sib-resources/images/logos-canales/png/logo-datos-b.png" alt="Logo Portal"/>
+                                <img src="https://s3.amazonaws.com/sib-resources/images/logos-canales/svg/logo-datos-b.svg" alt="Logo Portal"/>
                             </a>
                         </div>
                         <div className="col-3">
                             <a href="http://catalogo.biodiversidad.co/" target="_blank">
-                                <img src="https://s3.amazonaws.com/sib-resources/images/logos-canales/png/logo-catalogo-b.png" alt="Logo Catálogo"/>
+                                <img src="https://s3.amazonaws.com/sib-resources/images/logos-canales/svg/logo-catalogo-b.svg" alt="Logo Catálogo"/>
                             </a>
                         </div>
                         <div className="col-3">
                             <a href="http://colecciones.biodiversidad.co/" target="_blank">
-                                <img src="https://s3.amazonaws.com/sib-resources/images/logos-canales/png/logo-colecciones-b.png" alt="Logo Colecciones"/>
+                                <img src="https://s3.amazonaws.com/sib-resources/images/logos-canales/svg/logo-colecciones-b.svg" alt="Logo Colecciones"/>
                             </a>
                         </div>
                         <div className="col-3">
                             <a href="http://listas.biodiversidad.co/" target="_blank">
-                                <img src="https://s3.amazonaws.com/sib-resources/images/logos-canales/png/logo-listas-b.png" alt="Logo Listas"/>
+                                <img src="https://s3.amazonaws.com/sib-resources/images/logos-canales/svg/logo-listas-b.svg" alt="Logo Listas"/>
                             </a>
                         </div>
                     </div>

@@ -17,7 +17,8 @@ class Home extends Component {
         return (
             <HomeLayout>
                 <HomeSlider slides={this.props.slides}/>
-                <HomeLinks/>
+                <Counter/>
+                {/*<HomeLinks/>*/}
             </HomeLayout>
         )
     }

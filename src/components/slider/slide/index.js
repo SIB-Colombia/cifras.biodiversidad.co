@@ -12,14 +12,7 @@ class Slide extends Component {
                     <div className="row">
                         <div className="col-1"></div>
                         <div className="col-10">
-
-                            <span className="SlideLayout__number">{this.props.number}</span>
-                            <h2 className="SlideLayout__title">{this.props.title}</h2>
-                            <p className="SlideLayout__subtitle">{this.props.subtitle}</p>
-                            {
-                                this.props.disclaimer &&
-                                <p className="SlideLayout__disclaimer">{this.props.disclaimer}</p>
-                            }
+                            <img src={this.props.svg} alt=""/>
                             {
                                 this.props.credit &&
                                 <p className="SlideLayout__credit">{this.props.credit}</p>

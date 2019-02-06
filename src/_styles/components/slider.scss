@@ -26,7 +26,7 @@
     right: 0;
     bottom: 0;
     background-color: color("gray", "darken-2");
-    opacity: 0.4;
+    opacity: 0.2;
   }
   &__slide{
     z-index: 99;
@@ -66,7 +66,7 @@
   }
   &__credit {
     //color: $title-color;
-    color: white;
+    color: rgba(255,255,255,0.7);
     font-family: $main-font;
     font-size: 0.6em;
     font-weight: $light;
@@ -79,8 +79,8 @@
       left: -20px;
       width: 18px;
       height: 12px;
-      background-size: contain;
       background: url(https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/ph-credito.png) no-repeat;
+      background-size: contain;
     }
   }
 }
