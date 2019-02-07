@@ -2,13 +2,32 @@
 @import "../_utilities/grid";
 @import "card";
 
-.panel {
+.Panel {
   @extend %card;
   @extend .row;
   background: white;
+  position: relative;
   &--list {
     margin-bottom: 0.2em;
     padding: 1em;
+  }
+  &--visualization {
+    margin-bottom: 3em;
+    padding: 4rem 2rem 1rem;
+  }
+  &__header {
+    position: absolute;
+    background: color("teal", "lighten-3");
+    padding: 2em;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    h1,h2,h3,p,span {
+      color: color("teal", "darken-1");
+      text-transform: capitalize;
+    }
+
   }
   &.loading {
     animation-duration: 1.5s;
