@@ -14,16 +14,16 @@ class TableComponent extends Component {
             Header: 'Indicador',
             accessor: 'name'
         }, {
-            Header: 'RRBB Mun',
+            Header: 'Registros biológicos Municipio',
             accessor: 'RRBBSant',
         },{
-            Header: 'RRBB Sant',
+            Header: 'Registros biológicos Santander',
             accessor: 'RRBBCol',
         },{
-            Header: 'Especies Mun',
+            Header: 'Especies Municipio',
             accessor: 'ESPSant',
         },{
-            Header: 'Especies Sant',
+            Header: 'Especies Santander',
             accessor: 'ESPCol',
         }]
         return (
