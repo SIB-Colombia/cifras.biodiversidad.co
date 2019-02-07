@@ -14,7 +14,9 @@ import {
     ACTIVE_TOWN_DATA,
     ACTIVE_DEPARTMENT_DATA,
     FETCH_COMPANIES_DATA,
-    ACTIVE_GROUP_IMAGE
+    ACTIVE_GROUP_IMAGE,
+    ACTIVE_COMPANY_DATA,
+    ACTIVE_COMPANY_TYPE
 } from "../types"
 
 const initialState = fromJS({
@@ -56,7 +58,7 @@ const initialState = fromJS({
         },
         active: {
             type: {},
-            companies: {}
+            data: {}
         }
     }
 
@@ -106,7 +108,12 @@ const dataReducer = (state = initialState, action ) => {
         case FETCH_COMPANIES_DATA: {
             return state.setIn(['companies', 'data', 'companies'], action.payload.fetchCompaniesData)
         }
-
+        case ACTIVE_COMPANY_TYPE: {
+            return state.setIn(['companies', 'active', 'type'], action.payload.activeCompanyType)
+        }
+        case ACTIVE_COMPANY_DATA: {
+            return state.setIn(['companies', 'active', 'data'], action.payload.activeCompanyData)
+        }
 
 
         default:

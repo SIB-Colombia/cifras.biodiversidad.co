@@ -15,6 +15,8 @@ import {
     ACTIVE_TOWN_DATA,
     ACTIVE_DEPARTMENT_DATA,
     FETCH_COMPANIES_DATA,
+    ACTIVE_COMPANY_DATA,
+    ACTIVE_COMPANY_TYPE,
     ACTIVE_GROUP_IMAGE
 } from "./types"
 
@@ -172,4 +174,27 @@ export const setActiveGroupImage = data => {
         }
     })
 }
+
+export const activeCompanyType = data => {
+    return ({
+        type: ACTIVE_COMPANY_TYPE,
+        payload: {
+            activeCompanyType: data
+        }
+    })
+}
+
+
+
+export const activeCompanyData = data => {
+    return ({
+        type: ACTIVE_COMPANY_DATA,
+        payload: {
+            activeCompanyData: data
+        }
+    })
+}
+
+
+
 
