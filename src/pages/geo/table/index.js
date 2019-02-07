@@ -13,18 +13,24 @@ class TableComponent extends Component {
         const columns = [{
             Header: 'Indicador',
             accessor: 'name'
-        }, {
-            Header: 'Registros biológicos Municipio',
-            accessor: 'RRBBSant',
         },{
-            Header: 'Registros biológicos Santander',
-            accessor: 'RRBBCol',
+            Header: 'Registros biológicos',
+            columns: [{
+                Header: 'Municipio',
+                accessor: 'RRBBSant'
+            },{
+                Header: 'Santander',
+                accessor: 'RRBBCol'
+            }]
         },{
-            Header: 'Especies Municipio',
-            accessor: 'ESPSant',
-        },{
-            Header: 'Especies Santander',
-            accessor: 'ESPCol',
+            Header: 'Especies',
+            columns: [{
+                Header: 'Municipio',
+                accessor: 'ESPSant'
+            },{
+                Header: 'Santander',
+                accessor: 'ESPCol'
+            }]
         }]
         return (
             <TableComponentLayout>
@@ -32,6 +38,7 @@ class TableComponent extends Component {
                     data={this.props.dataTable}
                     columns={columns}
                     defaultPageSize={12}
+                    showPagination={false}
                 />
             </TableComponentLayout>
         );
@@ -57,21 +64,21 @@ const mapStateToProps = state => {
             ESPCol: activeDataDepartment ? activeDataDepartment.especiesAmenaza : 0,
         },
         {
-            name: 'Amenazadas CR',
+            name: 'En peligro crítico (CR)',
             RRBBSant: activeDataTown ? activeDataTown.registrosCR : 0,
             RRBBCol: activeDataDepartment ? activeDataDepartment.registrosCR : 0,
             ESPSant: activeDataTown ? activeDataTown.especiesCR : 0,
             ESPCol: activeDataDepartment ? activeDataDepartment.especiesCR : 0,
         },
         {
-            name: 'Amenazadas EN',
+            name: 'En peligro (EN)',
             RRBBSant: activeDataTown ? activeDataTown.registrosEN : 0,
             RRBBCol: activeDataDepartment ? activeDataDepartment.registrosEN : 0,
             ESPSant: activeDataTown ? activeDataTown.especiesEN : 0,
             ESPCol: activeDataDepartment ? activeDataDepartment.especiesEN : 0,
         },
         {
-            name: 'Amenazadas VU',
+            name: 'Vulnerable (VU)',
             RRBBSant: activeDataTown ? activeDataTown.registrosVU : 0,
             RRBBCol: activeDataDepartment ? activeDataDepartment.registrosVU : 0,
             ESPSant: activeDataTown ? activeDataTown.especiesVU : 0,
@@ -85,21 +92,21 @@ const mapStateToProps = state => {
             ESPCol: activeDataDepartment ? activeDataDepartment.especiesCites : 0,
         },
         {
-            name: 'CITES I',
+            name: 'Apéndice CITES I',
             RRBBSant: activeDataTown ? activeDataTown.registrosCitesI : 0,
             RRBBCol: activeDataDepartment ? activeDataDepartment.registrosCitesI : 0,
             ESPSant: activeDataTown ? activeDataTown.especiesCitesI : 0,
             ESPCol: activeDataDepartment ? activeDataDepartment.especiesCitesI : 0,
         },
         {
-            name: 'CITES II',
+            name: 'Apéndice CITES II',
             RRBBSant: activeDataTown ? activeDataTown.registrosCitesII : 0,
             RRBBCol: activeDataDepartment ? activeDataDepartment.registrosCitesII : 0,
             ESPSant: activeDataTown ? activeDataTown.especiesCitesII : 0,
             ESPCol: activeDataDepartment ? activeDataDepartment.especiesCitesII : 0,
         },
         {
-            name: 'CITES III',
+            name: 'Apéndice CITES III',
             RRBBSant: activeDataTown ? activeDataTown.registrosCitesIII : 0,
             RRBBCol: activeDataDepartment ? activeDataDepartment.registrosCitesIII : 0,
             ESPSant: activeDataTown ? activeDataTown.especiesCitesIII : 0,

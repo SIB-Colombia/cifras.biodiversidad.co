@@ -14,18 +14,24 @@ class TableComponent extends Component {
         const columns = [{
             Header: 'Indicador',
             accessor: 'name'
-        }, {
-            Header: 'Registros biológicos Santander',
-            accessor: 'RRBBSant',
         },{
-            Header: 'Registros biológicos Colombia',
-            accessor: 'RRBBCol',
+            Header: 'Registros biológicos',
+            columns: [{
+              Header: 'Santander',
+              accessor: 'RRBBSant'
+            },{
+                Header: 'Colombia',
+                accessor: 'RRBBCol'
+            }]
         },{
-            Header: 'Especies Santander',
-            accessor: 'ESPSant',
-        },{
-            Header: 'Especies Colombia',
-            accessor: 'ESPCol',
+            Header: 'Especies',
+            columns: [{
+                Header: 'Santander',
+                accessor: 'ESPSant'
+            },{
+                Header: 'Colombia',
+                accessor: 'ESPCol'
+            }]
         }]
         return (
             <TableComponentLayout>
@@ -33,6 +39,7 @@ class TableComponent extends Component {
                     data={this.props.dataTable}
                     columns={columns}
                     defaultPageSize={12}
+                    showPagination={false}
                 />
             </TableComponentLayout>
         );
@@ -59,21 +66,21 @@ const mapStateToProps = state => {
         ESPCol: activeDataCountry ? activeDataCountry.especiesAmenaza : 0,
     },
     {
-        name: 'Amenazadas CR',
+        name: 'En peligro crítico (CR)',
         RRBBSant: activeDataDepartment ? activeDataDepartment.registrosCR : 0,
         RRBBCol: activeDataCountry ? activeDataCountry.registrosCR : 0,
         ESPSant: activeDataDepartment ? activeDataDepartment.especiesCR : 0,
         ESPCol: activeDataCountry ? activeDataCountry.especiesCR : 0,
     },
     {
-        name: 'Amenazadas EN',
+        name: 'En peligro (EN)',
         RRBBSant: activeDataDepartment ? activeDataDepartment.registrosEN : 0,
         RRBBCol: activeDataCountry ? activeDataCountry.registrosEN : 0,
         ESPSant: activeDataDepartment ? activeDataDepartment.especiesEN : 0,
         ESPCol: activeDataCountry ? activeDataCountry.especiesEN : 0,
     },
     {
-        name: 'Amenazadas VU',
+        name: 'Vulnerable (VU)',
         RRBBSant: activeDataDepartment ? activeDataDepartment.registrosVU : 0,
         RRBBCol: activeDataCountry ? activeDataCountry.registrosVU : 0,
         ESPSant: activeDataDepartment ? activeDataDepartment.especiesVU : 0,
@@ -87,21 +94,21 @@ const mapStateToProps = state => {
         ESPCol: activeDataCountry ? activeDataCountry.especiesCites : 0,
     },
     {
-        name: 'CITES I',
+        name: 'Apéndice CITES I',
         RRBBSant: activeDataDepartment ? activeDataDepartment.registrosCitesI : 0,
         RRBBCol: activeDataCountry ? activeDataCountry.registrosCitesI : 0,
         ESPSant: activeDataDepartment ? activeDataDepartment.especiesCitesI : 0,
         ESPCol: activeDataCountry ? activeDataCountry.especiesCitesI : 0,
     },
     {
-        name: 'CITES II',
+        name: 'Apéndice CITES II',
         RRBBSant: activeDataDepartment ? activeDataDepartment.registrosCitesII : 0,
         RRBBCol: activeDataCountry ? activeDataCountry.registrosCitesII : 0,
         ESPSant: activeDataDepartment ? activeDataDepartment.especiesCitesII : 0,
         ESPCol: activeDataCountry ? activeDataCountry.especiesCitesII : 0,
     },
     {
-        name: 'CITES III',
+        name: 'Apéndice CITES III',
         RRBBSant: activeDataDepartment ? activeDataDepartment.registrosCitesIII : 0,
         RRBBCol: activeDataCountry ? activeDataCountry.registrosCitesIII : 0,
         ESPSant: activeDataDepartment ? activeDataDepartment.especiesCitesIII : 0,
@@ -140,23 +147,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(TableComponent)
-
-/*
-
-const columns = [{
-    Header: 'Indicador',
-    accessor: 'name' // String-based value accessors!
-}, {
-    Header: 'RRBB Sant',
-    accessor: 'age',
-    Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-}, {
-    id: 'friendName', // Required because our accessor is not a string
-    Header: 'Friend Name',
-    accessor: d => d.friend.name // Custom value accessors!
-}, {
-    Header: props => <span>Friend Age</span>, // Custom header components!
-    accessor: 'friend.age'
-}]
-
-*/
