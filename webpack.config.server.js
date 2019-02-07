@@ -38,6 +38,7 @@ module.exports = (env) => {
                     use: {
                         loader: 'babel-loader',
                         options: {
+                            compact: false,
                             presets: ['es2015', 'react', 'stage-2'],
                         }
                     },
@@ -53,6 +54,12 @@ module.exports = (env) => {
                                 }
                             }
                         ]
+                    })
+                },
+                {
+                    test: /\.scss$/,
+                    use: ExtractTextPlugin.extract({
+                        use: [ 'css-loader', 'sass-loader' ]
                     })
                 },
                 {
