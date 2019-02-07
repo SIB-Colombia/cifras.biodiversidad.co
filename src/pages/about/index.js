@@ -3,6 +3,8 @@ import TextTemplate from "../templates/text";
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
 import connect from "react-redux/es/connect/connect";
+import AnchorLink from 'react-anchor-link-smooth-scroll'
+
 
 class About extends Component {
     componentDidMount () {
@@ -23,10 +25,10 @@ class About extends Component {
                     <div className="col-3 sideNav">
                         <div className="card white fixed">
                             <ul>
-                                <li><a href="#sibcol">SiB Colombia</a></li>
-                                <li><a href="#biocifras">Biodiversidad en cifras</a></li>
-                                <li><a href="#consolida">¿Cómo se consolidan las cifras?</a></li>
-                                <li><a href="#aclaraciones">Aclaraciones</a></li>
+                                <li><AnchorLink href="#sibcol" offset='100'>SiB Colombia</AnchorLink></li>
+                                <li><AnchorLink href="#biocifras" offset='100'>Biodiversidad en cifras</AnchorLink></li>
+                                <li><AnchorLink href="#consolida" offset='100'>¿Cómo se consolidan las cifras?</AnchorLink></li>
+                                <li><AnchorLink href="#aclaraciones" offset='100'>Aclaraciones</AnchorLink></li>
 
                             </ul>
                         </div>
