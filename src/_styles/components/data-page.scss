@@ -4,6 +4,7 @@
 
 .DataPageLayout {
   padding-left: 0;
+  padding-bottom: 4em;
   overflow-y: hidden;
   &.sidebarActive {
     padding-left: 280px;
@@ -11,9 +12,6 @@
   .VisualizationPanel {
     margin-bottom: 3em;
     padding: 2rem;
-  }
-  .table {
-    margin-bottom: 3rem;
   }
 }
 
