@@ -11,7 +11,7 @@ class GroupsRadarComponent extends Component {
             <div>
                 <Radar
                     data={this.props.radarData}
-                    height={350}
+                    height={200}
                     options={{
                         legend: {
                             position: "bottom"
