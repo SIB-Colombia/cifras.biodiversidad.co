@@ -38,6 +38,7 @@
       border-bottom: 1px solid $light-gray;
       cursor: pointer;
     }
+    
     .FilterList {
       .FilterItem {
         background: $background-light;
@@ -67,4 +68,8 @@
       }
     }
   }
+}
+
+.hidden {
+  display: none !important;
 }
