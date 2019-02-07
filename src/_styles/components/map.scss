@@ -4,7 +4,11 @@
   fill: color("teal", "lighten-1");
 
   cursor: pointer;
-  stroke: none;
+  stroke: white;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-dasharray: 1px,1px;
+  transition: fill .2s ease;
   &:hover {
     fill: color("teal", "base");
   }
