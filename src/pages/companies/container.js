@@ -19,13 +19,15 @@ class CompaniesContainer extends Component {
     render () {
         return (
             <CompaniesLayout sidebarActive={this.props.sidebar}>
-                <h1>{this.props.title}</h1>
+                <h1 className="underline-title">{this.props.title}</h1>
                 <div className="row">
+                                    {console.log(this.props.companies)}
                     {
                         this.props.companies.map(item => (
                                 <Company
                                     key={item.id}
                                     {...item}
+
                                 />
                         ))
                     }
