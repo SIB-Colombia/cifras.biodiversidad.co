@@ -57,7 +57,7 @@ class Groups extends Component {
 
     saveDataToState(data) {
         let groupsList = [
-            {id: '0', nombre: 'Todos', aplica: true, grupoBiologicoHijos: []},
+            {id: '0', nombre: 'Todos', aplica: true, grupoBiologicoHijos: [], urlImagen: "https://s3.amazonaws.com/sib-resources/images/santander/cifras-san-42.svg"},
             data.animales,
             data.plantas,
             data.hongos,
