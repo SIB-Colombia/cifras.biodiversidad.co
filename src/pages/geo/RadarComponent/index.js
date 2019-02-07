@@ -24,23 +24,23 @@ class GeoRadarComponent extends Component {
 }
 
 const mapStateToProps = state => {
-    const activeDataCountry = state.getIn(['data', 'groups', 'active', 'data', 'country', 0])
     const activeDataDepartment = state.getIn(['data', 'groups', 'active', 'data', 'department', 0])
+    const activeDataTown = state.getIn(['data', 'groups', 'active', 'data', 'department', 0])
 
     let countryDataToRender = [
-        activeDataCountry ? activeDataCountry.especiesAmenaza : 0,
-        activeDataCountry ? activeDataCountry.especiesCites : 0,
-        activeDataCountry ? activeDataCountry.especiesEndemicas : 0,
-        activeDataCountry ? activeDataCountry.especiesMigratorias : 0,
-        activeDataCountry ? activeDataCountry.especiesExoticas : 0
-    ]
-
-    let departmentDataToRender = [
         activeDataDepartment ? activeDataDepartment.especiesAmenaza : 0,
         activeDataDepartment ? activeDataDepartment.especiesCites : 0,
         activeDataDepartment ? activeDataDepartment.especiesEndemicas : 0,
         activeDataDepartment ? activeDataDepartment.especiesMigratorias : 0,
         activeDataDepartment ? activeDataDepartment.especiesExoticas : 0
+    ]
+
+    let departmentDataToRender = [
+        activeDataTown ? activeDataTown.especiesAmenaza : 0,
+        activeDataTown ? activeDataTown.especiesCites : 0,
+        activeDataTown ? activeDataTown.especiesEndemicas : 0,
+        activeDataTown ? activeDataTown.especiesMigratorias : 0,
+        activeDataTown ? activeDataTown.especiesExoticas : 0
     ]
 
     const data = {
@@ -71,8 +71,8 @@ const mapStateToProps = state => {
 
     return (
         {
-            dataCountry: activeDataCountry,
             dataDepartment: activeDataDepartment,
+            dataTown: activeDataTown,
             radarData: data
         }
     )

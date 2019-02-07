@@ -28,19 +28,19 @@ const mapStateToProps = state => {
     const activeDataDepartment = state.getIn(['data', 'groups', 'active', 'data', 'department', 0])
 
     let countryDataToRender = [
-        activeDataCountry ? activeDataCountry.especiesAmenaza : 0,
-        activeDataCountry ? activeDataCountry.especiesCites : 0,
-        activeDataCountry ? activeDataCountry.especiesEndemicas : 0,
-        activeDataCountry ? activeDataCountry.especiesMigratorias : 0,
-        activeDataCountry ? activeDataCountry.especiesExoticas : 0
+        !activeDataCountry || activeDataCountry.especiesAmenaza === -1 ? 0 : activeDataCountry.especiesAmenaza,
+        !activeDataCountry || activeDataCountry.especiesCites === -1 ? 0 : activeDataCountry.especiesCites,
+        !activeDataCountry || activeDataCountry.especiesEndemicas === -1 ? 0 : activeDataCountry.especiesEndemicas,
+        !activeDataCountry || activeDataCountry.especiesMigratorias === -1 ? 0 : activeDataCountry.especiesMigratorias,
+        !activeDataCountry || activeDataCountry.especiesExoticas === -1 ? 0 : activeDataCountry.especiesExoticas
     ]
 
     let departmentDataToRender = [
-        activeDataDepartment ? activeDataDepartment.especiesAmenaza : 0,
-        activeDataDepartment ? activeDataDepartment.especiesCites : 0,
-        activeDataDepartment ? activeDataDepartment.especiesEndemicas : 0,
-        activeDataDepartment ? activeDataDepartment.especiesMigratorias : 0,
-        activeDataDepartment ? activeDataDepartment.especiesExoticas : 0
+        !activeDataDepartment || activeDataDepartment.especiesAmenaza === -1 ? 0 : activeDataDepartment.especiesAmenaza,
+        !activeDataDepartment || activeDataDepartment.especiesCites === -1 ? 0 : activeDataDepartment.especiesCites,
+        !activeDataDepartment || activeDataDepartment.especiesEndemicas === -1 ? 0: activeDataDepartment.especiesEndemicas,
+        !activeDataDepartment || activeDataDepartment.especiesMigratorias === -1 ? 0: activeDataDepartment.especiesMigratorias,
+        !activeDataDepartment || activeDataDepartment.especiesExoticas === -1 ? 0: activeDataDepartment.especiesExoticas
     ]
 
     const data = {
