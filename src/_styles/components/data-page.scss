@@ -9,7 +9,8 @@
     padding-left: 280px;
   }
   .VisualizationPanel {
-    margin-bottom: 3rem;
+    margin-bottom: 3em;
+    padding: 2rem;
   }
   .table {
     margin-bottom: 3rem;
@@ -24,4 +25,9 @@
   .caret {
     margin: 0 1em;
   }
+}
+
+groupsImage {
+  width: 90%;
+  height: auto;
 }
