@@ -1,5 +1,4 @@
 import React, {Component, Fragment} from 'react'
-import RadarComponent from "../../components/chart/RadarComponent/index";
 import TableComponent from "./table/index";
 import Panel from "../../components/panel/index";
 import GeoLayout from "./layout";
@@ -7,6 +6,7 @@ import connect from "react-redux/es/connect/connect";
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
 import Map from "../../components/illustration/map";
+import GeoRadarComponent from "./RadarComponent";
 
 class GeoContainer extends Component {
     componentDidMount() {
@@ -28,7 +28,7 @@ class GeoContainer extends Component {
                             <Map/>
                         </div>
                         <div className="col-6">
-                            <RadarComponent
+                            <GeoRadarComponent
                                 ref={ref => this.chartInstance = ref && ref.chartInstance}
                                 type='radar'
                                 {...this.props}

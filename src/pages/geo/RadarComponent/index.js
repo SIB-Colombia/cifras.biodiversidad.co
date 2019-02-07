@@ -4,7 +4,7 @@ import connect from "react-redux/es/connect/connect";
 
 
 
-class RadarComponent extends Component {
+class GeoRadarComponent extends Component {
 
     render() {
         return (
@@ -76,7 +76,6 @@ const mapStateToProps = state => {
             radarData: data
         }
     )
-
 }
 
-export default connect(mapStateToProps)(RadarComponent)
+export default connect(mapStateToProps)(GeoRadarComponent)
