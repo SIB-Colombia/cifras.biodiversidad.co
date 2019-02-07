@@ -8,8 +8,8 @@ import * as actions from "../../../actions";
 class LoadingTemplate extends Component {
     componentDidMount () {
         this.props.actions.sidebarVisibility(false)
-        this.props.actions.buttonSidebarVisibility(true)
     }
+
     render () {
         return (
             <Fragment>
@@ -21,7 +21,7 @@ class LoadingTemplate extends Component {
                     <Panel loading={true}></Panel>
                     <Panel loading={true}></Panel>
                     <Panel loading={true}></Panel>
-                    <Panel loading={true}></Panel>
+
                 </LoadingTemplateLayout>
             </Fragment>
         )

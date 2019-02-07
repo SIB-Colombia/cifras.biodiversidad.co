@@ -4,7 +4,7 @@ import '../../../_styles/components/text-page.scss'
 const TextTemplate = props => (
 
     <section className={`TextPageLayout ${props.sideNavActive ? `sideNavActive`: ` ` }`}>
-        <div className="container-fluid">
+        <div className="container">
             {props.children}
         </div>
     </section>
