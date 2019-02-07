@@ -16,26 +16,19 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import thunk from 'redux-thunk'
 import { Map as map } from 'immutable'
 import About from "./about";
-
-import ApolloClient from 'apollo-boost'
+import 'cross-fetch/polyfill';
+import fetch from 'node-fetch'
+import ApolloClient from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
-import {concat} from 'apollo-link';
-import {HttpLink} from 'apollo-link-http';
-import {RetryLink} from 'apollo-link-retry';
+import { createHttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import { persistCache } from 'apollo-cache-persist';
-
-const retry = new RetryLink({ attempts : { max : Infinity } })
-const http = new HttpLink({ uri : 'http://158.69.59.122:8001/graphql' })
-const link = concat(retry, http)
-const cache = new InMemoryCache()
-
-const storage = window.localStorage
-const waitOnCache = persistCache({ cache, storage })
 
 const client = new ApolloClient({
-    //cache,
-    uri : 'http://158.69.59.122:8001/graphql'
+    link: createHttpLink({
+        uri: 'http://158.69.59.122:8001/graphql',
+        fetch: fetch,
+    }),
+    cache: new InMemoryCache(),
 })
 
 const store = createStore(
