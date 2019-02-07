@@ -1,9 +1,9 @@
 import React from 'react'
-import "../../../_styles/elements/panel.scss"
+import "../../../_styles/components/company.scss"
 
 const CompanyLayout = props => (
-    <div className="panel panel--list">
-        <div className="row">
+    <div className="col-4">
+        <div className="Company">
             {props.children}
         </div>
     </div>

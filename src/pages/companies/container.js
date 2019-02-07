@@ -20,14 +20,16 @@ class CompaniesContainer extends Component {
         return (
             <CompaniesLayout sidebarActive={this.props.sidebar}>
                 <h1>{this.props.title}</h1>
-                {
-                    this.props.companies.map(item => (
-                        <Company
-                            key={item.id}
-                            {...item}
-                        />
-                    ))
-                }
+                <div className="row">
+                    {
+                        this.props.companies.map(item => (
+                                <Company
+                                    key={item.id}
+                                    {...item}
+                                />
+                        ))
+                    }
+                </div>
             </CompaniesLayout>
         )
     }
