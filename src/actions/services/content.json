@@ -63,7 +63,8 @@
       "link": "/",
       "color": "white",
       "align": "left",
-      "background": "https://s3.amazonaws.com/sib-resources/images/santander/fnd3.jpg"
+      "background": "https://s3.amazonaws.com/sib-resources/images/santander/yuca.jpg",
+      "credit": "Forest and Kim Starr"
     },
     {
       "id": "2",
@@ -74,7 +75,8 @@
       "link": "/",
       "color": "orange",
       "align": "left",
-      "background": "https://s3.amazonaws.com/sib-resources/images/santander/fnd1.jpg"
+      "background": "https://s3.amazonaws.com/sib-resources/images/santander/fnd1.jpg",
+      "credit": "Felipe Villegas / Instituto Humboldt"
     },
     {
       "id": "3",
@@ -85,7 +87,8 @@
       "link": "/",
       "color": "teal",
       "align": "left",
-      "background": "https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/_CIX1068_Felipe-Villegas.jpg"
+      "background": "https://upload.wikimedia.org/wikipedia/commons/7/77/Espeletiopsis_santanderensis.jpg",
+      "credit": "Sebastian Galvis"
     },
     {
       "id": "4",
@@ -96,7 +99,8 @@
       "link": "/",
       "color": "white",
       "align": "left",
-      "background": "https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/_CIX1068_Felipe-Villegas.jpg"
+      "background": "https://s3.amazonaws.com/sib-resources/images/santander/hormiga.jpg",
+      "credit": "Paola Sánchez"
     },
     {
       "id": "5",
@@ -107,7 +111,8 @@
       "link": "/",
       "color": "white",
       "align": "left",
-      "background": "https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/_CIX1068_Felipe-Villegas.jpg"
+      "background": "https://s3.amazonaws.com/sib-resources/images/santander/tucan.jpg",
+      "credit": "Paola Sánchez"
     },
     {
       "id": "6",
@@ -118,7 +123,8 @@
       "link": "/",
       "color": "teal",
       "align": "left",
-      "background": "https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/_CIX1068_Felipe-Villegas.jpg"
+      "background": "https://s3.amazonaws.com/sib-resources/images/santander/PaolaSanchez_CIM-22215.jpg",
+      "credit": "Paola Sánchez"
     },
     {
       "id": "7",
@@ -127,9 +133,10 @@
       "text": "En <b>Santander</b> habita el <b>30%</b> de las <b>especies de aves y peces únicas</b> del país.  ¡Descubra más sobre las especies endémicas en Biodiversidad en Cifras Santander! ",
       "size": "6",
       "link": "/",
-      "color": "white",
+      "color": "teal",
       "align": "left",
-      "background": "https://s3.amazonaws.com/sib-resources/images/santander/fnd2.jpg"
+      "background": "https://s3.amazonaws.com/sib-resources/images/santander/PS-pajaro.jpg",
+      "credit": "Paola Sánchez"
     },
     {
       "id": "8",
@@ -140,7 +147,8 @@
       "link": "/",
       "color": "orange",
       "align": "left",
-      "background": "https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/_CIX1068_Felipe-Villegas.jpg"
+      "background": "https://s3.amazonaws.com/sib-resources/images/santander/pajaro-amarillo-baja.jpg",
+      "credit": "Paola Sánchez"
     },
     {
       "id": "9",
@@ -151,7 +159,8 @@
       "link": "/",
       "color": "orange",
       "align": "left",
-      "background": "https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/_CIX1068_Felipe-Villegas.jpg"
+      "background": "https://s3.amazonaws.com/sib-resources/images/santander/rana-coqui.jpg",
+      "credit": "Mark Yokoyama"
     }
   ]
 }
