@@ -22,10 +22,10 @@
   border-bottom: 2px solid $secondary-color;
   height: 100px;
   box-sizing: border-box;
-  margin: 1em;
+  transition: all .2s ease;
   &:hover {
     @extend .card--hover;
-    background-color: rgba(255,255,255,0.4);
+    background-color: rgba(255,255,255,0.2);
     border-bottom: 4px solid $secondary-color;
   }
 }
