@@ -150,6 +150,7 @@ export const GROUPS = gql`
             ...numeros
             grupoBiologicoGeografia {
                 geografia{
+                    id
                     nombre
                 }
                 grupoBiologico {
@@ -171,12 +172,14 @@ export const GEO = gql`
             ...numeros2
             geografia {
                 nombre
+                id
             }
         }
         vistaGeneralDepartamento: vistaGeoByGeografia(geografiaId: 29) {
             ...numeros2
             geografia {
                 nombre
+                id
             }
         }
         vistaMunicipios: vistaGeoByGeografiaPadre(geografiaPadreId: 29) {
@@ -202,6 +205,7 @@ export const COMPANIES = gql`
             id
             nombre
             tipo
+            urlImagen
           }
         }
       }
