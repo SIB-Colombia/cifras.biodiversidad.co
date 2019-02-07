@@ -14,7 +14,8 @@ import {
     FETCH_TOWNS_DATA,
     ACTIVE_TOWN_DATA,
     ACTIVE_DEPARTMENT_DATA,
-    FETCH_COMPANIES_DATA
+    FETCH_COMPANIES_DATA,
+    ACTIVE_GROUP_IMAGE
 } from "./types"
 
 export const sidebarVisibility = visibility => (
@@ -159,6 +160,15 @@ export const fetchCompaniesData = data => {
         type: FETCH_COMPANIES_DATA,
         payload: {
             fetchCompaniesData: data
+        }
+    })
+}
+
+export const setActiveGroupImage = data => {
+    return ({
+        type: ACTIVE_GROUP_IMAGE,
+        payload: {
+            setActiveGroupImage: data
         }
     })
 }
