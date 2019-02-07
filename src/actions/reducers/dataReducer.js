@@ -13,7 +13,8 @@ import {
     FETCH_TOWNS_DATA,
     ACTIVE_TOWN_DATA,
     ACTIVE_DEPARTMENT_DATA,
-    FETCH_COMPANIES_DATA
+    FETCH_COMPANIES_DATA,
+    ACTIVE_GROUP_IMAGE
 } from "../types"
 
 const initialState = fromJS({
@@ -28,6 +29,7 @@ const initialState = fromJS({
             department: {}
         },
         active: {
+            imageUrl: {},
             item: {},
             data: {
                 country: {},
@@ -86,6 +88,9 @@ const dataReducer = (state = initialState, action ) => {
         case ACTIVE_GROUP_DATA_COUNTRY: {
             return state.setIn(['groups', 'active', 'data', 'country'], action.payload.activeGroupsDataCountry)
         }
+        case ACTIVE_GROUP_IMAGE: {
+            return state.setIn(['groups', 'active', 'imageUrl'], action.payload.setActiveGroupImage)
+        }
         case FILTER_TOWN: {
             return state.setIn(['geo', 'active', 'item'], action.payload.filterTown)
         }
@@ -101,6 +106,8 @@ const dataReducer = (state = initialState, action ) => {
         case FETCH_COMPANIES_DATA: {
             return state.setIn(['companies', 'data', 'companies'], action.payload.fetchCompaniesData)
         }
+
+
 
         default:
             return state

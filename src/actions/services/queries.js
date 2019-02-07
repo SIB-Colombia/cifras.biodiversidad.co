@@ -5,15 +5,23 @@ const Fragments = {
     fragment grupos on GrupoBiologicoType {
         id
         nombre
+        aplica
+        urlImagen
         grupoBiologicoHijos {
             id
             nombre
+          	aplica
+          	urlImagen
             grupoBiologicoHijos {
                 id
                 nombre
+              	aplica
+              	urlImagen
                 grupoBiologicoHijos {
                     id
                     nombre
+                  	aplica
+                  	urlImagen
                 }
             }
         }
