@@ -11,9 +11,10 @@ class CompaniesContainer extends Component {
     componentDidMount() {
         this.filterCompanies()
         this.props.actions.sidebarVisibility(true)
+
     }
     componentDidUpdate () {
-       this.filterCompanies()
+        this.filterCompanies()
     }
 
     render () {

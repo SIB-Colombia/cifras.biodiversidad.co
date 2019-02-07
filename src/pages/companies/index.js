@@ -11,9 +11,8 @@ import queryString from "query-string";
 
 class Companies extends Component {
     componentDidMount () {
-        this.props.actions.sidebarVisibility(false)
-        this.props.actions.buttonSidebarVisibility(true)
         this.setActiveCompanyType()
+        this.props.actions.buttonSidebarVisibility(true)
     }
 
     componentDidUpdate() {
@@ -37,7 +36,7 @@ class Companies extends Component {
                                 }
                                 <CompaniesContainer
                                     sidebar={this.props.sidebarVisible}
-                                    title="Búsqueda por entidades"
+                                    title="Entidades"
                                     dataVisualization={false}
                                 />
                             </Fragment>
