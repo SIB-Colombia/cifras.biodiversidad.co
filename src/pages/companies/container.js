@@ -3,57 +3,43 @@ import CompaniesLayout from "./layout";
 import connect from "react-redux/es/connect/connect";
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
-import FilterList from "../../components/sidebar/filterList";
-import CompanyLayout from "./company/layout";
+import CompaniesList from "./companiesList";
 import Company from "./company";
+import GroupsLayout from "../groups/layout";
 
 class CompaniesContainer extends Component {
     componentDidMount() {
-        //this.filterGroup()
+        this.filterCompanies()
         this.props.actions.sidebarVisibility(true)
     }
     componentDidUpdate () {
-       //this.filterGroup()
+       this.filterCompanies()
     }
 
     render () {
         return (
             <CompaniesLayout sidebarActive={this.props.sidebar}>
-                <h1 className="underline-title">{this.props.title}</h1>
-                <div className="row">
-                                    {console.log(this.props.companies)}
-                    {
-                        this.props.companies.map(item => (
-                                <Company
-                                    key={item.id}
-                                    {...item}
+                <div className="breadcrumb">
+                    <h1 className="underline-title">{this.props.title} </h1>
+                    <p><span className="caret">></span>{this.props.activeTypeToRenderName}</p>
+                </div>
 
-                                />
-                        ))
-                    }
+                <div className="row">
+                    <CompaniesList/>
                 </div>
             </CompaniesLayout>
         )
     }
 
-    filterGroup() {
-        let dataCountryActive = this.props.dataGroupsCountry.filter(item => (
-            //item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
-            item.id === this.props.activeIdToRender.id
+    filterCompanies() {
+        let dataCompaniesActive = this.props.companies.filter(item => (
+            item.entidadPublicadoraGeografia.entidadPublicadora.tipo === this.props.activeTypeToRenderName
         ))
-        let dataDepartmentActive = this.props.dataGroupsDepartment.filter(item => (
-            //item.grupoBiologicoGeografia.grupoBiologico.id === this.props.activeIdToRender.id
-            item.id === this.props.activeIdToRender.id
-        ))
-
-        if (this.props.activeIdToRender.id === '0') {
-            this.props.actions.activeGroupsDataCountry(this.props.dataCountry)
-            this.props.actions.activeGroupsDataDepartment(this.props.dataDepartment)
+        if ( this.props.activeTypeToRenderId === 0 ) {
+            this.props.actions.activeCompanyData(this.props.companies)
         } else {
-            this.props.actions.activeGroupsDataCountry(dataCountryActive)
-            this.props.actions.activeGroupsDataDepartment(dataDepartmentActive)
+            this.props.actions.activeCompanyData(dataCompaniesActive)
         }
-
     }
 
 
@@ -61,8 +47,11 @@ class CompaniesContainer extends Component {
 
 const mapStateToProps = ( state, props ) => (
     {
-        activeIdToRender: state.getIn(['data', 'groups', 'active', 'item']),
-        companies: state.getIn(['data', 'companies', 'data', 'companies'])
+        activeTypeToRenderId: state.getIn(['data', 'companies', 'active', 'type', 'id']),
+        activeTypeToRenderName: state.getIn(['data', 'companies', 'active', 'type', 'name']),
+        companies: state.getIn(['data', 'companies', 'data', 'companies']),
+        activeCompanies: state.getIn(['companies', 'active', 'data'])
+
     }
 )
 
