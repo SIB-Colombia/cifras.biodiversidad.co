@@ -14,7 +14,7 @@ class LoadingTemplate extends Component {
         return (
             <Fragment>
                 <LoadingTemplateLayout>
-                    <h1>Cargando datos</h1>
+                    <h1 className="underline-title">Cargando datos</h1>
                     <Panel loading={true}></Panel>
                     <Panel loading={true}></Panel>
                     <Panel loading={true}></Panel>
