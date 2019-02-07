@@ -19,12 +19,13 @@ class FilterItem extends Component {
         this.setState({
             showChildren: !this.state.showChildren,
         })
+        this.props.actions.setActiveGroupImage(this.props.urlImagen)
     }
 
     render () {
         return (
             <li
-                className="FilterItem"
+                className={`FilterItem ${this.props.aplica === true ? ``: `hidden` }`}
                 onClick={this.handleClick}
                 ref={this.setRef}
                 key={this.props.id}
@@ -44,8 +45,15 @@ class FilterItem extends Component {
             </li>
         )
     }
+
 }
 
 
+const mapDispatchToProps = dispatch => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+    }
+)
 
-export default FilterItem
+
+export default connect(null, mapDispatchToProps)(FilterItem)

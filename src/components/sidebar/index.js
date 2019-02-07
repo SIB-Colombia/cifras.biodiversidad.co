@@ -13,13 +13,14 @@ class Sidebar extends Component {
                 <h4>Sidebar</h4>
                 {
                     this.props.items.map(item => (
-                        <Fragment key={item.id}>
-                            <FilterList
-                            name={item.nombre}
-                            children={!!item.grupoBiologicoHijos}
-                            {...item}
-                            />
-                        </Fragment>
+                            <Fragment key={item.id}>
+                                <FilterList
+                                name={item.nombre}
+                                children={!!item.grupoBiologicoHijos}
+                                urlImagen={item.urlImagen}
+                                {...item}
+                                />
+                            </Fragment>
                     ))
                 }
             </SidebarLayout>

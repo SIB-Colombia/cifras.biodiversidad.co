@@ -21,20 +21,19 @@ class FilterList extends Component {
         this.setState({
             showChildren: !this.state.showChildren,
         })
+        this.props.actions.setActiveGroupImage(this.props.urlImagen)
     }
 
     render () {
         return (
             <FilterListLayout>
                 <li
-                    className="FilterItem"
+                    className={`FilterItem ${this.props.aplica === false ? `hidden`: `` }`}
                     onClick={this.handleClick}
                     ref={this.setRef}
                     key={this.props.id}
                 >
                     <Link to={`?name=${this.props.nombre}&id=${this.props.id}`}>{this.props.nombre}</Link>
-
-
                     {
                         this.state.showChildren &&
                         <ul className="FilterList">
@@ -50,9 +49,13 @@ class FilterList extends Component {
             </FilterListLayout>
         )
     }
+
 }
 
+const mapDispatchToProps = dispatch => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+    }
+)
 
-
-
-export default FilterList
+export default connect(null, mapDispatchToProps)(FilterList)
