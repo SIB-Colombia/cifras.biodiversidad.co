@@ -13,11 +13,11 @@ class Companies extends Component {
     componentDidMount () {
         this.props.actions.sidebarVisibility(false)
         this.props.actions.buttonSidebarVisibility(true)
-        this.setActiveGroup()
+        this.setActiveCompanyType()
     }
 
     componentDidUpdate() {
-        this.setActiveGroup()
+        this.setActiveCompanyType()
     }
 
     render () {
@@ -33,7 +33,7 @@ class Companies extends Component {
                             <Fragment>
                                 {
                                     this.props.sidebarVisible &&
-                                    <Sidebar/>
+                                    <Sidebar title="Tipo de Entidad"/>
                                 }
                                 <CompaniesContainer
                                     sidebar={this.props.sidebarVisible}
@@ -48,20 +48,21 @@ class Companies extends Component {
         )
     }
 
-    setActiveGroup() {
-        let urlValue = this.props.location.search.length === 0 ? {id: '0'} : queryString.parse(this.props.location.search)
-        this.props.actions.filterGroup(urlValue)
+    setActiveCompanyType() {
+        let urlValue = this.props.location.search.length === 0 ? {id: 0, name: "Todas"} : queryString.parse(this.props.location.search)
+        this.props.actions.activeCompanyType(urlValue)
     }
 
     saveDataToState (data) {
         let sidebarItems = []
+
         let companiesTypes = [...new Set(data.vistaEntidades.map(item => item.entidadPublicadoraGeografia.entidadPublicadora.tipo))];
         companiesTypes.forEach((i, k) => {
-            sidebarItems.push({id: k, nombre: i, grupoBiologicoHijos: []})
+            sidebarItems.push({id: (k) + 1, nombre: i, grupoBiologicoHijos: []})
         })
+
         this.props.actions.fetchCompaniesData(data.vistaEntidades)
         this.props.actions.sidebarItems(sidebarItems)
-
     }
 
 

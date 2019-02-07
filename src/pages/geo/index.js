@@ -33,7 +33,7 @@ class Geo extends Component {
                             <Fragment>
                                 {
                                     this.props.sidebarVisible &&
-                                        <Sidebar/>
+                                        <Sidebar title="Municipios"/>
                                 }
                                 <GeoContainer
                                     sidebar={this.props.sidebarVisible}

@@ -34,7 +34,7 @@ class Groups extends Component {
                             <Fragment>
                                 {
                                     this.props.sidebarVisible &&
-                                    <Sidebar/>
+                                    <Sidebar title="Grupos Biológicos"/>
                                 }
                                 <GroupsContainer
                                     sidebar={this.props.sidebarVisible}
