@@ -12,6 +12,7 @@ class GroupsContainer extends Component {
     componentDidMount() {
         this.filterGroup()
         this.props.actions.sidebarVisibility(true)
+
     }
     componentDidUpdate () {
         this.filterGroup()
@@ -22,11 +23,11 @@ class GroupsContainer extends Component {
             <GroupsLayout sidebarActive={this.props.sidebar}>
                 <div className="breadcrumb">
                     <h1 className="underline-title">{this.props.title} </h1>
-                    <p><span className="caret">></span>{this.props.activeIdToRender.name}</p>
+                    {/*<p><span className="caret">></span>{this.props.activeIdToRender.name}</p>*/}
                 </div>
                 {
                     this.props.dataVisualization &&
-                    <Panel>
+                    <Panel header={this.props.activeIdToRender.name.toLowerCase()}>
                         <div className="col-6">
                             <img className="groupsImage" src={this.props.imageUrl}  alt=""/>
                         </div>

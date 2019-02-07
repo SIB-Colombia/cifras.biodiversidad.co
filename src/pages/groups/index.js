@@ -11,10 +11,9 @@ import GroupsContainer from "./container";
 
 class Groups extends Component {
     componentDidMount () {
-        this.props.actions.sidebarVisibility(false)
+        this.setActiveGroup()
         this.props.actions.buttonSidebarVisibility(true)
         this.props.actions.setActiveGroupImage("https://s3.amazonaws.com/sib-resources/images/santander/cifras-san-42.svg")
-        this.setActiveGroup()
     }
 
     componentDidUpdate () {
@@ -39,7 +38,7 @@ class Groups extends Component {
                                 <GroupsContainer
                                     sidebar={this.props.sidebarVisible}
                                     page='groups'
-                                    title="Búsqueda por grupos biológicos"
+                                    title="Grupos biológicos"
                                     dataVisualization={true}
                                 />
                             </Fragment>
@@ -51,7 +50,7 @@ class Groups extends Component {
     }
 
     setActiveGroup() {
-        let urlValue = this.props.location.search.length === 0 ? {id: '0'} : queryString.parse(this.props.location.search)
+        let urlValue = this.props.location.search.length === 0 ? {id: '0',  name: 'General'} : queryString.parse(this.props.location.search)
         this.props.actions.filterGroup(urlValue)
     }
 

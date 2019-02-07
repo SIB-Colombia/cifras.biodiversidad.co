@@ -11,9 +11,8 @@ import GeoContainer from "./container";
 
 class Geo extends Component {
     componentDidMount () {
-        this.props.actions.sidebarVisibility(true)
-        this.props.actions.buttonSidebarVisibility(true)
         this.setActiveGroup()
+        this.props.actions.buttonSidebarVisibility(true)
     }
 
     componentDidUpdate () {
@@ -38,7 +37,7 @@ class Geo extends Component {
                                 <GeoContainer
                                     sidebar={this.props.sidebarVisible}
                                     page='geo'
-                                    title='Búsqueda por municipios'
+                                    title='Municipios de Santander'
                                     dataVisualization={true}
                                 />
                             </Fragment>
@@ -50,7 +49,7 @@ class Geo extends Component {
     }
 
     setActiveGroup () {
-        let urlValue = this.props.location.search.length === 0 ? {id: '0'} : queryString.parse(this.props.location.search)
+        let urlValue = this.props.location.search.length === 0 ? {id: '0', name: 'General'} : queryString.parse(this.props.location.search)
         this.props.actions.filterTown(urlValue)
     }
 

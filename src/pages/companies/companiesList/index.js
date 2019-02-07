@@ -8,7 +8,6 @@ class CompaniesList extends Component {
     render () {
         return (
             <Fragment>
-                {console.log(this.props.activeCompanies)}
                 {
                     this.props.activeCompanies.map(item => (
                         <Company

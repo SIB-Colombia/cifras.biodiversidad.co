@@ -5,13 +5,14 @@ import GeoLayout from "./layout";
 import connect from "react-redux/es/connect/connect";
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
-import Map from "../../components/illustration/map";
+import Map from "./map";
 import GeoRadarComponent from "./RadarComponent";
 
 class GeoContainer extends Component {
     componentDidMount() {
         this.filterGroup()
         this.props.actions.sidebarVisibility(true)
+
     }
     componentDidUpdate () {
         this.filterGroup()
@@ -23,7 +24,7 @@ class GeoContainer extends Component {
                 <h1 className="underline-title">{this.props.title}</h1>
                 {
                     this.props.dataVisualization &&
-                    <Panel>
+                    <Panel  header={this.props.activeIdToRender.name.toLowerCase()}>
                         <div className="col-6">
                             <Map/>
                         </div>
