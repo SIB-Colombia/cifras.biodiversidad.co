@@ -13,6 +13,7 @@ class Groups extends Component {
     componentDidMount () {
         this.props.actions.sidebarVisibility(false)
         this.props.actions.buttonSidebarVisibility(true)
+        this.props.actions.setActiveGroupImage("https://s3.amazonaws.com/sib-resources/images/santander/cifras-san-42.svg")
         this.setActiveGroup()
     }
 
@@ -56,7 +57,7 @@ class Groups extends Component {
 
     saveDataToState(data) {
         let groupsList = [
-            {id: '0', nombre: 'Todos', grupoBiologicoHijos: []},
+            {id: '0', nombre: 'Todos', aplica: true, grupoBiologicoHijos: []},
             data.animales,
             data.plantas,
             data.hongos,

@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import RadarComponent from "../../components/chart/RadarComponent/index";
 import TableComponent from "./table/index";
 import Panel from "../../components/panel/index";
 import GroupsLayout from "./layout";
@@ -7,6 +6,7 @@ import connect from "react-redux/es/connect/connect";
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
 import Tabs from "../../components/tabs";
+import GroupsRadarComponent from "./RadarComponent";
 
 class GroupsContainer extends Component {
     componentDidMount() {
@@ -20,7 +20,6 @@ class GroupsContainer extends Component {
     render () {
         return (
             <GroupsLayout sidebarActive={this.props.sidebar}>
-
                 <div className="breadcrumb">
                     <h1 className="underline-title">{this.props.title} </h1>
                     <p><span className="caret">></span>{this.props.activeIdToRender.name}</p>
@@ -29,11 +28,11 @@ class GroupsContainer extends Component {
                     this.props.dataVisualization &&
                     <Panel>
                         <div className="col-6">
-                            <p>ilustracion</p>
+                            <img className="groupsImage" src={this.props.imageUrl}  alt=""/>
                         </div>
                         <div className="col-6">
                             {/*<Tabs/>*/}
-                            <RadarComponent
+                            <GroupsRadarComponent
                                 ref={ref => this.chartInstance = ref && ref.chartInstance}
                                 type='radar'
                                 {...this.props}
@@ -64,21 +63,29 @@ class GroupsContainer extends Component {
             this.props.actions.activeGroupsDataDepartment(dataDepartmentActive)
         }
 
+
+
     }
 
 
 }
 
-const mapStateToProps = ( state, props ) => (
-    {
-        dataCountry: state.getIn(['data', 'general', 'country']),
-        dataDepartment: state.getIn(['data', 'general', 'department']),
-        dataGroupsCountry: state.getIn(['data', 'groups', 'data', 'country']),
-        dataGroupsDepartment: state.getIn(['data', 'groups', 'data', 'department']),
-        activeIdToRender: state.getIn(['data', 'groups', 'active', 'item']),
+const mapStateToProps = ( state, props ) => {
 
-    }
-)
+    return (
+        {
+            dataCountry: state.getIn(['data', 'general', 'country']),
+            dataDepartment: state.getIn(['data', 'general', 'department']),
+            dataGroupsCountry: state.getIn(['data', 'groups', 'data', 'country']),
+            dataGroupsDepartment: state.getIn(['data', 'groups', 'data', 'department']),
+            activeIdToRender: state.getIn(['data', 'groups', 'active', 'item']),
+            groupsList: state.getIn(['interaction', 'sidebar', 'items']),
+            imageUrl: state.getIn(['data', 'groups', 'active', 'imageUrl'])
+
+        }
+    )
+}
+
 
 const mapDispatchToProps = dispatch => (
     {
