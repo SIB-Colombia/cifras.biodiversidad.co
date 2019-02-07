@@ -1,0 +1,50 @@
+@import "../_utilities/variables";
+@import "../_utilities/grid";
+@import "../elements/card";
+
+
+.Company {
+  @extend .card;
+  background: white;
+  box-sizing: border-box;
+  border-bottom: 2px solid $secondary-color;
+  padding: 2em 1em;
+  position: relative;
+  height: 100%;
+  min-height: 270px;
+  &__logo {
+    max-height: 50px;
+    max-width: 80%;
+  }
+  &__title {
+    color: color("teal", "darken-1");
+    font-family: $secondary-font;
+    font-size: 1em;
+    line-height: 1.2em;
+    margin-bottom: .5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  &__data {
+    font-weight: $bold;
+  }
+
+  &__data-label {
+    font-weight: $light;
+    font-size: 0.8em;
+  }
+
+  &__type {
+    color: color("teal", "base");
+    font-size: 0.8em;
+    font-weight: $light;
+    line-height: 1em;
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+  }
+}
+
+
+
