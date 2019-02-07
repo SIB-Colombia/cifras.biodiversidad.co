@@ -5,24 +5,39 @@
 
 .HighlightsLayout {
   padding-bottom: 4em;
-  .row{
-    flex-wrap: wrap;
+  .row {
+    align-items: stretch;
   }
 }
 
-.Hightlight {
+.Highlight {
   border-bottom: 3px solid transparent;
   box-sizing: border-box;
-  height: 200px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  padding: 0 2vw;
+  padding: 5em;
   margin: 0.5em;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
   @extend %card;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: color("gray", "darken-2");
+    opacity: 0.2;
+  }
   a {
     text-decoration: none;
+    z-index: 1;
   }
   &__number {
     color: $title-color;
@@ -34,21 +49,23 @@
     color: $title-color;
     font-family: $secondary-font;
     font-size: 1.5em;
-    font-weight: $light;
   }
   &__text {
-    color: $title-color;
-    font-family: $main-font;
-    font-size: .8em;
+    color: white;
+    font-family: $secondary-font;
+    font-size: 2em;
     font-weight: $light;
-    margin-top: .5rem
+    z-index: 11;
+    b {
+      font-weight: $bold
+    }
   }
   &.white {
     background-color: white;
     border-bottom-color: $secondary-color;
   }
   &.orange,
-  &.teal{
+  &.teal {
     .Hightlight {
       &__number,
       &__title,
@@ -57,7 +74,7 @@
       }
     }
   }
-  &.center{
+  &.center {
     align-items: center;
     text-align: center;
   }
