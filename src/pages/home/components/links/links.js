@@ -7,17 +7,18 @@ import { connect } from 'react-redux'
 class HomeLinks extends Component {
     render () {
         return (
-            <div className="container">
-                <div className="row HomeLinks">
-                    {
-                        this.props.links.map( item => (
+            <div className="HomeLinks">
+                <div className="container">
+                    <div className="row">
+                        {
+                            this.props.links.map( item => (
+                                <div className="col-3" key={item.get('id')}>
+                                    <HomeLink {...item.toJS()}/>
+                                </div>
 
-                            <div className="col-3" key={item.get('id')}>
-                                <HomeLink {...item.toJS()}/>
-                            </div>
-
-                        ))
-                    }
+                            ))
+                        }
+                    </div>
 
                 </div>
             </div>
