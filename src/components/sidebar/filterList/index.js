@@ -21,7 +21,9 @@ class FilterList extends Component {
         this.setState({
             showChildren: !this.state.showChildren,
         })
-        this.props.actions.setActiveGroupImage(this.props.urlImagen)
+        if (this.props.urlImagen) {
+            this.props.actions.setActiveGroupImage(this.props.urlImagen)
+        }
     }
 
     render () {
@@ -33,7 +35,7 @@ class FilterList extends Component {
                     ref={this.setRef}
                     key={this.props.id}
                 >
-                    <Link to={`?name=${this.props.nombre}&id=${this.props.id}`}>{this.props.nombre}</Link>
+                    <Link to={`?name=${this.props.nombre}&id=${this.props.id}`}>{this.props.nombre.toLowerCase()}</Link>
                     {
                         this.state.showChildren &&
                         <ul className="FilterList">
