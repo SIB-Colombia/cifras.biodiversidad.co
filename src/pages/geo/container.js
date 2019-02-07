@@ -20,7 +20,7 @@ class GeoContainer extends Component {
     render () {
         return (
             <GeoLayout sidebarActive={this.props.sidebar}>
-                <h1>{this.props.title}</h1>
+                <h1 className="underline-title">{this.props.title}</h1>
                 {
                     this.props.dataVisualization &&
                     <Panel>
