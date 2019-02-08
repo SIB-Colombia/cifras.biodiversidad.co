@@ -28,10 +28,10 @@ class GroupsContainer extends Component {
                 {
                     this.props.dataVisualization &&
                     <Panel header={this.props.activeIdToRender.name.toLowerCase()}>
-                        <div className="col-6">
+                        <div className="col-6 center">
                             <img className="groupsImage" src={this.props.imageUrl}  alt=""/>
                         </div>
-                        <div className="col-6">
+                        <div className="col-6 center">
                             {/*<Tabs/>*/}
                             <GroupsRadarComponent
                                 ref={ref => this.chartInstance = ref && ref.chartInstance}
