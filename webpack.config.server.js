@@ -27,7 +27,7 @@ module.exports = (env) => {
             libraryTarget: 'commonjs2'
         },
         devServer: {
-            port: 9000,
+            port: 8002,
         },
         target: 'node',
         module: {

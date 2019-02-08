@@ -44,9 +44,7 @@ const store = createStore(
 class Root extends Component {
     render () {
         return (
-            <ApolloProvider client={client}>
                 <Provider store={store}>
-                    <BrowserRouter>
                         <Fragment>
                             <Navbar/>
                             <Switch>
@@ -60,9 +58,7 @@ class Root extends Component {
                             </Switch>
                             <Footer/>
                         </Fragment>
-                    </BrowserRouter>
                 </Provider>
-            </ApolloProvider>
         )
     }
 }
