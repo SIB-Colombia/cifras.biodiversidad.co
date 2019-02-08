@@ -1,5 +1,9 @@
 @import "../_utilities/variables";
 
+
+.MapContainer {
+  position: relative;
+}
 .geoPath {
   fill: color("teal", "lighten-1");
 
@@ -18,4 +22,25 @@
   .title {
 
   }
+}
+
+.soon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(white 0%, transparent 50%);
+  p{
+    font-size: 1em;
+    font-family: $secondary-font;
+    padding: .3em;
+    border: 1px solid color("teal", "darken-1");
+    color: color("teal", "darken-1" );
+    text-shadow: 0 0 150px color("teal", "darken-2");
+  }
+
 }

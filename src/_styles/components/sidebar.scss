@@ -74,6 +74,10 @@
   }
 }
 
+.FilterItem--Active {
+  background: $secondary-color;
+}
+
 .hidden {
   display: none !important;
 }
