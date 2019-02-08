@@ -44,6 +44,8 @@ app.get('*', (req, res) => {
         </head>
         <body>
             <div id="app">${html}</div>
+            
+            <script src="./ssr/app.js"></script>
         </body>
        
         </html>

@@ -22,7 +22,7 @@ const Html = ({ content, client: { cache } }) => (
 </head>
 <body>
 <div id="app"></div>
-<script src="http://localhost:9000/js/app.js"></script>
+<script src="/ssr/app.js"></script>
 </body>
 </html>
 

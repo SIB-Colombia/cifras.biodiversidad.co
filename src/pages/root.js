@@ -44,6 +44,7 @@ const store = createStore(
 class Root extends Component {
     render () {
         return (
+
                 <Provider store={store}>
                         <Fragment>
                             <Navbar/>
