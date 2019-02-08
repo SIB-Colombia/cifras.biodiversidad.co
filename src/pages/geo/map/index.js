@@ -9,7 +9,10 @@ class Map extends Component {
 
     render () {
         return (
-            <MapLayout/>
+            <div>
+                <MapLayout/>
+
+            </div>
         )
     }
 }

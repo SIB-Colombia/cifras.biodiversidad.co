@@ -49,7 +49,7 @@ class Geo extends Component {
     }
 
     setActiveGroup () {
-        let urlValue = this.props.location.search.length === 0 ? {id: '0', name: 'General'} : queryString.parse(this.props.location.search)
+        let urlValue = this.props.location.search.length === 0 ? {id: '0', name: 'Santander'} : queryString.parse(this.props.location.search)
         this.props.actions.filterTown(urlValue)
     }
 

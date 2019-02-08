@@ -11,7 +11,7 @@ class GeoRadarComponent extends Component {
             <div>
                 <Radar
                     data={this.props.radarData}
-                    height={350}
+                    height={200}
                     options={{
                         legend: {
                             position: "bottom"
@@ -24,30 +24,33 @@ class GeoRadarComponent extends Component {
 }
 
 const mapStateToProps = state => {
-    const activeDataDepartment = state.getIn(['data', 'groups', 'active', 'data', 'department', 0])
-    const activeDataTown = state.getIn(['data', 'groups', 'active', 'data', 'department', 0])
+    const activeDataDepartment = state.getIn(['data', 'geo', 'active', 'data', 'department', 0])
+    const activeDataTown = state.getIn(['data', 'geo', 'active', 'data', 'town', 0])
+
+    const activeTownName =  state.getIn(['data', 'geo', 'active', 'data', 'town', 0, 'geografia', 'nombre'])
+    const activeDepartmentName =  state.getIn(['data', 'geo', 'active', 'data', 'department', 0, 'geografia', 'nombre'])
 
     let countryDataToRender = [
-        activeDataDepartment ? activeDataDepartment.especiesAmenaza : 0,
-        activeDataDepartment ? activeDataDepartment.especiesCites : 0,
-        activeDataDepartment ? activeDataDepartment.especiesEndemicas : 0,
-        activeDataDepartment ? activeDataDepartment.especiesMigratorias : 0,
-        activeDataDepartment ? activeDataDepartment.especiesExoticas : 0
+        !activeDataDepartment || activeDataDepartment.especiesAmenaza === -1 ? 0 : activeDataDepartment.especiesAmenaza,
+        !activeDataDepartment || activeDataDepartment.especiesCites === -1 ? 0 : activeDataDepartment.especiesCites,
+        !activeDataDepartment || activeDataDepartment.especiesEndemicas === -1 ? 0 : activeDataDepartment.especiesEndemicas,
+        !activeDataDepartment || activeDataDepartment.especiesMigratorias === -1 ? 0 : activeDataDepartment.especiesMigratorias,
+        !activeDataDepartment || activeDataDepartment.especiesExoticas === -1 ? 0 : activeDataDepartment.especiesExoticas
     ]
 
     let departmentDataToRender = [
-        activeDataTown ? activeDataTown.especiesAmenaza : 0,
-        activeDataTown ? activeDataTown.especiesCites : 0,
-        activeDataTown ? activeDataTown.especiesEndemicas : 0,
-        activeDataTown ? activeDataTown.especiesMigratorias : 0,
-        activeDataTown ? activeDataTown.especiesExoticas : 0
+        !activeDataTown || activeDataTown.especiesAmenaza === -1 ? 0 : activeDataTown.especiesAmenaza,
+        !activeDataTown || activeDataTown.especiesCites === -1 ? 0 : activeDataTown.especiesCites,
+        !activeDataTown || activeDataTown.especiesEndemicas === -1 ? 0: activeDataTown.especiesEndemicas,
+        !activeDataTown || activeDataTown.especiesMigratorias === -1 ? 0: activeDataTown.especiesMigratorias,
+        !activeDataTown || activeDataTown.especiesExoticas === -1 ? 0: activeDataTown.especiesExoticas
     ]
 
     const data = {
         labels: ['Especies Amenazadas', 'Especies CITES', 'Especies Endémicas', 'Especies Migratorias', 'Especies Exóticas'],
         datasets: [
             {
-                label: 'Colombia',
+                label: activeDepartmentName,
                 backgroundColor: 'rgba(0, 168, 180, 0.2)',
                 borderColor: 'rgba(0, 168, 180, 1)',
                 pointBackgroundColor: 'rgba(0, 168, 180, 1)',
@@ -57,7 +60,7 @@ const mapStateToProps = state => {
                 data: countryDataToRender
             },
             {
-                label: 'Santander',
+                label: activeTownName,
                 backgroundColor: 'rgba(255, 120, 71, 0.2)',
                 borderColor: 'rgba(255, 120, 71, 1)',
                 pointBackgroundColor: 'rgba(255, 120, 71, 1)',

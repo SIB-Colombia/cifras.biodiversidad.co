@@ -10,33 +10,12 @@ class TableComponent extends Component {
     }
 
     render() {
-        const columns = [{
-            Header: 'Indicador',
-            accessor: 'name'
-        },{
-            Header: 'Registros biológicos',
-            columns: [{
-                Header: 'Municipio',
-                accessor: 'RRBBSant'
-            },{
-                Header: 'Santander',
-                accessor: 'RRBBCol'
-            }]
-        },{
-            Header: 'Especies',
-            columns: [{
-                Header: 'Municipio',
-                accessor: 'ESPSant'
-            },{
-                Header: 'Santander',
-                accessor: 'ESPCol'
-            }]
-        }]
+
         return (
             <TableComponentLayout>
                 <ReactTable
                     data={this.props.dataTable}
-                    columns={columns}
+                    columns={this.props.columns}
                     defaultPageSize={12}
                     showPagination={false}
                 />
@@ -48,7 +27,31 @@ class TableComponent extends Component {
 const mapStateToProps = state => {
     const activeDataTown = state.getIn(['data', 'geo', 'active', 'data', 'town', 0])
     const activeDataDepartment = state.getIn(['data', 'geo', 'active', 'data', 'department', 0])
+    const activeTownName =  state.getIn(['data', 'geo', 'active', 'data', 'town', 0, 'geografia', 'nombre'])
+    const activeDepartmentName =  state.getIn(['data', 'geo', 'active', 'data', 'department', 0, 'geografia', 'nombre'])
 
+    let columns = [{
+        Header: 'Indicador',
+        accessor: 'name'
+    },{
+        Header: 'Registros biológicos',
+        columns: [{
+            Header: activeTownName,
+            accessor: 'RRBBSant'
+        },{
+            Header: activeDepartmentName,
+            accessor: 'RRBBCol'
+        }]
+    },{
+        Header: 'Especies',
+        columns: [{
+            Header: activeTownName,
+            accessor: 'ESPSant'
+        },{
+            Header: activeDepartmentName,
+            accessor: 'ESPCol'
+        }]
+    }]
     let dataTable = [{
         name: 'Total',
         RRBBSant: activeDataTown ? activeDataTown.registros : 0,
@@ -137,7 +140,8 @@ const mapStateToProps = state => {
 
     return (
         {
-            dataTable
+            dataTable,
+            columns
         }
     )
 }
