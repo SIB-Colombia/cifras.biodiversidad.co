@@ -6,15 +6,18 @@ class NotFound extends PureComponent {
     }
     render() {
         return (
-            <div>
-                <h1>404</h1>
-                <h2>No se encontró la página que buscas</h2>
-                <button
-                    className="Button"
-                    onClick={this.handleBackClick}
-                >
-                    Volver
-                </button>
+
+            <div className="container">
+                <div className="Panel">
+
+                    <h1 className="underline-title">No se encontró la página que buscas</h1>
+                    <button
+                        className="Button"
+                        onClick={this.handleBackClick}
+                    >
+                        Volver
+                    </button>
+                </div>
             </div>
             )
     }
