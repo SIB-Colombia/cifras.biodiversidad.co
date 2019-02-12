@@ -17,7 +17,7 @@ module.exports = (env) => {
     return {
 
         entry: {
-            "app": path.resolve(__dirname, './src/pages/root.js'),
+            "app": path.resolve(__dirname, './src/pages/router.js'),
         },
         output: {
             path: path.resolve(__dirname, 'dist'),
@@ -38,7 +38,7 @@ module.exports = (env) => {
                     use: {
                         loader: 'babel-loader',
                         options: {
-                            compact: false,
+                            compact: true,
                             presets: ['es2015', 'react', 'stage-2'],
                         }
                     },
