@@ -1,11 +1,20 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 
 module.exports = (env) => {
     const plugins = [
-        new ExtractTextPlugin("css/[name].css")
+        new ExtractTextPlugin("css/[name].css"),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.min\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorPluginOptions: {
+                preset: ['default', { discardComments: { removeAll: true } }],
+            },
+            canPrint: true
+        })
     ]
 
     if (env.NODE_ENV === 'production') {
@@ -17,7 +26,7 @@ module.exports = (env) => {
     return {
 
         entry: {
-            "home": path.resolve(__dirname, 'src/entries/app.js'),
+            "home": path.resolve(__dirname, 'src/entries/client.js'),
         },
         output: {
             path: path.resolve(__dirname, 'dist'),
