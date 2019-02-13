@@ -19,7 +19,7 @@ const preloadedState = window.__PRELOADED_STATE__
 
 
 const client = new ApolloClient({
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache().restore(window.__APOLLO_STATE__),
     link: createHttpLink({
         uri: 'http://158.69.59.122:8001/graphql',
         fetch: fetch,
@@ -28,19 +28,20 @@ const client = new ApolloClient({
 
 const store = createStore(
     rootReducer,
-    map(),
-    composeWithDevTools(
-        applyMiddleware(
-            thunk
+    preloadedState,
+    compose(
+        map(),
+        composeWithDevTools(
+            applyMiddleware(
+                thunk
+            )
         )
     )
 )
 
 hydrate(
-    <ApolloProvider client={client}>
-        <Provider store={store}>
-            <Router />
-        </Provider>
-    </ApolloProvider>
+    <Provider store={store}>
+        <Router />
+    </Provider>
     , homeContainer )
 
