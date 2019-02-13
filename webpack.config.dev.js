@@ -5,12 +5,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        "app": path.resolve(__dirname, './src/entries/app.js'),
+        "app": path.resolve(__dirname, './src/entries/client.js'),
 
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/[name].js'
+        filename: 'js/dev.js'
     },
     devServer: {
         port: 9000,
