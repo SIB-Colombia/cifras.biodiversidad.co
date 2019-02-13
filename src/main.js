@@ -10,7 +10,7 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import { HttpLink } from 'apollo-link-http';
 
 import Provider from "react-redux/es/components/Provider";
-import {applyMiddleware, createStore} from "redux";
+import {applyMiddleware, compose, createStore} from "redux";
 import rootReducer from "./actions/reducers";
 import {Map as map} from "immutable";
 import {composeWithDevTools} from "redux-devtools-extension";
@@ -28,13 +28,7 @@ app.use(handleRender)
 
 function handleRender(req, res) {
     const store = createStore(
-        rootReducer,
-        map(),
-        composeWithDevTools(
-            applyMiddleware(
-                thunk
-            )
-        )
+        rootReducer
     )
 
     const client = new ApolloClient({
