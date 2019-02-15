@@ -9,6 +9,12 @@
   right: 0;
   bottom: 1em;
   max-height: 150px;
+  @media screen and (max-width: $size-small) {
+    max-height: initial;
+    position: relative;
+    bottom: 0;
+    padding: 1em 0;
+  }
 }
 .HomeLink {
   @extend .card;
@@ -30,6 +36,9 @@
     @extend .card--hover;
     background-color: rgba(255,255,255,0.2);
     border-bottom: 4px solid $secondary-color;
+  }
+  @media screen and (max-width: $size-small) {
+    background-color: color("teal", "lighten-1")
   }
 }
 
