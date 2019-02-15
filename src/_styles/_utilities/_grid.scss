@@ -49,9 +49,7 @@
     box-sizing: border-box;
     padding: 0.5em;
     margin: 0;
-    @media screen and (max-width: $size-medium) {
-      width: 45% !important;
-    }
+
     @media screen and (max-width: $size-small) {
       width: 100% !important;
     }
