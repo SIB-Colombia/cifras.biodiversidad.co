@@ -8,8 +8,10 @@
   overflow-y: hidden;
   &.sidebarActive {
     padding-left: 280px;
+    @media screen and (max-width: $size-small) {
+        padding-left: 0;
+    }
   }
-
 }
 
 .breadcrumb {
