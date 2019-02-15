@@ -6,6 +6,9 @@
   position: relative;
   &.sidebarActive {
     padding-left: 280px;
+    @media screen and (max-width: $size-small) {
+      padding-left: 0;
+    }
   }
 }
 .Footer{
@@ -21,7 +24,7 @@
     background-color: color("teal", "darken-2");
     padding: 15px 0;
     &__logos{
-      text-align: left;
+      text-align: center;
       img{
         height: 40px;
         max-width: 100%;
