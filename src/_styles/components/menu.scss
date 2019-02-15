@@ -13,6 +13,10 @@
     padding: 0;
     margin: 0;
   }
+  @media screen and (max-width: $size-small) {
+    top: 55px;
+    right: 5px;
+  }
 }
 
 .MainMenu__item {
