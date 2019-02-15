@@ -21,6 +21,10 @@
       width: 20px;
       text-indent: -9999px;
     }
+    @media screen and (max-width: $size-small) {
+      height: 50px;
+      width: 50px;
+    }
   }
 
 }

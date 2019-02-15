@@ -14,6 +14,9 @@
   &--visualization {
     margin-bottom: 3em;
     padding: 4rem 2rem 1rem;
+    img {
+      width: 90%;
+    }
   }
   &__header {
     position: absolute;
@@ -34,7 +37,7 @@
     animation-iteration-count: infinite;
     animation-name: blink;
     animation-timing-function: ease-in;
-    height: 100px;
+    height: 80px;
     opacity: 0.3;
     position: relative;
     margin-bottom: 1rem !important;
@@ -54,7 +57,10 @@
       background-color: $light-gray;
       position: absolute;
       top: 3em;
-      left: 1em
+      left: 1em;
+      @media screen and (max-width: $size-small) {
+        width: 200px;
+      }
     }
     @for $i from 0 through 12 {
       &:nth-child(#{$i}) {

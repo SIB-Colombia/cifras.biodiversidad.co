@@ -33,6 +33,9 @@
     z-index: 99;
     height: 100%;
     width: 100%;
+    img {
+
+    }
   }
   &__number {
     //color: $title-color;
@@ -45,17 +48,27 @@
     //color: $title-color;
     color: white;
     font-family: $secondary-font;
-    font-size: 2.5em;
-    font-weight: $bold;
+    font-size: 2em;
+    font-weight: $light;
     text-transform: uppercase;
+    b {
+      font-weight: $bold;
+    }
+    @media screen and (max-width: $size-medium) {
+      font-size: 2em;
+    }
+    @media screen and (max-width: $size-small) {
+      font-size: 1.5em;
+      padding: 0 1em;
+    }
   }
   &__subtitle {
-    //color: $title-color;
     color: white;
     font-family: $main-font;
     font-size: 1.3em;
     font-weight: $light;
     margin-top: 0.3em;
+
   }
   &__disclaimer {
     //color: $title-color;
