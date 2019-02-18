@@ -19,6 +19,11 @@ h1 {
   font-weight: 100;
   padding-bottom: 3rem;
   padding-top: 3rem;
+  @media screen and (max-width: $size-small) {
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    font-size: 1.5em;
+  }
 }
 h2 {
   font-size: 1.6em;
