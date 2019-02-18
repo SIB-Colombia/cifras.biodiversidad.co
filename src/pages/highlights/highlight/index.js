@@ -6,9 +6,9 @@ const Highlight = props => {
     return (
         <div className={`col-${props.size} ` } >
             <div className={`Highlight ${props.color} ${props.align}`} style={{backgroundImage: `url(${props.background})`}}>
-                <Link to={props.link}>
+                {/*<Link to={props.link}>*/}
                     <p className="Highlight__text" dangerouslySetInnerHTML={text}></p>
-                </Link>
+                {/*</Link>*/}
             </div>
         </div>
     )

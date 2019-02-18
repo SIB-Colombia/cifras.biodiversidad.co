@@ -40,6 +40,22 @@ class TableComponent extends Component {
                     columns={columns}
                     defaultPageSize={12}
                     showPagination={false}
+                    style={{
+                        height: "600px"
+                    }}
+                    SubComponent={row => {
+                        return (
+                                <ReactTable
+                                    data={this.props.dataTable}
+                                    columns={columns}
+                                    defaultPageSize={3}
+                                    showPagination={false}
+                                    style={{
+                                        height: "600px"
+                                    }}
+                                />
+                        );
+                    }}
                 />
             </TableComponentLayout>
         );

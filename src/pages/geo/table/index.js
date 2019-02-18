@@ -18,6 +18,9 @@ class TableComponent extends Component {
                     columns={this.props.columns}
                     defaultPageSize={12}
                     showPagination={false}
+                    style={{
+                        height: "600px"
+                    }}
                 />
             </TableComponentLayout>
         );

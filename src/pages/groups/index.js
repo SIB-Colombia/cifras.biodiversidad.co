@@ -10,10 +10,11 @@ import queryString from "query-string";
 import GroupsContainer from "./container";
 
 class Groups extends Component {
+
     componentDidMount () {
         this.setActiveGroup()
-        this.props.actions.buttonSidebarVisibility(true)
-        this.props.actions.setActiveGroupImage("https://s3.amazonaws.com/sib-resources/images/santander/cifras-san-42.svg")
+            this.props.actions.setActiveGroupImage("https://s3.amazonaws.com/sib-resources/images/santander/cifras-san-42.svg")
+            this.props.actions.buttonSidebarVisibility(true)
     }
 
     componentDidUpdate () {

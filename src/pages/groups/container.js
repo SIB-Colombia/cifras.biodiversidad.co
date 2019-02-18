@@ -11,9 +11,9 @@ import GroupsRadarComponent from "./RadarComponent";
 class GroupsContainer extends Component {
     componentDidMount() {
         this.filterGroup()
-        this.props.actions.sidebarVisibility(true)
-
+        window.innerWidth <= 800 ?  this.props.actions.sidebarVisibility(false) :  this.props.actions.sidebarVisibility(true)
     }
+
     componentDidUpdate () {
         this.filterGroup()
     }
