@@ -2,6 +2,8 @@ import React, {Component, Fragment} from 'react'
 import SidebarLayout from "./layout";
 import FilterList from "./filterList";
 import connect from "react-redux/es/connect/connect";
+import {bindActionCreators} from "redux";
+import * as actions from "../../actions";
 
 class Sidebar extends Component {
     componentDidMount () {
@@ -36,4 +38,10 @@ const mapStateToProps = ( state ) => {
     )
 }
 
-export default connect(mapStateToProps)(Sidebar)
+const mapDispatchToProps = dispatch => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+    }
+)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar)

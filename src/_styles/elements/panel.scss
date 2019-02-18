@@ -30,6 +30,9 @@
       color: color("teal", "darken-1");
       text-transform: capitalize;
     }
+    @media screen and (max-width: $size-small) {
+      padding: 1.5em;
+    }
 
   }
   &.loading {

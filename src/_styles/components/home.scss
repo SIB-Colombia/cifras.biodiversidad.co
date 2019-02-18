@@ -2,5 +2,8 @@
 @import "../_utilities/_gradients.scss";
 
 body {
-  @extend .gradient
+  @extend .gradient;
+  @media screen and (max-width: $size-small) {
+    padding-top: 50px;
+  }
 }

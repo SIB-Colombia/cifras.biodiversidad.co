@@ -78,4 +78,13 @@
     align-items: center;
     text-align: center;
   }
+  @media screen and (max-width: $size-small) {
+    padding: 1em;
+    &__text {
+      font-size: 1.5em;
+    }
+    &:before {
+      opacity: 0.4;
+    }
+  }
 }

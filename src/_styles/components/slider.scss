@@ -96,6 +96,10 @@
       background: url(https://s3.amazonaws.com/sib-resources/images/biodiversidadco/cifras/santander/ph-credito.png) no-repeat;
       background-size: contain;
     }
+    @media screen and (max-width: $size-small) {
+      top: initial;
+      bottom: 1em;
+    }
   }
 }
 

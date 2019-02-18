@@ -10,8 +10,7 @@ import GroupsLayout from "../groups/layout";
 class CompaniesContainer extends Component {
     componentDidMount() {
         this.filterCompanies()
-        this.props.actions.sidebarVisibility(true)
-
+        window.innerWidth <= 800 ?  this.props.actions.sidebarVisibility(false) :  this.props.actions.sidebarVisibility(true)
     }
     componentDidUpdate () {
         this.filterCompanies()
