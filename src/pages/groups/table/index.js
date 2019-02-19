@@ -11,38 +11,20 @@ class TableComponent extends Component {
     }
 
     render() {
-        const columns = [{
-            Header: 'Indicador',
-            accessor: 'name'
-        },{
-            Header: 'Registros biológicos',
-            columns: [{
-              Header: 'Santander',
-              accessor: 'RRBBSant'
-            },{
-                Header: 'Colombia',
-                accessor: 'RRBBCol'
-            }]
-        },{
-            Header: 'Especies',
-            columns: [{
-                Header: 'Santander',
-                accessor: 'ESPSant'
-            },{
-                Header: 'Colombia',
-                accessor: 'ESPCol'
-            }]
-        }]
+
+        const isMobile = window.innerWidth <= 800 ?  "400px" : "600px"
+
         return (
             <TableComponentLayout>
                 <ReactTable
                     data={this.props.dataTable}
-                    columns={columns}
+                    columns={this.props.columns}
                     defaultPageSize={12}
                     showPagination={false}
                     style={{
-                        height: "600px"
+                        height: isMobile
                     }}
+                    /*
                     SubComponent={row => {
                         return (
                                 <ReactTable
@@ -55,7 +37,7 @@ class TableComponent extends Component {
                                     }}
                                 />
                         );
-                    }}
+                    }}*/
                 />
             </TableComponentLayout>
         );
@@ -66,6 +48,28 @@ const mapStateToProps = state => {
     const activeDataCountry = state.getIn(['data', 'groups', 'active', 'data', 'country', 0])
     const activeDataDepartment = state.getIn(['data', 'groups', 'active', 'data', 'department', 0])
 
+    let columns = [{
+        Header: 'Indicador',
+        accessor: 'name'
+    },{
+        Header: 'Registros biológicos',
+        columns: [{
+            Header: 'Santander',
+            accessor: 'RRBBSant'
+        },{
+            Header: 'Colombia',
+            accessor: 'RRBBCol'
+        }]
+    },{
+        Header: 'Especies',
+        columns: [{
+            Header: 'Santander',
+            accessor: 'ESPSant'
+        },{
+            Header: 'Colombia',
+            accessor: 'ESPCol'
+        }]
+    }]
 
     let dataTable = [{
         name: 'Total',
@@ -157,7 +161,8 @@ const mapStateToProps = state => {
         {
             activeDataCountry,
             activeDataDepartment,
-            dataTable
+            dataTable,
+            columns
         }
     )
 }

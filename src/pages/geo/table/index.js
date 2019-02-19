@@ -10,7 +10,7 @@ class TableComponent extends Component {
     }
 
     render() {
-
+        const isMobile = window.innerWidth <= 800 ?  "400px" : "600px"
         return (
             <TableComponentLayout>
                 <ReactTable
@@ -19,7 +19,7 @@ class TableComponent extends Component {
                     defaultPageSize={12}
                     showPagination={false}
                     style={{
-                        height: "600px"
+                        height: isMobile
                     }}
                 />
             </TableComponentLayout>
