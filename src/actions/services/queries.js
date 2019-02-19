@@ -115,15 +115,6 @@ export const GROUPS = gql`
                 id
             }
         }
-        vistaGruposColombias: allVistagrupobiologico {
-            ...numeros
-            grupoBiologicoGeografia{
-              grupoBiologico{
-                id
-                nombre
-              }
-            }
-        }
         vistaGruposColombia: vistaGrupoBiologicoByGeografia(geografiaId: 1) {
             ...numeros
             grupoBiologicoGeografia {
@@ -134,15 +125,6 @@ export const GROUPS = gql`
                     nombre
                     id
                 }
-            }
-        }
-        vistaGruposDepartamentos: allVistagrupobiologico {
-            ...numeros
-            grupoBiologicoGeografia{
-              grupoBiologico{
-                id
-                nombre
-              }
             }
         }
         
