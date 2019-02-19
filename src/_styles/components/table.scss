@@ -12,6 +12,12 @@
       font-size: 2em;
       text-align: center;
     }
+    @media screen and (max-width: $size-small) {
+      padding: 1em .5em;
+      &:not(:first-child) {
+        font-size: 1em;
+      }
+    }
   }
 }
 
