@@ -25,9 +25,12 @@ class GeoContainer extends Component {
                     this.props.dataVisualization &&
                     <Panel  header={this.props.activeIdToRender.name.toLowerCase()}>
                         <div className="col-6">
-                            <Map/>
+                            {
+                                window.innerWidth <= 800 ? "" : <Map/>
+                            }
                         </div>
-                        <div className="col-6">
+
+                        <div className={window.innerWidth <= 800 ? "col-12" : "col-6"}>
                             <GeoRadarComponent
                                 ref={ref => this.chartInstance = ref && ref.chartInstance}
                                 type='radar'
