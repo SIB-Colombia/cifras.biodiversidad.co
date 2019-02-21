@@ -7,8 +7,11 @@ import * as actions from "../../actions";
 
 class Highlights extends Component {
     componentDidMount () {
+        window.scrollTo(0, 0);
+
         this.props.actions.sidebarVisibility(false)
         this.props.actions.buttonSidebarVisibility(false)
+
     }
     render () {
         return (

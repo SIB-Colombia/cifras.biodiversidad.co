@@ -12,9 +12,11 @@ import GroupsContainer from "./container";
 class Groups extends Component {
 
     componentDidMount () {
+        window.scrollTo(0, 0);
+
         this.setActiveGroup()
-            this.props.actions.setActiveGroupImage("https://s3.amazonaws.com/sib-resources/images/santander/cifras-san-42.svg")
-            this.props.actions.buttonSidebarVisibility(true)
+        this.props.actions.setActiveGroupImage("https://s3.amazonaws.com/sib-resources/images/santander/cifras-san-42.svg")
+        this.props.actions.buttonSidebarVisibility(true)
     }
 
     componentDidUpdate () {

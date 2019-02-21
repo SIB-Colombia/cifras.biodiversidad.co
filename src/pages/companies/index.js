@@ -11,6 +11,8 @@ import queryString from "query-string";
 
 class Companies extends Component {
     componentDidMount () {
+        window.scrollTo(0, 0);
+
         this.setActiveCompanyType()
         this.props.actions.buttonSidebarVisibility(true)
     }

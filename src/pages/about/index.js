@@ -4,10 +4,13 @@ import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
 import connect from "react-redux/es/connect/connect";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
+import Map from "../geo/map";
 
 
 class About extends Component {
     componentDidMount () {
+        window.scrollTo(0, 0);
+
         this.props.actions.sidebarVisibility(false)
         this.props.actions.buttonSidebarVisibility(false)
     }
@@ -22,18 +25,22 @@ class About extends Component {
                 </div>
 
                 <div className="row">
-                    <div className="col-4 sideNav">
-                        <div className="card white fixed">
-                            <ul>
-                                <li><AnchorLink href="#sibcol" offset='100'>SiB Colombia</AnchorLink></li>
-                                <li><AnchorLink href="#biocifras" offset='100'>Biodiversidad en cifras</AnchorLink></li>
-                                <li><AnchorLink href="#consolida" offset='100'>¿Cómo se consolidan las cifras?</AnchorLink></li>
-                                <li><AnchorLink href="#aclaraciones" offset='100'>Aclaraciones</AnchorLink></li>
-                                <li><AnchorLink href="#santander" offset='100'>Santander BIO</AnchorLink></li>
-                            </ul>
+                    {
+                        window.innerWidth > 800 &&
+
+                        <div className="col-4 sideNav">
+                            <div className="card white fixed">
+                                <ul>
+                                    <li><AnchorLink href="#sibcol" offset='100'>SiB Colombia</AnchorLink></li>
+                                    <li><AnchorLink href="#biocifras" offset='100'>Biodiversidad en cifras</AnchorLink></li>
+                                    <li><AnchorLink href="#consolida" offset='100'>¿Cómo se consolidan las cifras?</AnchorLink></li>
+                                    <li><AnchorLink href="#aclaraciones" offset='100'>Aclaraciones</AnchorLink></li>
+                                    <li><AnchorLink href="#santander" offset='100'>Santander BIO</AnchorLink></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-8">
+                    }
+                    <div className={window.innerWidth <= 800 ? "col-12" : "col-8"}>
                         <div className="card white" id="sibcol">
                             <h3 className='underline-title'>El SiB Colombia</h3>
                             <p>
