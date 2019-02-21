@@ -8,11 +8,17 @@ import * as actions from "../../actions";
 class Sidebar extends Component {
     componentDidMount () {
     }
-
+    handleClick = e => {
+        e.stopPropagation()
+        this.props.actions.sidebarVisibility(false)
+    }
     render () {
         return (
-            <SidebarLayout>
+            <SidebarLayout >
                 <h4>{ this.props.title ? this.props.title : "Filtros"}</h4>
+                {
+                    window.innerWidth <= 800 ?  <div className="closeSidebar" onClick={this.handleClick}/> : ""
+                }
                 {
                     this.props.items.map(item => (
                             <Fragment key={item.id}>
@@ -25,6 +31,7 @@ class Sidebar extends Component {
                             </Fragment>
                     ))
                 }
+
             </SidebarLayout>
         )
     }
