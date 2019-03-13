@@ -4,7 +4,7 @@ import {bindActionCreators} from "redux";
 import * as actions from "../../../actions";
 import connect from "react-redux/es/connect/connect";
 
-class MapLayout extends Component {
+class MapSvg extends Component {
     componentDidMount() {
     }
 
@@ -937,4 +937,4 @@ const mapDispatchToProps = dispatch => (
     }
 )
 
-export default connect(mapStateToProps, mapDispatchToProps)(MapLayout)
+export default connect(mapStateToProps, mapDispatchToProps)(MapSvg)

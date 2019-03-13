@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import "../../../_styles/components/map.scss"
-import MapLayout from "./layout";
+import MapSvg from "./map-svg";
+import GeoMap from "./geo-map";
 
 class Map extends Component {
     componentDidMount () {
@@ -10,7 +11,7 @@ class Map extends Component {
     render () {
         return (
             <div>
-                <MapLayout/>
+                <GeoMap/>
 
             </div>
         )
