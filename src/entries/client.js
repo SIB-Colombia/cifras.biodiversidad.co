@@ -12,6 +12,7 @@ import thunk from "redux-thunk";
 import Provider from "react-redux/es/components/Provider";
 import {ApolloProvider} from "react-apollo";
 import Router from "../pages/router";
+import {API_URL} from "../config";
 
 const homeContainer = document.getElementById('app')
 
@@ -21,7 +22,7 @@ const preloadedState = window.__PRELOADED_STATE__
 const client = new ApolloClient({
     cache: new InMemoryCache(),
     link: createHttpLink({
-        uri: 'http://158.69.59.122:8001/graphql',
+        uri: API_URL,
         fetch: fetch,
     }),
 })
