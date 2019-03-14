@@ -11,8 +11,7 @@ class Map extends Component {
     render () {
         return (
             <div>
-                <GeoMap/>
-
+                <MapSvg/>
             </div>
         )
     }
