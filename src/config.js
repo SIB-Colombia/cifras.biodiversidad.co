@@ -1,1 +1,1 @@
-export const API_URL = 'http://localhost:8001/graphql'
+export const API_URL = 'http://158.69.59.122:8001/graphql'
