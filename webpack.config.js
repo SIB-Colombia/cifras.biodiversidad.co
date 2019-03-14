@@ -6,7 +6,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = (env) => {
     const plugins = [
-        new ExtractTextPlugin("css/[name].css"),
+        new ExtractTextPlugin("[name].css"),
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /\.min\.css$/g,
             cssProcessor: require('cssnano'),
@@ -19,7 +19,7 @@ module.exports = (env) => {
 
     if (env.NODE_ENV === 'production') {
         plugins.push(
-            new CleanWebpackPlugin(['dist'], {root: __dirname})
+            new CleanWebpackPlugin(['build'], {root: __dirname})
         )
     }
 
@@ -29,9 +29,9 @@ module.exports = (env) => {
             "home": path.resolve(__dirname, 'src/entries/client.js'),
         },
         output: {
-            path: path.resolve(__dirname, 'dist'),
-            filename: 'js/[name].js',
-            publicPath: path.resolve(__dirname, 'dist')+"/",
+            path: path.resolve(__dirname, 'build'),
+            filename: '[name].js',
+            publicPath: path.resolve(__dirname, 'build')+"/",
             chunkFilename: 'js/[id].[chunkhash].js',
         },
         devServer: {
