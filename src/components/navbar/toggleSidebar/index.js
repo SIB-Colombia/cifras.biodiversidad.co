@@ -4,7 +4,7 @@ import "../../../_styles/components/toggleSidebar.scss"
 class ToggleSidebar extends Component {
     render () {
         return (
-            <div onClick={this.props.handleClick} className="ToggleSidebarLayout">
+            <div onClick={Map.handleClick} className="ToggleSidebarLayout">
                 <div className="burgerIcon">
                     <span>-</span>
                     <span>-</span>

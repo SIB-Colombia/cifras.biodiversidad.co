@@ -3,8 +3,8 @@ import CompaniesLayout from "./layout";
 import connect from "react-redux/es/connect/connect";
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
-import CompaniesList from "./companiesList";
-import Company from "./company";
+import CompaniesList from "../../components/companiesList";
+import Company from "../../components/company";
 import GroupsLayout from "../groups/layout";
 
 class CompaniesContainer extends Component {

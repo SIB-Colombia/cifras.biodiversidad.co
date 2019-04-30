@@ -3,7 +3,7 @@ import SliderLayout from "./layout";
 import Slide from "./slide";
 import Slider from "react-slick"
 import SliderNav from "./nav";
-import Counter from "../../pages/home/components/counter";
+import Counter from "../../pages/home/counter";
 
 class HomeSlider extends Component {
     setSliderRef = e => {

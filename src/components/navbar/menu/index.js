@@ -7,7 +7,7 @@ const Menu = props => (
         <ul>
             {
                 props.items.map( item => (
-                    <li className="MainMenu__item" key={item.get('id')} onClick={props.handleClick}>
+                    <li className="MainMenu__item" key={item.get('id')} onClick={Map.handleClick}>
                         <NavLink exact to={item.get('url')} activeClassName="is-active">
                             {item.get('title')}
                         </NavLink>

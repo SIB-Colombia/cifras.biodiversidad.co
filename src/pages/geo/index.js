@@ -13,12 +13,18 @@ class Geo extends Component {
     componentDidMount () {
         window.scrollTo(0, 0);
 
+        console.log(this.props)
+
         this.setActiveGroup()
         this.props.actions.buttonSidebarVisibility(true)
     }
 
     componentDidUpdate () {
         this.setActiveGroup()
+    }
+
+    handleMapClick = (feature) => {
+        this.props.history.push(`/municipios?name=${feature.properties.county}&id=${feature.properties.id}`);
     }
 
     render () {
@@ -41,6 +47,8 @@ class Geo extends Component {
                                     page='geo'
                                     title='Municipios de Santander'
                                     dataVisualization={true}
+                                    handleMapClick={this.handleMapClick}
+
                                 />
                             </Fragment>
                         )

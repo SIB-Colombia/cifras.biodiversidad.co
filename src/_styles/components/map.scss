@@ -1,6 +1,10 @@
 @import "../_utilities/variables";
 
-
+.leaflet-container {
+  height: 500px;
+  width: 400px;
+  margin-top: 3em;
+}
 .MapContainer {
   position: relative;
 }

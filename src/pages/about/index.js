@@ -4,7 +4,6 @@ import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
 import connect from "react-redux/es/connect/connect";
 import AnchorLink from 'react-anchor-link-smooth-scroll'
-import Map from "../geo/map";
 
 
 class About extends Component {

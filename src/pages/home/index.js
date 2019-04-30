@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import HomeLayout from "./layout";
 import HomeSlider from "../../components/slider";
-import HomeLinks from "./components/links/links";
+import HomeLinks from "./links/links";
 import { connect } from 'react-redux'
 import {bindActionCreators} from "redux";
 import * as actions from "../../actions";
