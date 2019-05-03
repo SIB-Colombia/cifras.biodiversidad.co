@@ -12,9 +12,6 @@ import GeoContainer from "./container";
 class Geo extends Component {
     componentDidMount () {
         window.scrollTo(0, 0);
-
-        console.log(this.props)
-
         this.setActiveGroup()
         this.props.actions.buttonSidebarVisibility(true)
     }

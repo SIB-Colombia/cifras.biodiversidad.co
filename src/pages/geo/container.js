@@ -26,7 +26,7 @@ class GeoContainer extends Component {
                     <Panel  header={this.props.activeIdToRender.name.toLowerCase()}>
                         <div className="col-6">
                             {
-                                window.innerWidth <= 800 ? "" : <Map handleMapClick={this.props.handleMapClick}/>
+                                window.innerWidth <= 800 ? "" : <Map handleMapClick={this.props.handleMapClick} activeId={this.props.activeIdToRender}/>
                             }
                         </div>
 
