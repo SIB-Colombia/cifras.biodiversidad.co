@@ -4,81 +4,74 @@ import {CRS} from 'leaflet';
 import { Map as LeafletMap, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet';
 import "../../../_styles/components/map.scss"
 import santanderGEOJSON from '../../../actions/services/Santander_Municipios_v1'
+import {bindActionCreators} from "redux";
+import * as actions from "../../../actions";
+import connect from "react-redux/es/connect/connect";
 
 
 
 class Map extends Component {
     state = {
         map: [],
-        active: []
+        active: [],
+
     }
 
     componentDidMount() {
-       /* console.log('MOUNT')
-        console.log(this.state.active.properties)
-        console.log(this.props.history)*/
-       console.log('ACTIVE ID')
-       console.log(this.props.activeId.id)
 
     }
 
     componentDidUpdate() {
-        /*console.log('UPDATE')
-        console.log(this.state.active.properties)*/
-
+        console.log(this.props.activeIdToRender)
     }
 
     handleClick = (e, feature, layer) => {
-        console.log(':::::Event:::::')
-        console.log(e)
-        console.log(':::::Feature:::::')
-        console.log(feature.properties)
-        console.log(':::::Layer:::::')
-        console.log(layer.options)
-        this.props.handleMapClick(feature)
-
+        this.props.handleMapClick(feature, layer)
     }
 ''
     onEachFeature = (feature, layer) => {
+
         if (layer.feature.properties.id === parseFloat(this.props.activeId.id)) {
             layer.setStyle({
                 fillColor: '#00A8B4'
             });
             layer.on('mouseout', () => {
                 layer.setStyle({
-                    fillColor: '#00A8B4',
-                });
+                    fillColor: '#00A8B4'
+                })
+            })
+        } else if (layer.feature.properties.id !== parseFloat(this.props.activeId.id)) {
+            layer.setStyle({
+                fillColor: '#C6DBDB'
+            });
+            layer.on('mouseout', () => {
+                layer.setStyle({
+                    fillColor: '#C6DBDB'
+                })
             })
         }
         layer.on('mouseover', () => {
             layer.bindTooltip(feature.properties.county).openTooltip();
             layer.setStyle({
-                fillColor: '#00A8B4',
+                fillColor: '#00A8B4'
             });
         })
-
-        layer.on('mouseout', () => {
-            layer.bindTooltip(feature.properties.county).closeTooltip();
-            layer.setStyle({
-                fillColor: '#C6DBDB',
-            });
-        })
-
 
         layer.on('click', e => {
             this.handleClick(e, feature, layer)
             layer.setStyle({
                 fillColor: '#00A8B4'
             });
+
         })
 
-            console.log(layer.feature.properties.id === parseFloat(this.props.activeId.id))
-
+        // console.log(layer.options.fillColor == '#00A8B4')
     }
 
     render () {
         return (
             <LeafletMap
+                key={this.props.activeIdToRender}
                 center={[6.9809,-73.4683]}
                 zoom={7.5}
                 maxZoom={14}
@@ -91,7 +84,6 @@ class Map extends Component {
                 style={{"backgroundColor": "#fff"}}>
             >
                 <GeoJSON
-                    key={1}
                     data={santanderGEOJSON}
                     onEachFeature={this.onEachFeature}
                     ref="geojson"
@@ -117,4 +109,19 @@ class Map extends Component {
 
 
 }
-export default Map
+
+
+const mapStateToProps = ( state, props ) => (
+    {
+        activeIdToRender: state.getIn(['data', 'geo', 'active', 'item', 'id']),
+    }
+)
+
+
+const mapDispatchToProps = dispatch => (
+    {
+        actions: bindActionCreators(actions, dispatch)
+    }
+)
+
+export default connect(mapStateToProps)(Map)
