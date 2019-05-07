@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactTable from "react-table";
 import TableComponentLayout from "./layout";
 import connect from "react-redux/es/connect/connect";
+import NumberFormat from 'react-number-format';
 
 
 class TableComponent extends Component {
@@ -33,113 +34,117 @@ const mapStateToProps = state => {
     const activeTownName =  state.getIn(['data', 'geo', 'active', 'data', 'town', 0, 'geografia', 'nombre'])
     const activeDepartmentName =  state.getIn(['data', 'geo', 'active', 'data', 'department', 0, 'geografia', 'nombre'])
 
-    let columns = [{
-        Header: 'Indicador',
-        accessor: 'name',
-        width: 200
-    },{
-        Header: 'Registros biológicos',
-        columns: [{
-            Header: activeTownName,
-            accessor: 'RRBBSant'
-        },{
-            Header: activeDepartmentName,
-            accessor: 'RRBBCol'
-        }]
-    },{
-        Header: 'Especies',
-        columns: [{
-            Header: activeTownName,
-            accessor: 'ESPSant'
-        },{
-            Header: activeDepartmentName,
-            accessor: 'ESPCol'
-        }]
-    }]
+    let columns = [
+        {
+            Header: 'Indicador',
+            accessor: 'name',
+            width: 200
+        },
+        {
+            Header: 'Especies',
+            columns: [{
+                Header: activeTownName,
+                accessor: 'ESPSant'
+            },{
+                Header: activeDepartmentName,
+                accessor: 'ESPCol'
+            }]
+        },
+        {
+            Header: 'Registros biológicos',
+            columns: [{
+                Header: activeTownName,
+                accessor: 'RRBBSant'
+            },{
+                Header: activeDepartmentName,
+                accessor: 'RRBBCol'
+            }]
+        }
+    ]
     let dataTable = [{
         name: 'Total',
-        RRBBSant: activeDataTown ? activeDataTown.registros : 0,
-        RRBBCol: activeDataDepartment ? activeDataDepartment.registros : 0,
-        ESPSant: activeDataTown ? activeDataTown.especies : 0,
-        ESPCol: activeDataDepartment ? activeDataDepartment.especies : 0,
+        ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especies} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+        ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especies} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+        RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registros} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+        RRBBCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.registros} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
     },
         {
             name: 'Total Amenazadas',
-            RRBBSant: activeDataTown ? activeDataTown.registrosAmenaza : 0,
-            RRBBCol: activeDataDepartment ? activeDataDepartment.registrosAmenaza : 0,
-            ESPSant: activeDataTown ? activeDataTown.especiesAmenaza : 0,
-            ESPCol: activeDataDepartment ? activeDataDepartment.especiesAmenaza : 0,
+            ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especiesAmenaza} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especiesAmenaza} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registrosAmenaza} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.registrosAmenaza} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
         },
         {
             name: 'En peligro crítico (CR)',
-            RRBBSant: activeDataTown ? activeDataTown.registrosCR : 0,
-            RRBBCol: activeDataDepartment ? activeDataDepartment.registrosCR : 0,
-            ESPSant: activeDataTown ? activeDataTown.especiesCR : 0,
-            ESPCol: activeDataDepartment ? activeDataDepartment.especiesCR : 0,
+            ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especiesCR} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especiesCR} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registrosCR} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />: 0,
+            RRBBCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.registrosCR} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
         },
         {
             name: 'En peligro (EN)',
-            RRBBSant: activeDataTown ? activeDataTown.registrosEN : 0,
-            RRBBCol: activeDataDepartment ? activeDataDepartment.registrosEN : 0,
-            ESPSant: activeDataTown ? activeDataTown.especiesEN : 0,
-            ESPCol: activeDataDepartment ? activeDataDepartment.especiesEN : 0,
+            ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especiesEN} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especiesEN} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registrosEN} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.registrosEN} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
         },
         {
             name: 'Vulnerable (VU)',
-            RRBBSant: activeDataTown ? activeDataTown.registrosVU : 0,
-            RRBBCol: activeDataDepartment ? activeDataDepartment.registrosVU : 0,
-            ESPSant: activeDataTown ? activeDataTown.especiesVU : 0,
-            ESPCol: activeDataDepartment ? activeDataDepartment.especiesVU : 0,
+            ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especiesVU} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especiesVU} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registrosVU} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.registrosVU} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
         },
         {
             name: 'Total CITES',
-            RRBBSant: activeDataTown ? activeDataTown.registrosCites : 0,
-            RRBBCol: activeDataDepartment ? activeDataDepartment.registrosCites : 0,
-            ESPSant: activeDataTown ? activeDataTown.especiesCites : 0,
-            ESPCol: activeDataDepartment ? activeDataDepartment.especiesCites : 0,
+            ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especiesCites} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especiesCites} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registrosCites} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.registrosCites} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
         },
         {
             name: 'Apéndice CITES I',
-            RRBBSant: activeDataTown ? activeDataTown.registrosCitesI : 0,
-            RRBBCol: activeDataDepartment ? activeDataDepartment.registrosCitesI : 0,
-            ESPSant: activeDataTown ? activeDataTown.especiesCitesI : 0,
-            ESPCol: activeDataDepartment ? activeDataDepartment.especiesCitesI : 0,
+            ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especiesCitesI} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especiesCitesI} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registrosCitesI} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.registrosCitesI} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
         },
         {
             name: 'Apéndice CITES II',
-            RRBBSant: activeDataTown ? activeDataTown.registrosCitesII : 0,
-            RRBBCol: activeDataDepartment ? activeDataDepartment.registrosCitesII : 0,
-            ESPSant: activeDataTown ? activeDataTown.especiesCitesII : 0,
-            ESPCol: activeDataDepartment ? activeDataDepartment.especiesCitesII : 0,
+            ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especiesCitesII} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especiesCitesII} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registrosCitesII} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.registrosCitesII} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
         },
         {
             name: 'Apéndice CITES III',
-            RRBBSant: activeDataTown ? activeDataTown.registrosCitesIII : 0,
-            RRBBCol: activeDataDepartment ? activeDataDepartment.registrosCitesIII : 0,
-            ESPSant: activeDataTown ? activeDataTown.especiesCitesIII : 0,
-            ESPCol: activeDataDepartment ? activeDataDepartment.especiesCitesIII : 0,
+            ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especiesCitesIII} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especiesCitesIII} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registrosCitesIII} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.registrosCitesIII} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
         },
 
         {
-            name: <div class="Table-tooltip-container">Expecies Exóticas <span className="Table-tooltip"><p class="tooltip">Incluye solo especies de animales</p></span></div>,
-            RRBBSant: activeDataTown ? activeDataTown.registrosExoticas : 0,
-            RRBBCol: activeDataDepartment ? activeDataDepartment.registrosExoticas : 0,
-            ESPSant: activeDataTown ? activeDataTown.especiesExoticas : 0,
-            ESPCol: activeDataDepartment ? activeDataDepartment.especiesExoticas : 0,
+            name: <div className="Table-tooltip-container">Expecies Exóticas <span className="Table-tooltip"><p className="tooltip">Incluye solo especies de animales</p></span></div>,
+            ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especiesExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especiesExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registrosExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.registrosExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
         },
         {
-            name: <div class="Table-tooltip-container">Expecies Endémicas <span className="Table-tooltip"><p class="tooltip">Incluye especies de aves, mamíferos,<br/>peces dulceacuícolas, plantas y líquenes</p></span></div>,
-            RRBBSant: activeDataTown ? activeDataTown.registrosEndemicas : 0,
-            RRBBCol: activeDataDepartment ? activeDataDepartment.registrosEndemicas : 0,
-            ESPSant: activeDataTown ? activeDataTown.especiesEndemicas : 0,
-            ESPCol: activeDataDepartment ? activeDataDepartment.especiesEndemicas : 0,
+            name: <div className="Table-tooltip-container">Expecies Endémicas <span className="Table-tooltip"><p className="tooltip">Incluye especies de aves, mamíferos,<br/>peces dulceacuícolas, plantas y líquenes</p></span></div>,
+            ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especiesEndemicas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especiesEndemicas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registrosEndemicas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.registrosEndemicas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
         },
         {
-            name: <div class="Table-tooltip-container">Expecies Migratorias <span class="Table-tooltip"><p class="tooltip">Incluye solo especies de aves</p></span></div>,
-            RRBBSant: activeDataTown ? activeDataTown.registrosMigratorias : 0,
-            RRBBCol: activeDataDepartment ? activeDataDepartment.registrosMigratorias : 0,
-            ESPSant: activeDataTown ? activeDataTown.especiesMigratorias : 0,
-            ESPCol: activeDataDepartment ? activeDataDepartment.especiesMigratorias : 0,
+            name: <div className="Table-tooltip-container">Expecies Migratorias <span className="Table-tooltip"><p className="tooltip">Incluye solo especies de aves</p></span></div>,
+            ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especiesMigratorias} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especiesMigratorias} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registrosMigratorias} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
+            RRBBCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.registrosMigratorias} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
         }]
 
     return (
