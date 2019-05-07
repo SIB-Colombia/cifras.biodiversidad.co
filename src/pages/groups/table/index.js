@@ -50,7 +50,8 @@ const mapStateToProps = state => {
 
     let columns = [{
         Header: 'Indicador',
-        accessor: 'name'
+        accessor: 'name',
+        width: 200
     },{
         Header: 'Registros biológicos',
         columns: [{
@@ -136,21 +137,21 @@ const mapStateToProps = state => {
     },
 
     {
-        name: 'Especies Exóticas',
+        name: <div class="Table-tooltip-container">Expecies Exóticas <span className="Table-tooltip"><p class="tooltip">Incluye solo especies de animales</p></span></div>,
         RRBBSant: !activeDataDepartment || activeDataDepartment.registrosExoticas === -1 ? "—" : activeDataDepartment.especiesExoticas,
         RRBBCol: !activeDataCountry || activeDataCountry.registrosExoticas === -1 ? "—" : activeDataCountry.registrosExoticas,
         ESPSant: !activeDataDepartment || activeDataDepartment.especiesExoticas === -1 ? "—" : activeDataDepartment.especiesExoticas,
         ESPCol: !activeDataCountry || activeDataCountry.especiesExoticas === -1 ? "—" : activeDataCountry.especiesExoticas,
     },
     {
-        name: 'Especies Endémicas',
+        name: <div class="Table-tooltip-container">Expecies Endémicas <span className="Table-tooltip"><p class="tooltip">Incluye especies de aves, mamíferos,<br/>peces dulceacuícolas, plantas y líquenes</p></span></div>,
         RRBBSant: !activeDataDepartment || activeDataDepartment.registrosEndemicas === -1 ? "—" : activeDataDepartment.registrosEndemicas,
         RRBBCol: !activeDataCountry || activeDataCountry.registrosEndemicas === -1 ? "—" : activeDataCountry.registrosEndemicas,
         ESPSant: !activeDataDepartment || activeDataDepartment.especiesEndemicas === -1 ? "—" : activeDataDepartment.especiesEndemicas,
         ESPCol: !activeDataCountry || activeDataCountry.especiesEndemicas === -1 ? "—" : activeDataCountry.especiesEndemicas,
     },
     {
-        name: 'Especies Migratorias',
+        name: <div class="Table-tooltip-container">Expecies Migratorias <span class="Table-tooltip"><p class="tooltip">Incluye solo especies de aves</p></span></div>,
         RRBBSant: !activeDataDepartment || activeDataDepartment.registrosMigratorias === -1 ? "—" : activeDataDepartment.registrosMigratorias,
         RRBBCol: !activeDataCountry || activeDataCountry.registrosMigratorias === -1 ? "—" : activeDataCountry.registrosMigratorias,
         ESPSant: !activeDataDepartment || activeDataDepartment.especiesMigratorias === -1 ? "—" : activeDataDepartment.especiesMigratorias,

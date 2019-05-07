@@ -6,10 +6,10 @@
     background-color: white;
     font-weight: $regular;
     line-height: 16px;
-    padding: 3rem 1rem;
+    padding: 1.8rem 1rem;
     &:not(:first-child) {
       font-family: $secondary-font;
-      font-size: 2em;
+      font-size: 1.2em;
       text-align: center;
     }
     @media screen and (max-width: $size-small) {
@@ -25,4 +25,31 @@
 .ReactTable .rt-thead {
   overflow-y: scroll;
 }
+.ReactTable .rt-td {
+  overflow: unset;
+}
+.Table-tooltip-container {
+  position: relative;
+  cursor: pointer
+}
+.Table-tooltip {
+  position: absolute;
+  opacity: 0;
+  font-size: 0.7em;
+  width: auto;
+  left: 0;
+  top: 100%;
+  background-color: #cceef0;
+  box-shadow: 0 2px 7px -3px #888;
+  box-sizing: border-box;
+  padding: 5px;
+  transition: opacity .3s ease;
+}
+.Table-tooltip .tooltip {
+  margin: 0;
 
+ }
+
+.Table-tooltip-container:hover .Table-tooltip {
+  opacity: 1
+}

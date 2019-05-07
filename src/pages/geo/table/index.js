@@ -35,7 +35,8 @@ const mapStateToProps = state => {
 
     let columns = [{
         Header: 'Indicador',
-        accessor: 'name'
+        accessor: 'name',
+        width: 200
     },{
         Header: 'Registros biológicos',
         columns: [{
@@ -120,21 +121,21 @@ const mapStateToProps = state => {
         },
 
         {
-            name: 'Especies Exóticas',
+            name: <div class="Table-tooltip-container">Expecies Exóticas <span className="Table-tooltip"><p class="tooltip">Incluye solo especies de animales</p></span></div>,
             RRBBSant: activeDataTown ? activeDataTown.registrosExoticas : 0,
             RRBBCol: activeDataDepartment ? activeDataDepartment.registrosExoticas : 0,
             ESPSant: activeDataTown ? activeDataTown.especiesExoticas : 0,
             ESPCol: activeDataDepartment ? activeDataDepartment.especiesExoticas : 0,
         },
         {
-            name: 'Especies Endémicas',
+            name: <div class="Table-tooltip-container">Expecies Endémicas <span className="Table-tooltip"><p class="tooltip">Incluye especies de aves, mamíferos,<br/>peces dulceacuícolas, plantas y líquenes</p></span></div>,
             RRBBSant: activeDataTown ? activeDataTown.registrosEndemicas : 0,
             RRBBCol: activeDataDepartment ? activeDataDepartment.registrosEndemicas : 0,
             ESPSant: activeDataTown ? activeDataTown.especiesEndemicas : 0,
             ESPCol: activeDataDepartment ? activeDataDepartment.especiesEndemicas : 0,
         },
         {
-            name: 'Especies Migratorias',
+            name: <div class="Table-tooltip-container">Expecies Migratorias <span class="Table-tooltip"><p class="tooltip">Incluye solo especies de aves</p></span></div>,
             RRBBSant: activeDataTown ? activeDataTown.registrosMigratorias : 0,
             RRBBCol: activeDataDepartment ? activeDataDepartment.registrosMigratorias : 0,
             ESPSant: activeDataTown ? activeDataTown.especiesMigratorias : 0,
