@@ -26,6 +26,7 @@ class Sidebar extends Component {
                                 name={item.nombre}
                                 children={!!item.grupoBiologicoHijos}
                                 urlImagen={item.urlImagen}
+                                activeItem={this.props.activeItem}
                                 {...item}
                                 />
                             </Fragment>

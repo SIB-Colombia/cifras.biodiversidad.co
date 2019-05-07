@@ -1,24 +1,19 @@
 import React, {Component} from 'react'
-import {CRS} from 'leaflet';
-
-import { Map as LeafletMap, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet';
+import { Map as LeafletMap, TileLayer, GeoJSON } from 'react-leaflet';
 import "../../../_styles/components/map.scss"
 import santanderGEOJSON from '../../../actions/services/Santander_Municipios_v1'
 import {bindActionCreators} from "redux";
 import * as actions from "../../../actions";
 import connect from "react-redux/es/connect/connect";
 
-
-
 class Map extends Component {
     state = {
         map: [],
         active: [],
-
     }
 
     componentDidMount() {
-
+        console.log(this.props.activeIdToRender)
     }
 
     componentDidUpdate() {
@@ -30,7 +25,6 @@ class Map extends Component {
     }
 ''
     onEachFeature = (feature, layer) => {
-
         if (layer.feature.properties.id === parseFloat(this.props.activeId.id)) {
             layer.setStyle({
                 fillColor: '#00A8B4'
@@ -53,7 +47,7 @@ class Map extends Component {
         layer.on('mouseover', () => {
             layer.bindTooltip(feature.properties.county).openTooltip();
             layer.setStyle({
-                fillColor: '#00A8B4'
+                fillColor: '#4bc5cf'
             });
         })
 
@@ -64,7 +58,6 @@ class Map extends Component {
             });
 
         })
-
         // console.log(layer.options.fillColor == '#00A8B4')
     }
 
@@ -76,12 +69,13 @@ class Map extends Component {
                 zoom={7.5}
                 maxZoom={14}
                 minZoom={7}
-                zoomControl={true}
-                doubleClickZoom={true}
-                scrollWheelZoom={true}
-                dragging={true}
+                zoomControl={false}
+                doubleClickZoom={false}
+                scrollWheelZoom={false}
+                dragging={false}
                 animate={true}
-                style={{"backgroundColor": "#fff"}}>
+                style={{"backgroundColor": "#fff"}}
+                attributionControl={false}
             >
                 <GeoJSON
                     data={santanderGEOJSON}
@@ -90,14 +84,13 @@ class Map extends Component {
                     fillColor={"#C6DBDB"}
                     fillOpacity={1}
                     opacity={1}
-                    weight={1}
+                    weight={0.8}
                     color={"#ffffff"}
                 />
                 <TileLayer
-                    opacity={0.5}
+                    opacity={0}
                     url='https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png'
                 />
-
                 {/*<Marker position={[6.751896464843375,-73.46832275390626]}>
                     <Popup>
                         Popup for any custom information.
@@ -106,17 +99,13 @@ class Map extends Component {
             </LeafletMap>
         )
     }
-
-
 }
-
 
 const mapStateToProps = ( state, props ) => (
     {
         activeIdToRender: state.getIn(['data', 'geo', 'active', 'item', 'id']),
     }
 )
-
 
 const mapDispatchToProps = dispatch => (
     {
