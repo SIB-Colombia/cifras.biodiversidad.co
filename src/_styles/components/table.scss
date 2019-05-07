@@ -20,7 +20,12 @@
     }
   }
 }
-
+.ReactTable .rt-table{
+  overflow-x: auto;
+  @media screen and (max-width: $size-small) {
+    overflow-x: scroll;
+  }
+}
 
 .ReactTable .rt-thead {
   overflow-y: scroll;
