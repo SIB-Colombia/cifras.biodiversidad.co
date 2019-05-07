@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react'
 
 class NotFound extends PureComponent {
+    componentDidMount () {
+        document.title = 'Cifras Santander / No encontrado';
+    }
     handleBackClick = () => {
         this.props.history.goBack()
     }

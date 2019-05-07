@@ -11,6 +11,7 @@ import queryString from "query-string";
 
 class Companies extends Component {
     componentDidMount () {
+        document.title = 'Cifras Santander / Entidades';
         window.scrollTo(0, 0);
 
         this.setActiveCompanyType()

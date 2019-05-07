@@ -10,6 +10,7 @@ import {SANTANDER} from "../../actions/services/queries";
 class Home extends Component {
 
     componentDidMount () {
+        document.title = 'Cifras Santander / Inicio';
         window.scrollTo(0, 0);
 
         this.props.actions.sidebarVisibility(false)

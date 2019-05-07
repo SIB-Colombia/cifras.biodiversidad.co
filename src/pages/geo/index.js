@@ -11,6 +11,7 @@ import GeoContainer from "./container";
 
 class Geo extends Component {
     componentDidMount () {
+        document.title = 'Cifras Santander / Municipios';
         window.scrollTo(0, 0);
         this.setActiveGroup()
         this.props.actions.buttonSidebarVisibility(true)

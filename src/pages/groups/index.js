@@ -12,6 +12,7 @@ import GroupsContainer from "./container";
 class Groups extends Component {
 
     componentDidMount () {
+        document.title = 'Cifras Santander / Grupos Biológicos';
         window.scrollTo(0, 0);
 
         this.setActiveGroup()
