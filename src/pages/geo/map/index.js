@@ -13,11 +13,11 @@ class Map extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.activeIdToRender)
+        // console.log(this.props.activeIdToRender)
     }
 
     componentDidUpdate() {
-        console.log(this.props.activeIdToRender)
+        // console.log(this.props.activeIdToRender)
     }
 
     handleClick = (e, feature, layer) => {
