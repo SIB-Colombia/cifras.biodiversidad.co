@@ -44,9 +44,8 @@ class About extends Component {
                             <h3 className='underline-title'>El SiB Colombia</h3>
                             <p>
                                 <b>El SiB Colombia es la red nacional de datos abiertos sobre biodiversidad.</b> Esta iniciativa de país nace con el Decreto 1603 de 1994 como parte del proceso de creación del Sistema Nacional Ambiental (Sina), establecido en la Ley 99 de 1993. Es el nodo oficial del país en la Infraestructura Mundial de Información en Biodiversidad (GBIF) y es el sistema de Información Biogeográfica del Océano (OBIS), a través del SiB Marino. Su principal propósito es brindar acceso abierto a información sobre la diversidad biológica del país para la construcción de una sociedad sostenible. Además, facilita la publicación en línea de datos e información sobre biodiversidad, y promueve su uso por parte de una amplia variedad de audiencias, apoyando de forma oportuna y eficiente la gestión integral de la biodiversidad.
+                                Es una realidad gracias a la participación de cientos de organizaciones y personas que comparten datos e información bajo los principios de libre acceso, transparencia, cooperación, reconocimiento y responsabilidad compartida. Promueve la participación activa del gobierno, la academia, el sector productivo y la sociedad civil para lograr la consolidación de información confiable y oportuna que apoye la toma de decisiones a nivel nacional e internacional.
 
-                                    Es una realidad gracias a la participación de cientos de organizaciones y personas que comparten datos e información bajo los principios de libre acceso, transparencia, cooperación, reconocimiento y responsabilidad compartida. Promueve la participación activa del gobierno, la academia, el sector productivo y la sociedad civil para lograr la consolidación de información confiable y oportuna que apoye la toma de decisiones a nivel nacional e internacional.
-                                Encuentra más información en https://www.sibcolombia.net · http://www.biodiversidad.co
 
                             </p>
                         </div>
@@ -54,11 +53,9 @@ class About extends Component {
                         <div className="card white" id="biocifras">
                             <h3 className='underline-title'>Biodiversidad en Cifras · Santander</h3>
                             <p>
-                                <b>Es la ventana a la biodiversidad de Santander desde los datos abiertos</b> y el primer paso en la regionalización del SiB Colombia en el país. Es una herramienta para la toma de decisiones que sintetiza el estado del conocimiento de la diversidad biológica departamental. Está diseñada para responder preguntas fundamentales sobre el estado de la biodiversidad en la región de manera eficaz, sencilla y oportuna.
+                                Biodiversidad en Cifras · Santander es el primer paso en la regionalización del SiB Colombia y un reflejo de la gestión del conocimiento sobre la biodiversidad en el departamento desde los datos abiertos. Esta ventana regional, que se actualiza periódicamente según la actividad de publicación a través del SiB Colombia, responde preguntas fundamentales sobre la diversidad biológica de la región para apoyar de forma oportuna la construcción de políticas ambientales y la toma de decisiones a nivel regional y nacional. Esto es posible gracias a la participación de cientos de organizaciones y personas que le apuestan a la construcción colectiva de conocimiento a través de un modelo abierto y participativo, garantizando el acceso libre y responsable a la información sobre la diversidad biológica en nuestro país.
 
-                                Permite la exploración de cifras consolidadas de especies y registros biológicos en tres ejes principales de síntesis: (a) cifras por grupos biológicos, (b) cifras por áreas geográficas, y (c) temáticas de conservación, uso y manejo, siendo este último un eje transversal a los dos anteriores.
-
-                                Es también una instancia de atribución y reconocimiento para quienes hacen posible la consolidación y actualización de estas cifras al compartir datos abiertos sobre biodiversidad del departamento.
+                                Permite la exploración de cifras consolidadas de especies y registros biológicos en tres ejes principales de síntesis: (a) cifras por <b>grupos biológicos</b>, (b) cifras por <b>áreas geográficas</b>, y (c) <b>temáticas de conservación, uso y manejo</b>, siendo este último un eje transversal a los dos anteriores.
 
                             </p>
                         </div>
