@@ -126,21 +126,21 @@ const mapStateToProps = state => {
         },
 
         {
-            name: <div className="Table-tooltip-container">Expecies Exóticas <span className="Table-tooltip"><p className="tooltip">Incluye solo especies de animales</p></span></div>,
+            name: 'Especies Exóticas',
             ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especiesExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
             ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especiesExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
             RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registrosExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
             RRBBCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.registrosExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
         },
         {
-            name: <div className="Table-tooltip-container">Expecies Endémicas <span className="Table-tooltip"><p className="tooltip">Incluye especies de aves, mamíferos,<br/>peces dulceacuícolas, plantas y líquenes</p></span></div>,
+            name: <div className="Table-tooltip-container">Especies Endémicas <span className="Table-tooltip"><p className="tooltip">Incluye especies de aves, mamíferos,<br/>peces dulceacuícolas, plantas y líquenes</p></span></div>,
             ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especiesEndemicas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
             ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especiesEndemicas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
             RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registrosEndemicas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
             RRBBCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.registrosEndemicas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
         },
         {
-            name: <div className="Table-tooltip-container">Expecies Migratorias <span className="Table-tooltip"><p className="tooltip">Incluye solo especies de aves</p></span></div>,
+            name: <div className="Table-tooltip-container">Especies Migratorias <span className="Table-tooltip"><p className="tooltip">Incluye solo especies de aves</p></span></div>,
             ESPSant: activeDataTown ? <NumberFormat value={activeDataTown.especiesMigratorias} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
             ESPCol: activeDataDepartment ? <NumberFormat value={activeDataDepartment.especiesMigratorias} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,
             RRBBSant: activeDataTown ? <NumberFormat value={activeDataTown.registrosMigratorias} thousandSeparator='.' decimalSeparator=','  displayType={'text'} /> : 0,

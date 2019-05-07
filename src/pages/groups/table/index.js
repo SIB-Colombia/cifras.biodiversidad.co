@@ -147,21 +147,21 @@ const mapStateToProps = state => {
     },
 
     {
-        name: <div className="Table-tooltip-container">Expecies Exóticas <span className="Table-tooltip"><p className="tooltip">Incluye solo especies de animales</p></span></div>,
+        name: 'Especies Exóticas',
         ESPSant: !activeDataDepartment || activeDataDepartment.especiesExoticas === -1 ? "—" : <NumberFormat value={activeDataDepartment.especiesExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
         ESPCol: !activeDataCountry || activeDataCountry.especiesExoticas === -1 ? "—" : <NumberFormat value={activeDataCountry.especiesExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
         RRBBSant: !activeDataDepartment || activeDataDepartment.registrosExoticas === -1 ? "—" : <NumberFormat value={activeDataDepartment.especiesExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
         RRBBCol: !activeDataCountry || activeDataCountry.registrosExoticas === -1 ? "—" : <NumberFormat value={activeDataCountry.registrosExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
     },
     {
-        name: <div className="Table-tooltip-container">Expecies Endémicas <span className="Table-tooltip"><p className="tooltip">Incluye especies de aves, mamíferos,<br/>peces dulceacuícolas, plantas y líquenes</p></span></div>,
+        name: <div className="Table-tooltip-container">Especies Endémicas <span className="Table-tooltip"><p className="tooltip">Incluye especies de aves, mamíferos,<br/>peces dulceacuícolas, plantas y líquenes</p></span></div>,
         ESPSant: !activeDataDepartment || activeDataDepartment.especiesEndemicas === -1 ? "—" : <NumberFormat value={activeDataDepartment.especiesEndemicas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
         ESPCol: !activeDataCountry || activeDataCountry.especiesEndemicas === -1 ? "—" : <NumberFormat value={activeDataCountry.especiesEndemicas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
         RRBBSant: !activeDataDepartment || activeDataDepartment.registrosEndemicas === -1 ? "—" : <NumberFormat value={activeDataDepartment.registrosEndemicas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
         RRBBCol: !activeDataCountry || activeDataCountry.registrosEndemicas === -1 ? "—" : <NumberFormat value={activeDataCountry.registrosEndemicas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
     },
     {
-        name: <div className="Table-tooltip-container">Expecies Migratorias <span className="Table-tooltip"><p className="tooltip">Incluye solo especies de aves</p></span></div>,
+        name: <div className="Table-tooltip-container">Especies Migratorias <span className="Table-tooltip"><p className="tooltip">Incluye solo especies de aves</p></span></div>,
         ESPSant: !activeDataDepartment || activeDataDepartment.especiesMigratorias === -1 ? "—" : <NumberFormat value={activeDataDepartment.especiesMigratorias} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
         ESPCol: !activeDataCountry || activeDataCountry.especiesMigratorias === -1 ? "—" : <NumberFormat value={activeDataCountry.especiesMigratorias} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
         RRBBSant: !activeDataDepartment || activeDataDepartment.registrosMigratorias === -1 ? "—" : <NumberFormat value={activeDataDepartment.registrosMigratorias} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
