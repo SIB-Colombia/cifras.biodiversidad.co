@@ -12,6 +12,7 @@ class Navbar extends Component {
         this.props.actions.menuVisibility(!this.props.menuVisible)
 
     }
+
     handleSidebar = e => {
         this.props.actions.sidebarVisibility(!this.props.sidebarVisible)
     }
@@ -29,7 +30,11 @@ class Navbar extends Component {
                         <img src="https://s3.amazonaws.com/sib-resources/images/logos-canales/svg/logo-cifras-santander.svg" alt="Logo Biodiversidad en cifras - Santander"/>
                     </Link>
                 </div>
-                <p onClick={this.handleToggleMainMenu} className="ToggleMainMenu">EXPLORAR</p>
+                <p
+                    onClick={this.handleToggleMainMenu}
+                    className="ToggleMainMenu">
+                    EXPLORAR
+                </p>
                 {
                     this.props.menuVisible &&
                     <Menu items={this.props.items} handleClick={this.handleToggleMainMenu}/>
