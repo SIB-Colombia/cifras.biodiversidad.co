@@ -7,7 +7,7 @@ class SliderNav extends PureComponent {
         return (
             <div
                 className={`SliderNav ${this.props.direction}`}
-                onClick={Map.handleClick}>
+                onClick={this.props.handleClick}>
                 {this.props.direction}
             </div>
         )
