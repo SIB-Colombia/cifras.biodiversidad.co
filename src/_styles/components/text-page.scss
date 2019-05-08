@@ -34,4 +34,11 @@
     padding: 2em;
     margin-bottom: 2em;
   }
+  img {
+    width: auto;
+    max-width: 80%;
+    display: block;
+    margin: 1.5em auto 2.5em;
+    box-shadow: 0 4px 7px 0 $light-gray;
+  }
 }

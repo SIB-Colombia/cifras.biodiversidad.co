@@ -63,7 +63,9 @@ class About extends Component {
                         <div className="card white" id="consolida">
                             <h3 className='underline-title'>¿Cómo se consolidan las cifras?</h3>
                             <p>
-                                Las cifras se consolidan a partir de los datos abiertos disponibles a través del SiB Colombia tras un proceso de depuración y validación que tiene tres etapas: (1) Consulta de datos disponibles a través del SiB Colombia y listas externas, (2) Validación y limpieza de datos, y (3) Síntesis de cifras a partir de datos validados
+                                Las cifras se consolidan a partir de los datos abiertos disponibles a través del SiB Colombia tras un proceso de depuración y validación que tiene tres etapas: (1) Consulta de datos disponibles a través del SiB Colombia y listas externas, (2) Validación y limpieza de datos, y (3) Síntesis de cifras a partir de datos validados. Si quieres conocer el proceso en detalle, <a  target="_blank" href="http://repository.humboldt.org.co/handle/20.500.11761/35288">consulta la ficha metodológica</a> y los conjuntos de datos utilizados en el proceso.
+                                <br/>
+                                <img src="./static/esquema-consulta.png" alt=""/>
                             </p>
                                 <h4>Consulta de datos abiertos</h4>
                                     <p>
@@ -74,130 +76,134 @@ class About extends Component {
 
                                     <h5>A. Registros Biológicos en Colombia:</h5>
                                         <p>
-                                            Consulta general a la base de datos del SiB Colombia y dos sub consultas geográficas: la primera, sobre el elemento ‘stateProvince’ y la segunda, a partir de la capa geográfica del departamento. Estas consultas son unificadas y procesadas durante la validación y limpieza de datos
+                                            Consulta general a la base de datos del SiB Colombia y dos sub consultas geográficas: la primera, sobre el elemento ‘stateProvince’ y la segunda, a partir de la capa geográfica del departamento. Estas consultas son unificadas y procesadas durante la validación y limpieza de datos. <a  target="_blank" href="https://gitlab.com/sib-colombia/sintesis_cifras/tree/master/Datos">Consulta los datos que hacen posible esta síntesis haciendo clic aquí.</a>
                                         </p>
                                     <h5>B. Listas de especies de referencia en el país:</h5>
 
                                             <ul>
-                                                <li><p>Lista de especies de peces de agua dulce de Colombia (Publicador: Asociación Colombiana de Ictiólogos)</p></li>
-                                                <li><p>Lista de mamíferos de Colombia (Publicador: Sociedad Colombiana de Mastozoología)</p></li>
-                                                <li><p>Lista de referencia de especies de aves de Colombia (Publicador: Asociación Colombiana de Ornitología)</p></li>
-                                                <li><p>Lista de especies amenazadas de Colombia (Publicador: Ministerio de Ambiente y Desarrollo Sostenible )</p></li>
+                                                <li><p><a  target="_blank" href="http://listas.biodiversidad.co/list/7e3a2242-46d6-4b90-b80c-42c5d27ed93b">Lista de especies de peces de agua dulce de Colombia</a> (Publicador: Asociación Colombiana de Ictiólogos)</p></li>
+                                                <li><p><a  target="_blank" href="http://listas.biodiversidad.co/list/e8b9ed9b-f715-4eac-ae24-772fbf40d7ae">Lista de mamíferos de Colombia</a> (Publicador: Sociedad Colombiana de Mastozoología)</p></li>
+                                                <li><p><a  target="_blank" href="https://ipt.biodiversidad.co/sib/resource?r=aco_listaavescolombia2017">Lista de referencia de especies de aves de Colombia</a> (Publicador: Asociación Colombiana de Ornitología)</p></li>
+                                                <li><p><a  target="_blank" href="https://ipt.biodiversidad.co/sib/resource?r=resolucion1912-2017mads">Lista de especies amenazadas de Colombia</a> (Publicador: Ministerio de Ambiente y Desarrollo Sostenible )</p></li>
                                             </ul>
 
                                     <h5>C. Listas externas </h5>
                                         <ul>
-                                                <li><p>Catálogo de plantas y líquenes de Colombia:
+                                                <li><p><a  target="_blank" href="http://catalogoplantasdecolombia.unal.edu.co/es/">Catálogo de plantas y líquenes de Colombia:</a>
                                                     Este catálogo constituye la recopilación más completa de especies de plantas y líquenes para el país con 28.683 especies identificadas hasta la fecha (2018-09) en Colombia. El catálogo cuenta con información taxonómica, geográfica y de endemismo sobre  las especies de plantas y líquenes que habitan el país.
                                                 </p></li>
-                                                <li><p>Especies objeto de Comercio:
+                                                <li><p><a  target="_blank" href="https://speciesplus.net/species">Especies objeto de Comercio:</a>
                                                     Lista de especies objeto de comercio según la Convención sobre el Comercio Internacional de Especies Amenazadas de Fauna y Flora Silvestres (CITES). El acuerdo internacional CITES, tiene por finalidad velar por que el comercio internacional de especímenes de animales y plantas silvestres no constituya una amenaza para su supervivencia y establece tres apéndices a partir de los cuales se regula su uso y comercio.                                                 </p></li>
-                                                <li><p>Lista Roja de Especies Amenazadas de la IUCN:
+                                                <li><p><a  target="_blank" href="https://www.iucnredlist.org/">Lista Roja de Especies Amenazadas de la IUCN:</a>
                                                     La Lista Roja de la Unión Internacional para la Conservación de la Naturaleza (IUCN) constituye el inventario mundial de las especies en estado de amenaza. Esta lista es un indicador crítico de la salud de la biodiversidad del mundo, que sirve como una herramienta para informar y catalizar acciones para la conservación de la biodiversidad.
                                                 </p></li>
-                                                <li><p>Lista de Especies Exóticas de Colombia:
+                                                <li><p><a  target="_blank" href="https://www.gbif.org/dataset/168568e7-eb5f-4ef6-8c59-f73ceaf57e91">Lista de Especies Exóticas de Colombia:</a>
                                                     La lista comprende aquellas especies que se encuentran fuera de su rango de distribución natural por intervención humana. La presencia de estas especies en Colombia puede causar impactos en los ecosistemas y sus servicios ecosistémicos. Esta lista es una herramienta crucial para gestionar y evitar efectos negativos que puedan generar estas especies en los ecosistemas Colombianos.
                                                 </p></li>
                                             </ul>
                                     <h5>D. Fuentes auxiliares</h5>
                                         <p>
                                             Las fuentes auxiliares, son fuentes bibliográficas obtenidas a través de una búsqueda sistemática de información sobre el número de especies estimadas que habitan en el país para cada grupo biológico.
-                                            Las fuentes auxiliares también comprenden documentos internos del SiB Colombia que permiten dar el crédito adecuado a quienes publican datos abiertos sobre biodiversidad.
-
+                                            Las fuentes auxiliares también comprenden documentos internos del SiB Colombia que permiten dar el crédito adecuado a quienes publican datos abiertos sobre biodiversidad. <a  target="_blank" href="http://repository.humboldt.org.co/handle/20.500.11761/35288">Conoce las fuentes consultadas haciendo clic aquí. </a>
                                         </p>
 
 
                                 <h4>Validación y limpieza</h4>
                                     <p>
-                                        Para lograr una síntesis de información adecuada e incidente, los datos de todas las fuentes de información son evaluados de acuerdo a los principios de calidad de datos en informática de la biodiversidad. El proceso de  validación y limpieza de los datos se enfoca en la información taxonómica y geográfica con el fin de maximizar el uso de los datos y excluir registros ambiguos. A continuación se resumen los pasos que conforman el proceso:                                    </p>
+                                        Para lograr una síntesis de información adecuada e incidente, los datos de todas las fuentes de información son evaluados de acuerdo a los principios de calidad de datos en <a  target="_blank" href="https://www.gbif.org/document/80509/principles-of-data-quality">informática de la biodiversidad.</a> El proceso de  validación y limpieza de los datos se enfoca en la información taxonómica y geográfica con el fin de maximizar el uso de los datos y excluir registros ambiguos. A continuación se resumen los pasos que conforman el proceso:                                    </p>
                                         <h5>A. Elementos priorizados:</h5>
-                            <p>Con el fin de optimizar el procesamiento de datos y reducir su volumen, se priorizaron 23 elementos del estándar Darwin Core, más 13 elementos de registro del SiB Colombia y GBIF. Estos elementos constituyen la información mínima necesaria para consolidar las cifras.
-                            </p>
+                                            <p>
+                                                Con el fin de optimizar el procesamiento de datos y reducir su volumen, se priorizaron 23 elementos del estándar <a  target="_blank" href="https://dwc.tdwg.org/">Darwin Core</a>, más 13 elementos de registro del SiB Colombia y GBIF. Estos elementos constituyen la información mínima necesaria para consolidar las cifras.
+                                                <img src="./static/validacion.png" alt="Elementos priorizados"/>
+                                            </p>
                                         <h5>B. Estructuración:</h5>
-                            <p>Las listas externas son revisadas y sus elementos mapeados al estándar Darwin Core, esto permite identificar los elementos que serán utilizados en la síntesis de cifras de acuerdo a los elementos priorizados. Luego se procede a estructurar los elementos priorizados de las listas externas en el estándar Darwin Core. Este proceso asegura que la base de datos para la consolidación de las cifras pueda construirse de forma automatizada.
-                            </p>
+                                            <p>
+                                                Las listas externas son revisadas y sus elementos mapeados al estándar Darwin Core, esto permite identificar los elementos que serán utilizados en la síntesis de cifras de acuerdo a los elementos priorizados. Luego se procede a estructurar los elementos priorizados de las listas externas en el estándar Darwin Core. Este proceso asegura que la base de datos para la consolidación de las cifras pueda construirse de forma automatizada.
+                                            </p>
                                         <h5>C. Validación y limpieza:</h5>
-                            <p>Es un proceso de revisión y ajuste de los datos para que cumplan con criterios de calidad que  faciliten el procesamiento de los datos y conduzcan a cifras confiables. En la validación, se evalúan criterios de calidad como el formato, completitud, coherencia y exactitud de los datos; por ejemplo, que el nombre científico y la jerarquía taxonómica sean consistentes; y que los topónimos geográficos y las coordenadas coincidan (la validación de coordenadas se realiza únicamente sobre las sub-consultas regionales). A partir de la validación, se identifican aquellos datos que requieren algún tipo corrección, y se procede a limpiarlos. La limpieza se enfoca en correcciones de formato y ajustes menores de consistencia, y se realiza de manera que no se altere la integridad de la información.
-                            </p>
-                            <p>Aquellos registros biológicos que presenten inconsistencias irreconciliables son excluidos de la base de datos utilizada para la síntesis de cifras. La validación y limpieza se realizan en un proceso semi-automatizado con el programa de software libre OpenRefine, el lenguaje de programación Python y la librería de código abierto pandas.
-                            </p>
+                                            <p>
+                                                Es un proceso de revisión y ajuste de los datos para que cumplan con criterios de calidad que  faciliten el procesamiento de los datos y conduzcan a cifras confiables. En la validación, se evalúan criterios de calidad como el formato, completitud, coherencia y exactitud de los datos; por ejemplo, que el nombre científico y la jerarquía taxonómica sean consistentes; y que los topónimos geográficos y las coordenadas coincidan (la validación de coordenadas se realiza únicamente sobre las sub-consultas regionales). A partir de la validación, se identifican aquellos datos que requieren algún tipo corrección, y se procede a limpiarlos. La limpieza se enfoca en correcciones de formato y ajustes menores de consistencia, y se realiza de manera que no se altere la integridad de la información.
+                                            </p>
+                                            <p>
+                                                Aquellos registros biológicos que presenten inconsistencias irreconciliables son excluidos de la base de datos utilizada para la síntesis de cifras. La validación y limpieza se realizan en un proceso semi-automatizado con el programa de software libre <a target="_blank" href="http://openrefine.org/">OpenRefine</a>, el lenguaje de programación <a target="_blank" href="https://www.python.org/">Python</a> y la librería de código abierto <a target="_blank" href="https://pandas.pydata.org/">pandas</a>.
+                                            </p>
                                         <h5>D. Base de datos para la síntesis de cifras:</h5>
-                            <p>Una vez todas las fuentes de datos han sido validadas, limpiadas y se han descartado datos ambiguos, inconsistentes o duplicados entre consultas, se consolida una única base de datos con la información de todas las fuentes, excepto las fuentes bibliográficas. Este proceso se realiza a partir de cruces de información entre los registros biológicos (fuente  de datos principal) y las listas de referencia  a partir del nombre científico (sin autoría). Con cada lista de referencia que se cruza, se genera una nueva columna o elemento en la base de datos que relaciona los registros biológicos con las temáticas y/o categorías de las listas; las nuevas columnas son creadas de acuerdo a la tabla de elementos priorizados. Este proceso se realiza automáticamente por medio del lenguaje de programación Python y la librería de código abierto pandas.</p>
-                            <p>La base de datos para la síntesis de cifras difiere a la base de datos original en la calidad y la cantidad de datos, ya que solo incluye datos que cumplen con un criterio mínimo de calidad y cuenta con una capa de información adicional, obtenida de las listas de referencia.
-                            </p>
+                                            <p>
+                                                Una vez todas las fuentes de datos han sido validadas, limpiadas y se han descartado datos ambiguos, inconsistentes o duplicados entre consultas, se consolida una única base de datos con la información de todas las fuentes, excepto las fuentes bibliográficas. Este proceso se realiza a partir de cruces de información entre los registros biológicos (fuente  de datos principal) y las listas de referencia  a partir del nombre científico (sin autoría). Con cada lista de referencia que se cruza, se genera una nueva columna o elemento en la base de datos que relaciona los registros biológicos con las temáticas y/o categorías de las listas; las nuevas columnas son creadas de acuerdo a la tabla de elementos priorizados. Este proceso se realiza automáticamente por medio del lenguaje de programación <a target="_blank" href="https://www.python.org/">Python</a> y la librería de código abierto <a target="_blank" href="https://pandas.pydata.org/">pandas</a>.
+                                            </p>
+                                            <p>
+                                                La base de datos para la síntesis de cifras difiere a la base de datos original en la calidad y la cantidad de datos, ya que solo incluye datos que cumplen con un criterio mínimo de calidad y cuenta con una capa de información adicional, obtenida de las listas de referencia.
+                                            </p>
 
                                 <h4>Síntesis de cifras</h4>
                                     <p>
-                                        La síntesis de cifras consiste en la generación de conteos de registros biológicos y especies únicas de acuerdo a los siguientes ejes: (A) grupos biológicos, (B) geografía y (C) temáticas de conservación, siendo este último un eje transversal a los dos anteriores. Dado el volumen de los datos el proceso de síntesis a sido optimizado y automatizando por medio del lenguaje de programación Python y la librería de código abierto pandas. Los resultados obtenidos son corroborados con consultas manuales y aleatorias sobre los datos para asegurar la exactitud y precisión de las cifras.
+                                        La síntesis de cifras consiste en la generación de conteos de registros biológicos y especies únicas de acuerdo a los siguientes ejes: (A) grupos biológicos, (B) geografía y (C) temáticas de conservación, siendo este último un eje transversal a los dos anteriores. Dado el volumen de los datos el proceso de síntesis a sido optimizado y automatizando por medio del lenguaje de programación <a target="_blank" href="https://www.python.org/">Python</a> y la librería de código abierto <a target="_blank" href="https://pandas.pydata.org/">pandas</a>. Los resultados obtenidos son corroborados con consultas manuales y aleatorias sobre los datos para asegurar la exactitud y precisión de las cifras.
                                     </p>
                                     <h5>A. Grupos biológicos:</h5>
-                                    <p>
-                                        La configuración de los grupos biológicos se realiza de acuerdo con documentos nacionales que facilitan la gestión y uso sostenible de la biodiversidad (estrategias, planes y programas de conservación, manejo y uso de la biodiversidad, y las resoluciones asociadas a la declaración y regulación de especies exóticas y amenazadas, entre otros). Posteriormente es refinada con criterios taxonómicos, para obtener cifras que respondan a las necesidades de información sobre biodiversidad de múltiples sectores académicos y políticos del país.
-                                        A partir de la base de datos consolidada se generan las cifras de número de registros biológicos y número de especies con evidencia en el SiB Colombia para cada grupo biológico establecido.
-                                    </p>
+                                        <p>
+                                            La configuración de los grupos biológicos se realiza de acuerdo con documentos nacionales que facilitan la gestión y uso sostenible de la biodiversidad (estrategias, planes y programas de conservación, manejo y uso de la biodiversidad, y las resoluciones asociadas a la declaración y regulación de especies exóticas y amenazadas, entre otros). Posteriormente es refinada con criterios taxonómicos, para obtener cifras que respondan a las necesidades de información sobre biodiversidad de múltiples sectores académicos y políticos del país.
+                                            A partir de la base de datos consolidada se generan las cifras de número de registros biológicos y número de especies con evidencia en el SiB Colombia para cada grupo biológico establecido. <a target="_blank" href="http://repository.humboldt.org.co/handle/20.500.11761/35288">Para conocer en detalle los grupos biológicos consulta la ficha metodológica.</a>
+                                        </p>
                                     <h5>B. Geografía:</h5>
-                                    <p>
-                                        En este eje, se consolida el número de registros biológicos y especies publicados a través del SiB Colombia para el país (se incluyen datos con y sin coordenadas), y para Santander, las cifras (número de registros biológicos y especies) se generan a partir de los elementos DwC ‘StateProvince’ y ‘county’ previamente validados y curados; teniendo en cuenta solamente  aquellos registros biológicos que cuentan por lo menos con un elemento geográfico (departamento o coordenadas), documentado y validado.
-                                    </p>
+                                        <p>
+                                            En este eje, se consolida el número de registros biológicos y especies publicados a través del SiB Colombia para el país (se incluyen datos con y sin coordenadas), y para Santander, las cifras (número de registros biológicos y especies) se generan a partir de los elementos DwC ‘StateProvince’ y ‘county’ previamente validados y curados; teniendo en cuenta solamente  aquellos registros biológicos que cuentan por lo menos con un elemento geográfico (departamento o coordenadas), documentado y validado.
+                                        </p>
                                     <h5>C. Temáticas de conservación:</h5>
-                                    <p>
-                                        Biodiversidad en Cifras incorpora tres (3) temáticas transversales al eje de grupos biológicos y geografía. Estas permiten entender el estado actual de conservación de la biodiversidad a nivel nacional y regional. De esta manera se consolidan el número de registros biológicos y especies por grupo biológico, departamento y municipio según las siguientes temáticas:
-                                    </p>
-                                        <ul>
-                                            <li>
-                                                <p>Especies amenazadas:
-                                                De acuerdo a la lista de especies amenazadas de Colombia, de la Resolución 1912 de 2017, expedida por el Ministerio de Ambiente y Desarrollo Sostenible; y la Lista Roja de especies de la Unión Internacional para la Conservación de la Naturaleza (IUCN) se establecen tres categorías de amenaza:
-                                            </p>
-                                                <ul>
-                                                    <li><p>
-                                                En peligro crítico (CR): especies con riesgo extremadamente alto de extinción en la naturaleza.
-                                                    </p></li>
-                                                    <li><p>
-                                                En peligro (EN): especies con riesgo  alto de extinción en la naturaleza.
-                                                    </p></li>
-                                                    <li><p>
-                                                Vulnerables (VU): especies con riesgo  de extinción en la naturaleza.
-                                                    </p></li>
-                                                </ul>
-                                            </li>
+                                        <p>
+                                            Biodiversidad en Cifras incorpora tres (3) temáticas transversales al eje de grupos biológicos y geografía. Estas permiten entender el estado actual de conservación de la biodiversidad a nivel nacional y regional. De esta manera se consolidan el número de registros biológicos y especies por grupo biológico, departamento y municipio según las siguientes temáticas:
+                                        </p>
+                                            <ul>
+                                                <li>
+                                                    <p>Especies amenazadas:
+                                                    De acuerdo a la lista de especies amenazadas de Colombia, de la <a target="_blank" href="https://ipt.biodiversidad.co/sib/resource?r=resolucion1912-2017mads">Resolución 1912 de 2017</a>, expedida por el Ministerio de Ambiente y Desarrollo Sostenible; y la Lista Roja de especies de la Unión Internacional para la Conservación de la Naturaleza (IUCN) se establecen tres categorías de amenaza:
+                                                </p>
+                                                    <ul>
+                                                        <li><p>
+                                                    En peligro crítico (CR): especies con riesgo extremadamente alto de extinción en la naturaleza.
+                                                        </p></li>
+                                                        <li><p>
+                                                    En peligro (EN): especies con riesgo  alto de extinción en la naturaleza.
+                                                        </p></li>
+                                                        <li><p>
+                                                    Vulnerables (VU): especies con riesgo  de extinción en la naturaleza.
+                                                        </p></li>
+                                                    </ul>
+                                                </li>
 
-                                            <li><p>Especies objeto de comercio:
-                                                De acuerdo a la lista de especies objeto de comercio establecida por la Convención sobre el Comercio Internacional de Especies Amenazadas de Fauna y Flora Silvestres (CITES), las especies se categorizan en tres apéndices a partir de los cuales se regula su uso y comercio:
-                                                </p><ul>
-                                                    <li><p>
-                                                    Apéndice I: especies en peligro de extinción, el comercio de estas se autoriza solamente bajo circunstancias excepcionales.
-                                                    </p></li>
-                                                    <li><p>
-                                                        Apéndice II: especies que no se encuentran necesariamente en peligro de extinción, pero cuyo comercio debe controlarse para evitar una utilización incompatible con su supervivencia.
-                                                    </p></li>
-                                                    <li><p>
-                                                        Apéndice III: especies que están protegidas en al menos en un país, el cual ha solicitado la asistencia de otras Partes en la CITES para controlar su comercio.
+                                                <li><p>Especies objeto de comercio:
+                                                    De acuerdo a la lista de especies objeto de comercio establecida por la Convención sobre el Comercio Internacional de Especies Amenazadas de Fauna y Flora Silvestres (<a target="_blank" href="https://speciesplus.net/species">CITES</a>), las especies se categorizan en tres apéndices a partir de los cuales se regula su uso y comercio:
+                                                    </p><ul>
+                                                        <li><p>
+                                                        Apéndice I: especies en peligro de extinción, el comercio de estas se autoriza solamente bajo circunstancias excepcionales.
+                                                        </p></li>
+                                                        <li><p>
+                                                            Apéndice II: especies que no se encuentran necesariamente en peligro de extinción, pero cuyo comercio debe controlarse para evitar una utilización incompatible con su supervivencia.
+                                                        </p></li>
+                                                        <li><p>
+                                                            Apéndice III: especies que están protegidas en al menos en un país, el cual ha solicitado la asistencia de otras Partes en la CITES para controlar su comercio.
 
-                                                    </p></li>
-                                                </ul>
+                                                        </p></li>
+                                                    </ul>
 
-                                           </li>
-                                            <li><p>
-                                                Distribución: especies endémicas, migratorias y exóticas:
-                                                Según la distribución original y actual de las especies dentro del país, estas se clasifican en endémicas, migratorias y exóticas. Las cifras de estas categorías se establece a partir de las listas de referencia y fuentes externas consultadas.
-                                            </p>
-                                                <ul>
-                                                    <li><p>Especies endémicas: son especies cuya distribución está limitada a un área geográfica específica; en este contexto corresponde a especies que habitan únicamente en Colombia.
-                                                        (!) A partir de las listas se obtiene información sobre el endemismo de aves, peces dulceacuícolas, mamíferos y plantas; otros grupos serán añadidos a medida que se publiquen nuevas listas de referencia para el país.
-                                                    </p></li>
-                                                    <li><p>Especies migratorias: son especies cuyas poblaciones se mueven masivamente entre áreas geográficas distantes, cíclicamente y de manera previsible; en este contexto corresponde a especies que pasan por Colombia dentro de su ruta migratoria.
-                                                        (!) Aplica para especies migratorias de aves únicamente, otros grupos serán añadidos a medida que se publiquen nuevas listas de referencia para el país.
-                                                    </p></li>
-                                                    <li><p>Especies exóticas: son especies que se encuentran fuera de su distribución natural; en este contexto, corresponde a especies nativas de otras regiones distintas a Colombia pero que se encuentran distribuidas en el país.
-                                                        (!) La lista oficial de especies exóticas para el país incluye únicamente información curada para animales, en futuras actualizaciones de la lista y de la Biodiversidad en cifras se incluirá las especies de plantas exóticas.
-                                                    </p></li>
-                                                </ul>
+                                               </li>
+                                                <li><p>
+                                                    Distribución: especies endémicas, migratorias y exóticas:
+                                                    Según la distribución original y actual de las especies dentro del país, estas se clasifican en endémicas, migratorias y exóticas. Las cifras de estas categorías se establece a partir de las listas de referencia y fuentes externas consultadas.
+                                                </p>
+                                                    <ul>
+                                                        <li><p>Especies endémicas: son especies cuya distribución está limitada a un área geográfica específica; en este contexto corresponde a especies que habitan únicamente en Colombia.
+                                                            (!) A partir de las listas se obtiene información sobre el endemismo de aves, peces dulceacuícolas, mamíferos y plantas; otros grupos serán añadidos a medida que se publiquen nuevas listas de referencia para el país.
+                                                        </p></li>
+                                                        <li><p>Especies migratorias: son especies cuyas poblaciones se mueven masivamente entre áreas geográficas distantes, cíclicamente y de manera previsible; en este contexto corresponde a especies que pasan por Colombia dentro de su ruta migratoria.
+                                                            (!) Aplica para especies migratorias de aves únicamente, otros grupos serán añadidos a medida que se publiquen nuevas listas de referencia para el país.
+                                                        </p></li>
+                                                        <li><p>Especies exóticas: son especies que se encuentran fuera de su distribución natural; en este contexto, corresponde a especies nativas de otras regiones distintas a Colombia pero que se encuentran distribuidas en el país.
+                                                            (!) La lista oficial de especies exóticas para el país incluye únicamente información curada para animales, en futuras actualizaciones de la lista y de la Biodiversidad en cifras se incluirá las especies de plantas exóticas.
+                                                        </p></li>
+                                                    </ul>
 
-                                            </li>
-                                        </ul>
-
-
-
+                                                </li>
+                                            </ul>
                         </div>
 
                         <div className="card white" id="aclaraciones">
@@ -210,7 +216,7 @@ class About extends Component {
                                     <li><p>Las Cifras son dinámicas, pueden aumentar o disminuir en el tiempo.
                                         Los datos abiertos son dinámicos, es decir que están cambiando constantemente de acuerdo a la tasa de publicación y actualización de los datos. Los procesos de calidad que mejoran la precisión y exactitud de las determinaciones taxonómicas, y los procesos de georeferenciación también generan fluctuaciones en el número de registros biológicos y especies reportados para determinada región. Esto implica que los datos no solo incrementan en el tiempo, si no que también disminuyen;  así mismo las cifras sintetizadas en Biodiversidad en Cifras también cambian.</p></li>
                                     <li><p>El  árbol taxonómico de GBIF se utiliza como referente taxonómico
-                                        Debido a que existen diferentes autoridades taxonómicas, una misma especie puede contar con un nombre y taxonomía superior distintos. Estas diferencias entre conjuntos de datos dificultan la integración y análisis de los datos, lo que puede llevar a una sobreestimación de las cifras. Para evitar ambigüedades y obtener cifras reproducibles y precisas, durante el proceso de validación y limpieza, todas las fuentes de información se homologan con el árbol taxonómico de GBIF. Esto implica que las cifras por grupos biológicos pueden diferir ligeramente de otras fuentes que utilicen una clasificación taxonómica distinta a la de GBIF. También es posible que algunas especies endémicas, que aún no hagan parte de este árbol taxonómico, hayan sido excluidas durante la generación de cifras.
+                                        Debido a que existen diferentes autoridades taxonómicas, una misma especie puede contar con un nombre y taxonomía superior distintos. Estas diferencias entre conjuntos de datos dificultan la integración y análisis de los datos, lo que puede llevar a una sobreestimación de las cifras. Para evitar ambigüedades y obtener cifras reproducibles y precisas, durante el proceso de validación y limpieza, todas las fuentes de información se homologan con el <a target="_blank" href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">árbol taxonómico de GBIF</a>. Esto implica que las cifras por grupos biológicos pueden diferir ligeramente de otras fuentes que utilicen una clasificación taxonómica distinta a la de GBIF. También es posible que algunas especies endémicas, que aún no hagan parte de este árbol taxonómico, hayan sido excluidas durante la generación de cifras.
                                     </p></li>
                                     <li><p>Las cifras regionales tienen mayor precisión
                                         Las cifras departamentales se obtienen a partir de la ubicación de las coordenadas geográficas, esto evita los problemas asociados a la heterogeneidad en la documentación de los nombres  departamentales y agiliza el proceso de síntesis de cifras. Sin embargo para los departamentos con cifras regionales como Santander y Boyacá, se realiza un proceso de limpieza en los nombres departamentales y municipales, lo que permite corregir y/o descartar datos con inconsistentes, e incluir en las cifras una mayor cantidad de datos.. A medida que el proceso de regionalización de Biodiversidad en Cifras avance y más departamentos cuenten con cifras regionales, se irá mejorando la precisión de las cifras para todos los departamentos.
