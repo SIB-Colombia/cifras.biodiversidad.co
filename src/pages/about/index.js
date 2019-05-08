@@ -63,7 +63,7 @@ class About extends Component {
                         <div className="card white" id="consolida">
                             <h3 className='underline-title'>¿Cómo se consolidan las cifras?</h3>
                             <p>
-                                Las cifras se consolidan a partir de los datos abiertos disponibles a través del SiB Colombia tras un proceso de depuración y validación que tiene tres etapas: (1) Consulta de datos disponibles a través del SiB Colombia y listas externas, (2) Validación y limpieza de datos, y (3) Síntesis de cifras a partir de datos validados. Si quieres conocer el proceso en detalle, <a  target="_blank" href="http://repository.humboldt.org.co/handle/20.500.11761/35288">consulta la ficha metodológica</a> y los conjuntos de datos utilizados en el proceso.
+                                Las cifras se consolidan a partir de los datos abiertos disponibles a través del SiB Colombia tras un proceso de depuración y validación que tiene tres etapas: (1) Consulta de datos disponibles a través del SiB Colombia y listas externas, (2) Validación y limpieza de datos, y (3) Síntesis de cifras a partir de datos validados. Si quieres conocer el proceso en detalle, <a  target="_blank" href="http://repository.humboldt.org.co/handle/20.500.11761/35288">consulta la ficha metodológica</a> y los <a target="_blank" href="https://gitlab.com/sib-colombia/sintesis_cifras/blob/master/Datos/Recursos%20VR%20Santander%20v201904.xls">conjuntos de datos utilizados en el proceso</a>.
                                 <br/>
                                 <img src="./static/esquema-consulta.png" alt=""/>
                             </p>
@@ -104,7 +104,7 @@ class About extends Component {
                                     <h5>D. Fuentes auxiliares</h5>
                                         <p>
                                             Las fuentes auxiliares, son fuentes bibliográficas obtenidas a través de una búsqueda sistemática de información sobre el número de especies estimadas que habitan en el país para cada grupo biológico.
-                                            Las fuentes auxiliares también comprenden documentos internos del SiB Colombia que permiten dar el crédito adecuado a quienes publican datos abiertos sobre biodiversidad. <a  target="_blank" href="http://repository.humboldt.org.co/handle/20.500.11761/35288">Conoce las fuentes consultadas haciendo clic aquí. </a>
+                                            Las fuentes auxiliares también comprenden documentos internos del SiB Colombia que permiten dar el crédito adecuado a quienes publican datos abiertos sobre biodiversidad.
                                         </p>
 
 
