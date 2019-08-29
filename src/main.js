@@ -16,6 +16,8 @@ import {Map as map} from "immutable";
 import {composeWithDevTools} from "redux-devtools-extension";
 import thunk from "redux-thunk";
 
+import { API_URL} from "./config";
+
 import App from '../dist/ssr/app'
 
 const app = Express();
@@ -33,7 +35,7 @@ function handleRender(req, res) {
 
     const client = new ApolloClient({
         ssrMode: true,
-        link: new HttpLink({ uri: 'http://158.69.59.122:8001/graphql' , fetch: fetch}),
+        link: new HttpLink({ uri: API_URL , fetch: fetch}),
         cache: new InMemoryCache(),
     });
 

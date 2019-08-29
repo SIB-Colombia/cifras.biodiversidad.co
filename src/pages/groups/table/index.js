@@ -150,7 +150,7 @@ const mapStateToProps = state => {
         name: 'Especies Exóticas',
         ESPSant: !activeDataDepartment || activeDataDepartment.especiesExoticas === -1 ? "—" : <NumberFormat value={activeDataDepartment.especiesExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
         ESPCol: !activeDataCountry || activeDataCountry.especiesExoticas === -1 ? "—" : <NumberFormat value={activeDataCountry.especiesExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
-        RRBBSant: !activeDataDepartment || activeDataDepartment.registrosExoticas === -1 ? "—" : <NumberFormat value={activeDataDepartment.especiesExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
+        RRBBSant: !activeDataDepartment || activeDataDepartment.registrosExoticas === -1 ? "—" : <NumberFormat value={activeDataDepartment.registrosExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
         RRBBCol: !activeDataCountry || activeDataCountry.registrosExoticas === -1 ? "—" : <NumberFormat value={activeDataCountry.registrosExoticas} thousandSeparator='.' decimalSeparator=','  displayType={'text'} />,
     },
     {
